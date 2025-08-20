@@ -2,794 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Special Bundles - Auto Champion</title>
     <link rel="icon" type="image/x-icon" href="brand logos/auto-champion-logo.jpg">
-    <link rel="stylesheet" href="css/vibrant-theme.css">
+    <link rel="stylesheet" href="css/vibrant-theme.css?v=1.0.1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Enhanced Design Styles */
-        :root {
-            --primary-blue: #4682B4;
-            --secondary-blue: #1976D2;
-            --dark-blue: #1E90FF;
-            --black: #000000;
-            --dark-gray: #1a1a1a;
-            --light-gray: #333333;
-            --white: #ffffff;
-            --gradient-blue: linear-gradient(135deg, #4682B4 0%, #1976D2 50%, #1E90FF 100%);
-            --gradient-dark: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
-            --shadow-blue: 0 8px 32px rgba(70, 130, 180, 0.3);
-            --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.5);
-            --border-radius: 15px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Only essential mobile optimizations */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--gradient-dark);
-            color: var(--white);
-            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
             overflow-x: hidden;
-        }
-
-        /* Enhanced Header */
-        .header {
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 2px solid var(--primary-blue);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-dark);
-        }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            max-width: 100%;
-            margin: 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: var(--white);
-        }
-
-        .logo-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid var(--primary-blue);
-            transition: var(--transition);
-        }
-
-        .logo:hover .logo-image {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-blue);
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-blue);
-        }
-
-        .nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-gold);
-            transition: var(--transition);
-            z-index: -1;
-        }
-
-        .nav a:hover::before,
-        .nav a.active::before {
-            left: 0;
-        }
-
-        .nav a:hover,
-        .nav a.active {
-            color: var(--black);
-            transform: translateY(-2px);
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .cart-icon {
-            position: relative;
-            color: var(--white);
-            font-size: 1.5rem;
-            padding: 0.5rem;
-            border-radius: 50%;
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid var(--primary-gold);
-            transition: var(--transition);
-        }
-
-        .cart-icon:hover {
-            background: var(--primary-gold);
-            color: var(--black);
-            transform: scale(1.1);
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: var(--primary-gold);
-            color: var(--black);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        /* Enhanced Bundles Section */
-        .bundles-section {
-            padding: 4rem 2rem;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-header h2 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: #4682B4;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: #4682B4;
-            margin-bottom: 2rem;
-        }
-
-        .section-decoration {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .decoration-line {
-            width: 100px;
-            height: 3px;
-            background: #4682B4;
-            border-radius: 2px;
-        }
-
-        .section-decoration i {
-            color: #4682B4;
-            font-size: 1.5rem;
-            animation: rotate 3s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Enhanced Bundles Grid */
-        .bundles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .bundle-card {
-            background: rgba(26, 26, 26, 0.9);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            border: 2px solid transparent;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .bundle-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-gold);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
-        .bundle-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .bundle-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-gold);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .bundle-card.featured {
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(51, 51, 51, 0.95) 100%);
-            border: 3px solid var(--primary-gold);
-            position: relative;
-        }
-
-        .bundle-card.featured::after {
-            content: '⭐ FEATURED';
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--gradient-gold);
-            color: var(--black);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* Enhanced Bundle Header */
-        .bundle-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .bundle-header h3 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--white);
-            margin: 0;
-        }
-
-        .bundle-badge {
-            background: var(--gradient-gold);
-            color: var(--black);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .featured-badge {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6347 100%);
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-
-        /* Enhanced Slideshow */
-        .bundle-slideshow {
-            position: relative;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-            background: var(--dark-gray);
-            box-shadow: var(--shadow-dark);
-        }
-
-        .slideshow-container {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: all 0.5s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: var(--dark-gray);
-        }
-
-        .slide.active {
-            opacity: 1;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            transition: var(--transition);
-        }
-
-        .slide:hover img {
-            transform: scale(1.05);
-        }
-
-        .slide span {
-            color: var(--white);
-            font-weight: bold;
-            text-align: center;
-            padding: 0.5rem 1rem;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        /* Enhanced Slideshow Controls */
-        .slideshow-controls {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 1rem;
-            z-index: 10;
-        }
-
-        .slideshow-controls button {
-            background: rgba(0, 0, 0, 0.7);
-            color: var(--primary-gold);
-            border: 2px solid var(--primary-gold);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-        }
-
-        .slideshow-controls button:hover {
-            background: var(--primary-gold);
-            color: var(--black);
-            transform: scale(1.1);
-        }
-
-        .slideshow-dots {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 0.5rem;
-            z-index: 10;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .dot.active,
-        .dot:hover {
-            background: var(--primary-gold);
-            transform: scale(1.2);
-        }
-
-        /* Enhanced Bundle Products */
-        .bundle-products {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--primary-gold);
-        }
-
-        .bundle-products h4 {
-            color: var(--primary-gold);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .bundle-products h4::before {
-            content: '📦';
-            font-size: 1.5rem;
-        }
-
-        .bundle-products ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .bundle-products li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .bundle-products li::before {
-            content: '✓';
-            color: var(--primary-gold);
-            font-weight: bold;
-        }
-
-        .bundle-products li:last-child {
-            border-bottom: none;
-        }
-
-        /* Enhanced Bundle Pricing */
-        .bundle-pricing {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .original-price {
-            color: #999;
-            text-decoration: line-through;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .bundle-price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-gold);
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
-        .savings {
-            color: #00ff00;
-            font-weight: bold;
-            font-size: 1rem;
-            background: rgba(0, 255, 0, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            display: inline-block;
-        }
-
-        /* Enhanced Add to Cart Button */
-        .add-to-cart-btn {
-            width: 100%;
-            padding: 1rem 2rem;
-            background: var(--gradient-gold);
-            color: var(--black);
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .add-to-cart-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: var(--transition);
-        }
-
-        .add-to-cart-btn:hover::before {
-            left: 100%;
-        }
-
-        .add-to-cart-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .add-to-cart-btn:active {
-            transform: translateY(-1px);
-        }
-
-        .featured-btn {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6347 100%);
-            animation: gradientShift 3s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        /* Enhanced Footer */
-        footer {
-            background: var(--black);
-            border-top: 2px solid var(--primary-gold);
-            padding: 3rem 2rem 1rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 100%;
-            margin: 0;
-        }
-
-        .footer-section h3 {
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section ul li a {
-            color: var(--white);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--primary-gold);
-            padding-left: 0.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            padding: 0.5rem;
-            border-radius: 50%;
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid var(--primary-gold);
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--primary-gold);
-            color: var(--black);
-            transform: scale(1.1);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 215, 0, 0.3);
-            color: #999;
-        }
-
-        /* Enhanced Notifications */
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--gradient-gold);
-            color: var(--black);
-            padding: 1rem 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-gold);
-            z-index: 10000;
-            font-weight: bold;
-            animation: slideInRight 0.3s ease-out;
-        }
-
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        @keyframes slideOutRight {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-
-        /* Mobile Responsive Design */
-        @media (max-width: 768px) {
-            .header .container {
-                padding: 1rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-
-            .section-header h2 {
-                font-size: 2.5rem;
-            }
-
-            .bundles-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 0 1rem;
-            }
-
-            .bundle-card {
-                padding: 1.5rem;
-            }
-
-            .slideshow-container {
-                height: 250px;
-            }
-
-            .slide img {
-                height: 150px;
-            }
-
-            .bundle-price {
-                font-size: 2rem;
-            }
-
-            .slideshow-controls button {
-                width: 35px;
-                height: 35px;
-            }
-
-            .dot {
-                width: 10px;
-                height: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .bundles-section {
-                padding: 2rem 1rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .bundle-header {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .bundle-header h3 {
-                font-size: 1.5rem;
-            }
-
-            .slideshow-container {
-                height: 200px;
-            }
-
-            .slide img {
-                height: 120px;
-            }
-
-            .bundle-price {
-                font-size: 1.8rem;
-            }
-
-            .add-to-cart-btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-
-        /* Loading Animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(70, 130, 180, 0.3);
-            border-radius: 50%;
-            border-top-color: #4682B4;
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Scroll Animations */
-        .bundle-card {
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .bundle-card:nth-child(1) { animation-delay: 0.1s; }
-        .bundle-card:nth-child(2) { animation-delay: 0.2s; }
-        .bundle-card:nth-child(3) { animation-delay: 0.3s; }
-        .bundle-card:nth-child(4) { animation-delay: 0.4s; }
-        .bundle-card:nth-child(5) { animation-delay: 0.5s; }
-        .bundle-card:nth-child(6) { animation-delay: 0.6s; }
-        .bundle-card:nth-child(7) { animation-delay: 0.7s; }
-        .bundle-card:nth-child(8) { animation-delay: 0.8s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
@@ -799,7 +23,7 @@
         <div class="container">
             <div class="logo">
                 <img src="brand logos/auto-champion-logo.jpg" alt="Auto Champion Logo" class="logo-image">
-        <h1>AUTO CHAMPION</h1>
+                <h1>AUTO CHAMPION</h1>
             </div>
             <nav class="nav">
                 <ul>
@@ -819,1015 +43,219 @@
     </header>
 
     <!-- Special Bundles Section -->
-    <section id="bundles" class="bundles-section">
+    <section class="bundle-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Exclusive Car Care Bundles</h2>
-                <p class="section-subtitle">Save big with our specially curated product combinations</p>
-                <div class="section-decoration">
-                    <div class="decoration-line"></div>
-                    <i class="fas fa-gem"></i>
-                    <div class="decoration-line"></div>
-                </div>
-            </div>
+            <h2>Exclusive Car Care Bundles</h2>
+            <p>Save big with our specially curated product combinations</p>
             
-            <div class="bundles-grid">
+            <div class="bundle-grid">
                 <!-- Bundle 1: Complete Car Care Kit -->
-                <div class="bundle-card" id="complete-car-care">
-                    <div class="bundle-header">
-                        <h3>Complete Car Care Kit</h3>
-                        <span class="bundle-badge">BEST SELLER</span>
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="products/CAR WASH & WAX/F1-113 CERAMIC LIQUID WAX.jpeg" alt="Complete Car Care Kit">
                     </div>
-                    <div class="bundle-slideshow" id="complete-car-care">
-                        <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="products/CAR WASH & WAX/F1-113 CERAMIC LIQUID WAX.jpeg" alt="F1-113 Ceramic Liquid Wax">
-                                <span>F1-113 CERAMIC WAX</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/F1-132 WHEEL+TIRE FOAM CLEANER.jpeg" alt="F1-132 Wheel & Tire Foam Cleaner">
-                                <span>F1-132 TIRE CLEANER</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg" alt="Microfiber Towel Pack">
-                                <span>MICROFIBER PACK</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/F1-117 GLASS CLEANER.jpeg" alt="F1-117 Glass Cleaner">
-                                <span>F1-117 GLASS CLEANER</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR POLISH & SHINNERS/scratchout paste.jpeg" alt="F1-130 SCRATCH OUT">
-                                <span>F1-130 SCRATCH OUT</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR WASH & WAX/F1-101 CARNAUBA WASH &WAX.jpeg" alt="F1-101 CARNAUBA WASH + WAX">
-                                <span>F1-101 WASH + WAX</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-131 AIM GLASS CLEANER.jpeg" alt="A-131 AIM Glass Cleaner">
-                                <span>A-131 GLASS CLEANER</span>
-                            </div>
-                        </div>
-                        <div class="slideshow-controls">
-                            <button class="prev" onclick="changeSlide(-1, 'complete-car-care')">&#10094;</button>
-                            <button class="next" onclick="changeSlide(1, 'complete-car-care')">&#10095;</button>
-                        </div>
-                        <div class="slideshow-dots">
-                            <span class="dot active" onclick="currentSlide(1, 'complete-car-care')"></span>
-                            <span class="dot" onclick="currentSlide(2, 'complete-car-care')"></span>
-                            <span class="dot" onclick="currentSlide(3, 'complete-car-care')"></span>
-                            <span class="dot" onclick="currentSlide(4, 'complete-car-care')"></span>
-                            <span class="dot" onclick="currentSlide(5, 'complete-car-care')"></span>
-                            <span class="dot" onclick="currentSlide(6, 'complete-car-care')"></span>
-                            <span class="dot" onclick="currentSlide(7, 'complete-car-care')"></span>
-                        </div>
-                    </div>
-                                                <div class="bundle-products">
-                                <h4>Includes:</h4>
-                                <ul>
-                                    <li>F1-113 Ceramic Liquid Wax (500ml)</li>
-                                    <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
-                                    <li>Microfiber Towel Pack (6 pieces)</li>
-                                    <li>F1-117 Glass Cleaner (500ml)</li>
-                                    <li>F1-130 SCRATCH OUT Paste Polishing Compound (227g)</li>
-                                </ul>
-                            </div>
-                    <div class="bundle-pricing">
-                        <div class="original-price">₨ 2,800</div>
-                        <div class="bundle-price">₨ 2,200</div>
-                        <div class="savings">Save ₨ 600 (21% OFF)</div>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('complete-car-care', 2200, 'Complete Car Care Kit')">
-                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
+                    <h3>Complete Car Care Kit</h3>
+                    <div class="bundle-price">Rs. 2,500</div>
+                    <div class="bundle-description">Complete car care solution with premium products</div>
+                    <ul class="bundle-items">
+                        <li>F1-113 Ceramic Liquid Wax (500ml)</li>
+                        <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
+                        <li>Microfiber Towel Pack (6 pieces)</li>
+                        <li>F1-117 Glass Cleaner (500ml)</li>
+                        <li>F1-130 Scratch Out Paste</li>
+                        <li>F1-101 Carnuba Wash & Wax</li>
+                        <li>A-131 AIM Glass Cleaner</li>
+                    </ul>
+                    <button class="add-to-cart-btn" onclick="addBundleToCart('Complete Car Care Kit', 2500, ['F1-113', 'F1-132', 'Microfiber Pack', 'F1-117', 'F1-130', 'F1-101', 'A-131'])">Add to Cart</button>
                 </div>
 
                 <!-- Bundle 2: Interior Care Package -->
-                <div class="bundle-card" id="interior-care">
-                    <div class="bundle-header">
-                        <h3>Interior Care Package</h3>
-                        <span class="bundle-badge">POPULAR</span>
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="products/CLEANERS/F1-119 LEATHER CLEANER +CONDITIONER.jpeg" alt="Interior Care Package">
                     </div>
-                    <div class="bundle-slideshow" id="interior-care">
-                        <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="products/CAR POLISH & SHINNERS/aim had wax.jpeg" alt="AIM Hard Wax">
-                                <span>AIM HARD WAX</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR POLISH & SHINNERS/scratchout paste.jpeg" alt="F1-130 SCRATCH OUT">
-                                <span>F1-130 SCRATCH OUT</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR WASH & WAX/F1-101 CARNAUBA WASH &WAX.jpeg" alt="F1-101 CARNAUBA WASH + WAX">
-                                <span>F1-101 WASH + WAX</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-126 AIM TIRE FOAM.jpeg" alt="A-126 AIM TIRE FOAM">
-                                <span>A-126 TIRE FOAM</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg" alt="AIM Microfibre Polishing Cloth">
-                                <span>MICROFIBRE CLOTH</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/F1-119 LEATHER CLEANER +CONDITIONER.jpeg" alt="F1-119 Leather Cleaner & Conditioner">
-                                <span>F1-119 LEATHER CLEANER</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-133 AIM LEATHER CLEANER.jpeg" alt="A-133 AIM Leather Cleaner">
-                                <span>A-133 LEATHER CLEANER</span>
-                            </div>
-                        </div>
-                        <div class="slideshow-controls">
-                            <button class="prev" onclick="changeSlide(-1, 'interior-care')">&#10094;</button>
-                            <button class="next" onclick="changeSlide(1, 'interior-care')">&#10095;</button>
-                        </div>
-                        <div class="slideshow-dots">
-                            <span class="dot active" onclick="currentSlide(1, 'interior-care')"></span>
-                            <span class="dot" onclick="currentSlide(2, 'interior-care')"></span>
-                            <span class="dot" onclick="currentSlide(3, 'interior-care')"></span>
-                            <span class="dot" onclick="currentSlide(4, 'interior-care')"></span>
-                            <span class="dot" onclick="currentSlide(5, 'interior-care')"></span>
-                            <span class="dot" onclick="currentSlide(6, 'interior-care')"></span>
-                            <span class="dot" onclick="currentSlide(7, 'interior-care')"></span>
-                        </div>
-                    </div>
-                                         <div class="bundle-products">
-                         <h4>Includes:</h4>
-                         <ul>
-                             <li>EASY KANGAROO® Cosmic Car Wax</li>
-                             <li>F1-130 SCRATCH OUT Paste Polishing Compound (227g)</li>
-                             <li>F1-101 CARNAUBA WASH + WAX (473ml)</li>
-                             <li>A-126 AIM TIRE FOAM (650ml)</li>
-                             <li>AIM Microfibre Polishing Cloth</li>
-                         </ul>
-                     </div>
-                    <div class="bundle-pricing">
-                        <div class="original-price">₨ 2,400</div>
-                        <div class="bundle-price">₨ 1,950</div>
-                        <div class="savings">Save ₨ 450 (19% OFF)</div>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('interior-care', 1950, 'Interior Care Package')">
-                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
+                    <h3>Interior Care Package</h3>
+                    <div class="bundle-price">Rs. 1,800</div>
+                    <div class="bundle-description">Complete interior cleaning and protection</div>
+                    <ul class="bundle-items">
+                        <li>AIM Interior Spray (500ml)</li>
+                        <li>AIM Fabric Freshener (500ml)</li>
+                        <li>Microfiber Cloth Pack (4 pieces)</li>
+                        <li>AIM Furniture Polish (500ml)</li>
+                        <li>Leather & Tyre Wax</li>
+                    </ul>
+                    <button class="add-to-cart-btn" onclick="addBundleToCart('Interior Care Package', 1800, ['AIM Interior', 'AIM Fabric', 'Microfiber Cloth', 'AIM Polish', 'Leather Wax'])">Add to Cart</button>
                 </div>
 
-                <!-- Bundle 3: Exterior Protection Set -->
-                <div class="bundle-card" id="exterior-protection">
-                    <div class="bundle-header">
-                        <h3>Exterior Protection Set</h3>
-                        <span class="bundle-badge">NEW</span>
+                <!-- Bundle 3: Exterior Protection Kit -->
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="products/CAR WASH & WAX/F1-101 CARNAUBA WASH &WAX.jpeg" alt="Exterior Protection Kit">
                     </div>
-                    <div class="bundle-slideshow" id="exterior-protection">
-                        <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="products/CAR POLISH & SHINNERS/aim had wax.jpeg" alt="AIM Hard Wax">
-                                <span>AIM Hard Wax</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR WASH & WAX/F1-114 CERAMIC SPRAY WAX.jpeg" alt="F1-114 Ceramic Spray Wax">
-                                <span>F1-114 Ceramic Spray Wax</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR POLISH & SHINNERS/black and gold tire shine.jpeg" alt="Black & Gold Tire Shine">
-                                <span>Black & Gold Tire Shine</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg" alt="Microfiber Towel Pack">
-                                <span>Microfiber Towel Pack</span>
-                            </div>
-                        </div>
-                        <div class="slideshow-controls">
-                            <button class="prev" onclick="changeSlide(-1, 'exterior-protection')">&#10094;</button>
-                            <button class="next" onclick="changeSlide(1, 'exterior-protection')">&#10095;</button>
-                        </div>
-                        <div class="slideshow-dots">
-                            <span class="dot active" onclick="currentSlide(1, 'exterior-protection')"></span>
-                            <span class="dot" onclick="currentSlide(2, 'exterior-protection')"></span>
-                            <span class="dot" onclick="currentSlide(3, 'exterior-protection')"></span>
-                            <span class="dot" onclick="currentSlide(4, 'exterior-protection')"></span>
-                        </div>
-                    </div>
-                    <div class="bundle-products">
-                        <h4>Includes:</h4>
-                        <ul>
-                            <li>AIM Hard Wax (500ml)</li>
-                            <li>F1-114 Ceramic Spray Wax (500ml)</li>
-                            <li>Black & Gold Tire Shine (500ml)</li>
-                            <li>Microfiber Towel Pack (4 pieces)</li>
-                        </ul>
-                    </div>
-                    <div class="bundle-pricing">
-                                                 <div class="original-price">₨ 2,600</div>
-                         <div class="bundle-price">₨ 2,100</div>
-                         <div class="savings">Save ₨ 500 (19% OFF)</div>
-                    </div>
-                                         <button class="add-to-cart-btn" onclick="addBundleToCart('exterior-protection', 2100, 'Exterior Protection Set')">
-                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
+                    <h3>Exterior Protection Kit</h3>
+                    <div class="bundle-price">Rs. 2,200</div>
+                    <div class="bundle-description">Professional exterior protection and shine</div>
+                    <ul class="bundle-items">
+                        <li>F1-113 Ceramic Liquid Wax (500ml)</li>
+                        <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
+                        <li>F1-117 Glass Cleaner (500ml)</li>
+                        <li>Microfiber Towel Pack (4 pieces)</li>
+                        <li>F1-101 Carnuba Wash & Wax</li>
+                        <li>Scratch Out Liquid</li>
+                    </ul>
+                    <button class="add-to-cart-btn" onclick="addBundleToCart('Exterior Protection Kit', 2200, ['F1-113', 'F1-132', 'F1-117', 'Microfiber Pack', 'F1-101', 'Scratch Out'])">Add to Cart</button>
                 </div>
 
-                <!-- Bundle 4: Engine Care Combo -->
-                <div class="bundle-card" id="engine-care">
-                    <div class="bundle-header">
-                        <h3>Engine Care Combo</h3>
-                        <span class="bundle-badge">LIMITED</span>
+                <!-- Bundle 4: Professional Detailer Kit -->
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg" alt="Professional Detailer Kit">
                     </div>
-                    <div class="bundle-slideshow" id="engine-care">
-                        <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="products/CLEANERS/A-125 AIM ENGINE CLEANER.jpeg" alt="A-125 AIM Engine Cleaner">
-                                <span>A-125 AIM Engine Cleaner</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-109 INJECTOR CLEANER.jpeg" alt="A-109 AIM Injector Cleaner">
-                                <span>A-109 AIM Injector Cleaner</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-123 AIM ANTI-RUST.jpeg" alt="A-123 AIM Anti-Rust">
-                                <span>A-123 AIM Anti-Rust</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-135 AIM FUEL INJECTOR CLEANER.jpeg" alt="A-135 AIM Fuel Injector Cleaner">
-                                <span>A-135 AIM Fuel Injector Cleaner</span>
-                            </div>
-                            <div class="slide fade">
-                                                            <img src="products/CLEANERS/A-136-AIM-CATALYIC-SYSTEM-CLEANER.jpeg?v=3" alt="A-136 AIM Catalytic System Cleaner">
-                            <span>A-136 AIM Catalytic System Cleaner</span>
-                            </div>
-                        </div>
-                        <div class="slideshow-controls">
-                            <button class="prev" onclick="changeSlide(-1, 'engine-care')">&#10094;</button>
-                            <button class="next" onclick="changeSlide(1, 'engine-care')">&#10095;</button>
-                        </div>
-                        <div class="slideshow-dots">
-                            <span class="dot active" onclick="currentSlide(1, 'engine-care')"></span>
-                            <span class="dot" onclick="currentSlide(2, 'engine-care')"></span>
-                            <span class="dot" onclick="currentSlide(3, 'engine-care')"></span>
-                            <span class="dot" onclick="currentSlide(4, 'engine-care')"></span>
-                            <span class="dot" onclick="currentSlide(5, 'engine-care')"></span>
-                        </div>
-                    </div>
-                    <div class="bundle-products">
-                        <h4>Includes:</h4>
-                        <ul>
-                            <li>A-125 AIM Engine Cleaner (500ml)</li>
-                            <li>A-109 AIM Injector Cleaner (300ml)</li>
-                            <li>A-123 AIM Anti-Rust (300ml)</li>
-                            <li>A-135 AIM Fuel Injector Cleaner (300ml)</li>
-                            <li>A-136 AIM Catalytic System Cleaner (300ml)</li>
-                        </ul>
-                    </div>
-                    <div class="bundle-pricing">
-                        <div class="original-price">₨ 2,200</div>
-                        <div class="bundle-price">₨ 1,750</div>
-                        <div class="savings">Save ₨ 450 (20% OFF)</div>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('engine-care', 1750, 'Engine Care Combo')">
-                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
+                    <h3>Professional Detailer Kit</h3>
+                    <div class="bundle-price">Rs. 3,500</div>
+                    <div class="bundle-description">Complete professional detailing solution</div>
+                    <ul class="bundle-items">
+                        <li>F1-113 Ceramic Liquid Wax (500ml)</li>
+                        <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
+                        <li>F1-117 Glass Cleaner (500ml)</li>
+                        <li>AIM Interior Spray (500ml)</li>
+                        <li>Microfiber Towel Pack (8 pieces)</li>
+                        <li>F1-101 Carnuba Wash & Wax</li>
+                        <li>Scratch Out Paste</li>
+                        <li>Leather & Tyre Wax</li>
+                        <li>AIM Furniture Polish (500ml)</li>
+                    </ul>
+                    <button class="add-to-cart-btn" onclick="addBundleToCart('Professional Detailer Kit', 3500, ['F1-113', 'F1-132', 'F1-117', 'AIM Interior', 'Microfiber Pack', 'F1-101', 'Scratch Out', 'Leather Wax', 'AIM Polish'])">Add to Cart</button>
                 </div>
 
-                <!-- Bundle 5: Premium Detailing Kit -->
-                <div class="bundle-card featured" id="premium-detailing">
-                    <div class="bundle-header">
-                        <h3>Premium Detailing Kit</h3>
-                        <span class="bundle-badge featured-badge">FEATURED</span>
+                <!-- Bundle 5: Engine Care Kit -->
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="products/CLEANERS/A-125 AIM ENGINE CLEANER.jpeg" alt="Engine Care Kit">
                     </div>
-                    <div class="bundle-slideshow" id="premium-detailing">
-                        <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="products/CLEANERS/F1-119 LEATHER CLEANER +CONDITIONER.jpeg" alt="Dashboard Spray Formula 1">
-                                <span>Dashboard Spray Formula 1</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-128 AIM FOAMY CLEANER.jpeg" alt="Foam Cleaner AIM">
-                                <span>Foam Cleaner AIM</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-133 AIM LEATHER CLEANER.jpeg" alt="Leather Spray AIM">
-                                <span>Leather Spray AIM</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg" alt="Microfibre Cloth AIM">
-                                <span>Microfibre Cloth AIM</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-131 AIM GLASS CLEANER.jpeg" alt="Perfume Card">
-                                <span>Perfume Card</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="Premium Detailing Kit.jpg" alt="Premium Detailing Kit Collection">
-                                <span>Premium Detailing Kit Collection</span>
-                            </div>
-                        </div>
-                        <div class="slideshow-controls">
-                            <button class="prev" onclick="changeSlide(-1, 'premium-detailing')">&#10094;</button>
-                            <button class="next" onclick="changeSlide(1, 'premium-detailing')">&#10095;</button>
-                        </div>
-                        <div class="slideshow-dots">
-                            <span class="dot active" onclick="currentSlide(1, 'premium-detailing')"></span>
-                            <span class="dot" onclick="currentSlide(2, 'premium-detailing')"></span>
-                            <span class="dot" onclick="currentSlide(3, 'premium-detailing')"></span>
-                            <span class="dot" onclick="currentSlide(4, 'premium-detailing')"></span>
-                            <span class="dot" onclick="currentSlide(5, 'premium-detailing')"></span>
-                            <span class="dot" onclick="currentSlide(6, 'premium-detailing')"></span>
-                        </div>
-                    </div>
-                    <div class="bundle-products">
-                        <h4>Includes:</h4>
-                        <ul>
-                            <li>Dashboard Spray Formula 1 (500ml)</li>
-                            <li>Foam Cleaner AIM (500ml)</li>
-                            <li>Leather Spray AIM (500ml)</li>
-                            <li>Microfibre Cloth AIM (1 piece)</li>
-                            <li>Perfume Card (1 piece)</li>
-                        </ul>
-                    </div>
-                    <div class="bundle-pricing">
-                        <div class="original-price">₨ 1,800</div>
-                        <div class="bundle-price">₨ 1,400</div>
-                        <div class="savings">Save ₨ 400 (22% OFF)</div>
-                    </div>
-                    <button class="add-to-cart-btn featured-btn" onclick="addBundleToCart('premium-detailing', 1400, 'Premium Detailing Kit')">
-                        <i class="fas fa-crown"></i> Premium Deal
-                    </button>
+                    <h3>Engine Care Kit</h3>
+                    <div class="bundle-price">Rs. 1,800</div>
+                    <div class="bundle-description">Complete engine maintenance and cleaning</div>
+                    <ul class="bundle-items">
+                        <li>A-125 AIM Engine Cleaner (500ml)</li>
+                        <li>A-109 AIM Injector Cleaner (300ml)</li>
+                        <li>A-123 AIM Anti-Rust (300ml)</li>
+                        <li>A-135 AIM Fuel Injector Cleaner (300ml)</li>
+                        <li>A-136 AIM Catalytic System Cleaner (300ml)</li>
+                    </ul>
+                    <button class="add-to-cart-btn" onclick="addBundleToCart('Engine Care Kit', 1800, ['A-125', 'A-109', 'A-123', 'A-135', 'A-136'])">Add to Cart</button>
                 </div>
 
-                <!-- Bundle 6: Budget Starter Pack -->
-                <div class="bundle-card" id="budget-starter">
-                    <div class="bundle-header">
-                        <h3>Budget Starter Pack</h3>
-                        <span class="bundle-badge">VALUE</span>
+                <!-- Bundle 6: Glass & Interior Kit -->
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="products/CLEANERS/A-131 AIM GLASS CLEANER.jpeg" alt="Glass & Interior Kit">
                     </div>
-                    <div class="bundle-slideshow" id="budget-starter">
-                        <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="products/CLEANERS/A-128 AIM FOAMY CLEANER.jpeg" alt="Sofa Carpet Cleaner">
-                                <span>Sofa Carpet Cleaner</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR POLISH & SHINNERS/aim furtinure polish.jpeg" alt="Furniture Polish">
-                                <span>Furniture Polish</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-129 AIM FOAMY CLEANER.jpeg" alt="Kitchen Cleaner">
-                                <span>Kitchen Cleaner</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR WASH SHAMPOOS/AW-157 AIM WASH & SHAMPOO.jpeg" alt="Shampoo 1 Litre">
-                                <span>Shampoo 1 Litre</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/MICRO FIBER CLOTHES/MICROFIBER CLOTH PACK OF 4.jpeg" alt="Microfibre Cloth">
-                                <span>Microfibre Cloth</span>
-                            </div>
-                        </div>
-                        <div class="slideshow-controls">
-                            <button class="prev" onclick="changeSlide(-1, 'budget-starter')">&#10094;</button>
-                            <button class="next" onclick="changeSlide(1, 'budget-starter')">&#10095;</button>
-                        </div>
-                        <div class="slideshow-dots">
-                            <span class="dot active" onclick="currentSlide(1, 'budget-starter')"></span>
-                            <span class="dot" onclick="currentSlide(2, 'budget-starter')"></span>
-                            <span class="dot" onclick="currentSlide(3, 'budget-starter')"></span>
-                            <span class="dot" onclick="currentSlide(4, 'budget-starter')"></span>
-                            <span class="dot" onclick="currentSlide(5, 'budget-starter')"></span>
-                        </div>
-                    </div>
-                    <div class="bundle-products">
-                        <h4>Includes:</h4>
-                        <ul>
-                            <li>Sofa Carpet Cleaner (500ml)</li>
-                            <li>Furniture Polish (500ml)</li>
-                            <li>Kitchen Cleaner (500ml)</li>
-                            <li>Shampoo (1L)</li>
-                                <li>Microfibre Cloth (1 piece)</li>
-                            </ul>
-                        </div>
-                        <div class="bundle-pricing">
-                        <div class="original-price">₨ 1,200</div>
-                        <div class="bundle-price">₨ 950</div>
-                        <div class="savings">Save ₨ 250 (21% OFF)</div>
-                        </div>
-                                        <button class="add-to-cart-btn" onclick="addBundleToCart('budget-starter', 950, 'Budget Starter Pack')">
-                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
-                </div>
-
-                <!-- Bundle 7: Complete Car - Basic -->
-                <div class="bundle-card" id="complete-car-basic">
-                    <div class="bundle-header">
-                        <h3>Complete Car - Basic</h3>
-                        <span class="bundle-badge">BASIC</span>
-                    </div>
-                    <div class="bundle-slideshow" id="complete-car-basic">
-                        <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="products/CAR POLISH & SHINNERS/aim had wax.jpeg" alt="Cosmic Polish">
-                                <span>Cosmic Polish</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR WASH SHAMPOOS/AW-157 AIM WASH & SHAMPOO.jpeg" alt="Shampoo 1 Litre AIM">
-                                <span>Shampoo 1 Litre AIM</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg" alt="Towel">
-                                <span>Towel</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-131 AIM GLASS CLEANER.jpeg" alt="Dashboard Spray AIM">
-                                <span>Dashboard Spray AIM</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-128 AIM FOAMY CLEANER.jpeg" alt="Foam Cleaner">
-                                <span>Foam Cleaner</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-126 AIM TIRE FOAM.jpeg" alt="Tire Foam">
-                                <span>Tire Foam</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-125 AIM ENGINE CLEANER.jpeg" alt="Engine Degreaser">
-                                <span>Engine Degreaser</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/OTHERS/A-137 AIM OCTANE BOOSTER.jpeg" alt="Octane Booster">
-                                <span>Octane Booster</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR POLISH & SHINNERS/scratch out liquid.jpeg" alt="Scratch Remover AIM">
-                                <span>Scratch Remover AIM</span>
-                            </div>
-                        </div>
-                        <div class="slideshow-controls">
-                            <button class="prev" onclick="changeSlide(-1, 'complete-car-basic')">&#10094;</button>
-                            <button class="next" onclick="changeSlide(1, 'complete-car-basic')">&#10095;</button>
-                        </div>
-                        <div class="slideshow-dots">
-                            <span class="dot active" onclick="currentSlide(1, 'complete-car-basic')"></span>
-                            <span class="dot" onclick="currentSlide(2, 'complete-car-basic')"></span>
-                            <span class="dot" onclick="currentSlide(3, 'complete-car-basic')"></span>
-                            <span class="dot" onclick="currentSlide(4, 'complete-car-basic')"></span>
-                            <span class="dot" onclick="currentSlide(5, 'complete-car-basic')"></span>
-                            <span class="dot" onclick="currentSlide(6, 'complete-car-basic')"></span>
-                            <span class="dot" onclick="currentSlide(7, 'complete-car-basic')"></span>
-                            <span class="dot" onclick="currentSlide(8, 'complete-car-basic')"></span>
-                            <span class="dot" onclick="currentSlide(9, 'complete-car-basic')"></span>
-                        </div>
-                    </div>
-                    <div class="bundle-products">
-                        <h4>Includes:</h4>
-                        <ul>
-                            <li>Cosmic Polish (500ml)</li>
-                            <li>Shampoo 1 Litre AIM (1L)</li>
-                            <li>Towel (1 piece)</li>
-                            <li>Dashboard Spray AIM (500ml)</li>
-                            <li>Foam Cleaner (500ml)</li>
-                            <li>Tire Foam (500ml)</li>
-                            <li>Engine Degreaser (500ml)</li>
-                            <li>Octane Booster (300ml)</li>
-                            <li>Scratch Remover AIM (500ml)</li>
-                        </ul>
-                    </div>
-                    <div class="bundle-pricing">
-                        <div class="original-price">₨ 3,200</div>
-                        <div class="bundle-price">₨ 2,500</div>
-                        <div class="savings">Save ₨ 700 (22% OFF)</div>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('complete-car-basic', 2500, 'Complete Car - Basic')">
-                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
-                </div>
-
-                <!-- Bundle 8: Premium -->
-                <div class="bundle-card" id="premium">
-                    <div class="bundle-header">
-                        <h3>Premium</h3>
-                        <span class="bundle-badge">PREMIUM</span>
-                    </div>
-                    <div class="bundle-slideshow" id="premium">
-                        <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="products/CAR POLISH & SHINNERS/aim had wax.jpeg" alt="Cosmic Polish">
-                                <span>Cosmic Polish</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR WASH & WAX/F1-101 CARNAUBA WASH &WAX.jpeg" alt="Shampoo 32oz Formula 1">
-                                <span>Shampoo 32oz Formula 1</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/MICRO FIBER CLOTHES/MICROFIBER CLOTH PACK OF 4.jpeg" alt="Cloth">
-                                <span>Cloth</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg" alt="Towel">
-                                <span>Towel</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-131 AIM GLASS CLEANER.jpeg" alt="Dashboard Spray Formula 1">
-                                <span>Dashboard Spray Formula 1</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/F1-119 LEATHER CLEANER +CONDITIONER.jpeg" alt="Leather Spray Formula 1">
-                                <span>Leather Spray Formula 1</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-133 AIM LEATHER CLEANER.jpeg" alt="Fabric Spray Formula 1">
-                                <span>Fabric Spray Formula 1</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CLEANERS/A-125 AIM ENGINE CLEANER.jpeg" alt="Engine Degreaser">
-                                <span>Engine Degreaser</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR POLISH & SHINNERS/black and gold tire shine.jpeg" alt="Tire Gold Formula 1">
-                                <span>Tire Gold Formula 1</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/OTHERS/A-137 AIM OCTANE BOOSTER.jpeg" alt="Octane Booster">
-                                <span>Octane Booster</span>
-                            </div>
-                            <div class="slide fade">
-                                <img src="products/CAR POLISH & SHINNERS/scratchout paste.jpeg" alt="Scratch Out Paste">
-                                <span>Scratch Out Paste</span>
-                            </div>
-                        </div>
-                        <div class="slideshow-controls">
-                            <button class="prev" onclick="changeSlide(-1, 'premium')">&#10094;</button>
-                            <button class="next" onclick="changeSlide(1, 'premium')">&#10095;</button>
-                        </div>
-                        <div class="slideshow-dots">
-                            <span class="dot active" onclick="currentSlide(1, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(2, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(3, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(4, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(5, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(6, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(7, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(8, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(9, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(10, 'premium')"></span>
-                            <span class="dot" onclick="currentSlide(11, 'premium')"></span>
-                        </div>
-                    </div>
-                    <div class="bundle-products">
-                        <h4>Includes:</h4>
-                        <ul>
-                            <li>Cosmic Polish (500ml)</li>
-                            <li>Shampoo 32oz Formula 1 (946ml)</li>
-                            <li>Cloth (1 piece)</li>
-                            <li>Towel (1 piece)</li>
-                            <li>Dashboard Spray Formula 1 (500ml)</li>
-                            <li>Leather Spray Formula 1 (500ml)</li>
-                            <li>Fabric Spray Formula 1 (500ml)</li>
-                            <li>Engine Degreaser (500ml)</li>
-                            <li>Tire Gold Formula 1 (500ml)</li>
-                            <li>Octane Booster (300ml)</li>
-                            <li>Scratch Out Paste (500ml)</li>
-                        </ul>
-                    </div>
-                    <div class="bundle-pricing">
-                        <div class="original-price">₨ 4,500</div>
-                        <div class="bundle-price">₨ 3,600</div>
-                        <div class="savings">Save ₨ 900 (20% OFF)</div>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('premium', 3600, 'Premium')">
-                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
+                    <h3>Glass & Interior Kit</h3>
+                    <div class="bundle-price">Rs. 1,500</div>
+                    <div class="bundle-description">Perfect for interior and glass cleaning</div>
+                    <ul class="bundle-items">
+                        <li>A-131 AIM Glass Cleaner (500ml)</li>
+                        <li>F1-117 Glass Cleaner (500ml)</li>
+                        <li>A-128 AIM Foamy Cleaner (500ml)</li>
+                        <li>Microfiber Cloth Pack (4 pieces)</li>
+                        <li>A-133 AIM Leather Cleaner (500ml)</li>
+                    </ul>
+                    <button class="add-to-cart-btn" onclick="addBundleToCart('Glass & Interior Kit', 1500, ['A-131', 'F1-117', 'A-128', 'Microfiber Cloth', 'A-133'])">Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Auto Champion</h3>
-                    <p>Your trusted partner for premium car care products.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="shop.html">Shop</a></li>
-                <li><a href="special-bundles.html">Special Bundles</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
+                    <p>Pakistan's leading car care distribution company with 40 years of excellence.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> Sales: 04237103750 - 1</p>
+                    <p><i class="fas fa-headset"></i> 24/7 Helpline: +923234890184</p>
+                    <p><i class="fas fa-envelope"></i> ksmenterprises22@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Badami Bagh Centre, Badami Bagh, Lahore</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Brands</h4>
+                    <ul>
+                        <li><a href="#">Formula 1</a></li>
+                        <li><a href="#">AIM Car Care</a></li>
+                        <li><a href="#">WD-40 Products</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2023 Auto Champion. All rights reserved.
+                <p>&copy; 2024 Auto Champion. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Add bundle to cart functionality
-        function addBundleToCart(bundleId, price, bundleName) {
-            // Get existing cart from localStorage
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            
-            // Create bundle item
-            const bundleItem = {
-                id: bundleId,
-                name: bundleName,
-                price: price,
-                quantity: 1,
-                image: 'products/CAR WASH & WAX/F1-101 CARNAUBA WASH &WAX.jpeg', // Default image
-                type: 'bundle'
-            };
+        // Initialize cart count
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = document.getElementById('cartCount');
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        });
+
+        // Function to add bundle to cart
+        function addBundleToCart(bundleName, price, products) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
             
             // Check if bundle already exists in cart
-            const existingIndex = cart.findIndex(item => item.id === bundleId);
+            const existingBundle = cart.find(item => item.name === bundleName);
             
-            if (existingIndex !== -1) {
-                // Update quantity if already exists
-                cart[existingIndex].quantity += 1;
+            if (existingBundle) {
+                existingBundle.quantity += 1;
             } else {
-                // Add new bundle to cart
-                cart.push(bundleItem);
+                cart.push({
+                    name: bundleName,
+                    price: price,
+                    quantity: 1,
+                    type: 'bundle',
+                    products: products
+                });
             }
             
-            // Save updated cart
             localStorage.setItem('cart', JSON.stringify(cart));
             
-            // Show success message
-            showNotification(`${bundleName} added to cart!`);
+            // Update cart count
+            const cartCount = document.getElementById('cartCount');
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
             
-            // Update cart count if cart count element exists
-            updateCartCount();
+            // Show notification
+            showNotification('Bundle added to cart!', 'success');
         }
-        
-        // Show notification
-        function showNotification(message) {
+
+        // Function to show notification
+        function showNotification(message, type = 'success') {
             const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.textContent = message;
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: var(--gradient-gold);
-                color: var(--black);
-                padding: 15px 20px;
-                border-radius: var(--border-radius);
-                box-shadow: var(--shadow-gold);
-                z-index: 10000;
-                font-weight: bold;
-                animation: slideInRight 0.3s ease-out;
+            notification.className = `notification ${type} show`;
+            notification.innerHTML = `
+                <span>${message}</span>
+                <button onclick="this.parentElement.remove()">&times;</button>
             `;
-            
             document.body.appendChild(notification);
             
-            // Remove notification after 3 seconds
             setTimeout(() => {
-                notification.style.animation = 'slideOutRight 0.3s ease-in';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
+                notification.remove();
             }, 3000);
         }
-        
-        // Update cart count
-        function updateCartCount() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            
-            // Update cart count in header if it exists
-            const cartCountElement = document.querySelector('.cart-count');
-            if (cartCountElement) {
-                cartCountElement.textContent = totalItems;
-            }
-        }
-        
-        // Add CSS animations
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            @keyframes slideOut {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Enhanced Slideshow functionality
-        let slideIndex = { 
-            'complete-car-care': 1,
-            'interior-care': 1,
-            'exterior-protection': 1,
-            'engine-care': 1,
-            'premium-detailing': 1,
-            'budget-starter': 1,
-            'complete-car-basic': 1,
-            'premium': 1
-        };
-        
-        let autoAdvanceTimers = {};
-        let isPaused = {};
-        
-        function changeSlide(direction, slideshowId) {
-            const slideshowContainer = document.querySelector(`#${slideshowId}`);
-            if (!slideshowContainer) return;
-            
-            const slides = slideshowContainer.querySelectorAll('.slide');
-            const dots = slideshowContainer.querySelectorAll('.dot');
-            
-            // Hide current slide with fade out effect
-            const currentSlide = slides[slideIndex[slideshowId] - 1];
-            if (currentSlide) {
-                currentSlide.style.opacity = '0';
-                currentSlide.style.transform = 'scale(0.9) translateY(10px)';
-            }
-            
-            slideIndex[slideshowId] += direction;
-            
-            if (slideIndex[slideshowId] > slides.length) {
-                slideIndex[slideshowId] = 1;
-            }
-            if (slideIndex[slideshowId] < 1) {
-                slideIndex[slideshowId] = slides.length;
-            }
-            
-            // Show new slide with fade in effect
-            setTimeout(() => {
-                // Hide all slides
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                    slide.style.opacity = '0';
-                    slide.style.transform = 'scale(0.9) translateY(10px)';
-                });
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                // Show current slide
-                const newSlide = slides[slideIndex[slideshowId] - 1];
-                if (newSlide) {
-                    newSlide.classList.add('active');
-                    setTimeout(() => {
-                        newSlide.style.opacity = '1';
-                        newSlide.style.transform = 'scale(1) translateY(0)';
-                    }, 50);
-                }
-                
-                if (dots[slideIndex[slideshowId] - 1]) {
-                    dots[slideIndex[slideshowId] - 1].classList.add('active');
-                }
-            }, 300);
-        }
-        
-        function currentSlide(n, slideshowId) {
-            const slideshowContainer = document.querySelector(`#${slideshowId}`);
-            if (!slideshowContainer) return;
-            
-            const slides = slideshowContainer.querySelectorAll('.slide');
-            const dots = slideshowContainer.querySelectorAll('.dot');
-            
-            // Hide current slide
-            const currentSlide = slides[slideIndex[slideshowId] - 1];
-            if (currentSlide) {
-                currentSlide.style.opacity = '0';
-                currentSlide.style.transform = 'scale(0.9) translateY(10px)';
-            }
-            
-            slideIndex[slideshowId] = n;
-            
-            setTimeout(() => {
-                // Hide all slides
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                    slide.style.opacity = '0';
-                    slide.style.transform = 'scale(0.9) translateY(10px)';
-                });
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                // Show selected slide
-                const selectedSlide = slides[n - 1];
-                if (selectedSlide) {
-                    selectedSlide.classList.add('active');
-                    setTimeout(() => {
-                        selectedSlide.style.opacity = '1';
-                        selectedSlide.style.transform = 'scale(1) translateY(0)';
-                    }, 50);
-                }
-                
-                if (dots[n - 1]) {
-                    dots[n - 1].classList.add('active');
-                }
-            }, 300);
-        }
-        
-        function autoAdvance(slideshowId) {
-            if (autoAdvanceTimers[slideshowId]) {
-                clearInterval(autoAdvanceTimers[slideshowId]);
-            }
-            
-            autoAdvanceTimers[slideshowId] = setInterval(() => {
-                if (!isPaused[slideshowId]) {
-                    changeSlide(1, slideshowId);
-                }
-            }, 4000); // Increased to 4 seconds for better user experience
-        }
-        
-        function pauseSlideshow(slideshowId) {
-            isPaused[slideshowId] = true;
-        }
-        
-        function resumeSlideshow(slideshowId) {
-            isPaused[slideshowId] = false;
-        }
-        
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCartCount();
-            
-            // Initialize slideshows for all bundles that have slideshows
-            const slideshowIds = ['complete-car-care', 'interior-care', 'exterior-protection', 'engine-care', 'premium-detailing', 'budget-starter', 'complete-car-basic', 'premium'];
-            
-            console.log('Initializing slideshows...');
-            
-            slideshowIds.forEach(id => {
-                // Check if this bundle actually has a slideshow
-                const slideshowContainer = document.querySelector(`#${id}`);
-                if (!slideshowContainer) {
-                    console.log(`Slideshow container not found for: ${id}`);
-                    return;
-                }
-                
-                const slides = slideshowContainer.querySelectorAll('.slide');
-                const dots = slideshowContainer.querySelectorAll('.dot');
-                
-                console.log(`Found ${slides.length} slides and ${dots.length} dots for ${id}`);
-                
-                if (slides.length > 0) {
-                    // Hide all slides first
-                    slides.forEach(slide => {
-                        slide.classList.remove('active');
-                        slide.style.opacity = '0';
-                        slide.style.transform = 'scale(0.9) translateY(10px)';
-                    });
-                    
-                    // Show first slide
-                    slides[0].classList.add('active');
-                    setTimeout(() => {
-                        slides[0].style.opacity = '1';
-                        slides[0].style.transform = 'scale(1) translateY(0)';
-                    }, 100);
-                    
-                    // Start auto-advance only if there are slides
-                    autoAdvance(id);
-                    
-                    // Add pause/resume functionality on hover (desktop only)
-                    if (window.innerWidth > 768) {
-                        slideshowContainer.addEventListener('mouseenter', () => pauseSlideshow(id));
-                        slideshowContainer.addEventListener('mouseleave', () => resumeSlideshow(id));
-                    }
-                    
-                    // Add touch/swipe support for mobile
-                    if (window.innerWidth <= 768) {
-                        addTouchSupport(slideshowContainer, id);
-                    }
-                    
-                    console.log(`Slideshow ${id} initialized successfully`);
-                } else {
-                    console.log(`No slides found for ${id}`);
-                }
-                
-                if (dots.length > 0) {
-                    // Remove active class from all dots
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    // Activate first dot
-                    dots[0].classList.add('active');
-                }
-            });
-            
-            // Add mobile-specific optimizations
-            addMobileOptimizations();
-        });
-        
-        // Touch support for mobile slideshows
-        function addTouchSupport(container, slideshowId) {
-            let touchStartX = 0;
-            let touchEndX = 0;
-            let touchStartY = 0;
-            let touchEndY = 0;
-            
-            container.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-                touchStartY = e.changedTouches[0].screenY;
-            }, { passive: true });
-            
-            container.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                touchEndY = e.changedTouches[0].screenY;
-                handleSwipe();
-            }, { passive: true });
-            
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                const diffX = touchStartX - touchEndX;
-                const diffY = touchStartY - touchEndY;
-                
-                // Only handle horizontal swipes
-                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
-                    if (diffX > 0) {
-                        // Swipe left - next slide
-                        changeSlide(1, slideshowId);
-                    } else {
-                        // Swipe right - previous slide
-                        changeSlide(-1, slideshowId);
-                    }
-                }
-            }
-        }
-        
-        // Mobile-specific optimizations
-        function addMobileOptimizations() {
-            // Disable auto-advance on mobile for better user control
-            if (window.innerWidth <= 768) {
-                Object.keys(autoAdvanceTimers).forEach(id => {
-                    if (autoAdvanceTimers[id]) {
-                        clearInterval(autoAdvanceTimers[id]);
-                    }
-                });
-            }
-            
-            // Add smooth scrolling for better mobile experience
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            // Optimize bundle cards for mobile interaction
-            document.querySelectorAll('.bundle-card').forEach(card => {
-                card.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.98)';
-                }, { passive: true });
-                
-                card.addEventListener('touchend', function() {
-                    this.style.transform = 'scale(1)';
-                }, { passive: true });
-            });
-            
-            // Add haptic feedback for mobile (if supported)
-            if ('vibrate' in navigator) {
-                document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        navigator.vibrate(50);
-                    });
-                });
-            }
-        }
-        
-        // Handle window resize for responsive behavior
-        window.addEventListener('resize', function() {
-            const isMobile = window.innerWidth <= 768;
-            
-            // Reinitialize touch support if switching between mobile/desktop
-            if (isMobile !== window.wasMobile) {
-                window.wasMobile = isMobile;
-                
-                if (isMobile) {
-                    // Disable auto-advance on mobile
-                    Object.keys(autoAdvanceTimers).forEach(id => {
-                        if (autoAdvanceTimers[id]) {
-                            clearInterval(autoAdvanceTimers[id]);
-                        }
-                    });
-                } else {
-                    // Re-enable auto-advance on desktop
-                    const slideshowIds = ['complete-car-care', 'interior-care', 'exterior-protection', 'engine-care', 'premium-detailing', 'budget-starter', 'complete-car-basic', 'premium'];
-                    slideshowIds.forEach(id => {
-                        if (document.querySelector(`#${id}`)) {
-                            autoAdvance(id);
-                        }
-                    });
-                }
-            }
-        });
     </script>
 </body>
 </html> 
