@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Debug - Auto Champain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #000;
+            color: #FFD700;
+        }
+        .debug-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+        }
+        button {
+            background: #FFD700;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #FFA500;
+        }
+        .debug-info {
+            background: #1a0000;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .error { color: #ff6b6b; }
+        .success { color: #51cf66; }
+        .warning { color: #ffd43b; }
+    </style>
+</head>
+<body>
+    <h1>🛒 Cart Debug Page</h1>
+    
+    <div class="debug-section">
+        <h2>🔍 Cart Status Check</h2>
+        <button onclick="checkCartStatus()">Check Cart Status</button>
+        <button onclick="checkLocalStorage()">Check LocalStorage</button>
+        <button onclick="checkCartElements()">Check Cart Elements</button>
+        <div id="statusResults" class="debug-info"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>🧪 Test Cart Operations</h2>
+        <button onclick="testAddProduct()">Add Test Product</button>
+        <button onclick="testRemoveProduct()">Remove Test Product</button>
+        <button onclick="clearCart()">Clear Cart</button>
+        <div id="testResults" class="debug-info"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>📊 Cart Data</h2>
+        <div id="cartData" class="debug-info">Cart data will appear here...</div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>🚨 Console Log</h2>
+        <div id="consoleLog" class="debug-info">Console messages will appear here...</div>
+        <button onclick="clearConsole()">Clear Console</button>
+    </div>
+
+    <script>
+        // Intercept console.log to display in our debug area
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        function addToConsole(message, type = 'log') {
+            const consoleDiv = document.getElementById('consoleLog');
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type === 'error' ? 'error' : type === 'warn' ? 'warning' : 'success';
+            
+            consoleDiv.innerHTML += `<span class="${className}">[${timestamp}] ${message}</span>\n`;
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToConsole(args.join(' '), 'log');
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToConsole(args.join(' '), 'error');
+        };
+        
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addToConsole(args.join(' '), 'warn');
+        };
+        
+        // Debug functions
+        function checkCartStatus() {
+            const results = document.getElementById('statusResults');
+            let output = '=== CART STATUS CHECK ===\n\n';
+            
+            try {
+                // Check if cart.js functions are available
+                if (typeof addToCart === 'function') {
+                    output += '✅ addToCart function: AVAILABLE\n';
+                } else {
+                    output += '❌ addToCart function: NOT AVAILABLE\n';
+                }
+                
+                if (typeof updateCartCount === 'function') {
+                    output += '✅ updateCartCount function: AVAILABLE\n';
+                } else {
+                    output += '❌ updateCartCount function: NOT AVAILABLE\n';
+                }
+                
+                // Check localStorage
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                output += `✅ Cart in localStorage: ${cart.length} items\n`;
+                
+                // Check cart count element
+                const cartCount = document.getElementById('cartCount');
+                if (cartCount) {
+                    output += `✅ Cart count element: FOUND (${cartCount.textContent})\n`;
+                } else {
+                    output += '❌ Cart count element: NOT FOUND\n';
+                }
+                
+            } catch (error) {
+                output += `❌ Error checking cart status: ${error.message}\n`;
+            }
+            
+            results.textContent = output;
+        }
+        
+        function checkLocalStorage() {
+            const results = document.getElementById('statusResults');
+            let output = '=== LOCALSTORAGE CHECK ===\n\n';
+            
+            try {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                output += `Cart items: ${cart.length}\n`;
+                
+                if (cart.length > 0) {
+                    cart.forEach((item, index) => {
+                        output += `${index + 1}. ${item.name} - Rs. ${item.price} x ${item.quantity}\n`;
+                    });
+                } else {
+                    output += 'Cart is empty\n';
+                }
+                
+                // Check other localStorage items
+                const keys = Object.keys(localStorage);
+                output += `\nAll localStorage keys: ${keys.join(', ')}\n`;
+                
+            } catch (error) {
+                output += `Error checking localStorage: ${error.message}\n`;
+            }
+            
+            results.textContent = output;
+        }
+        
+        function checkCartElements() {
+            const results = document.getElementById('statusResults');
+            let output = '=== CART ELEMENTS CHECK ===\n\n';
+            
+            const elements = [
+                'cartItems',
+                'totalItems', 
+                'totalAmount',
+                'cartCount'
+            ];
+            
+            elements.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    output += `✅ ${id}: FOUND\n`;
+                } else {
+                    output += `❌ ${id}: NOT FOUND\n`;
+                }
+            });
+            
+            results.textContent = output;
+        }
+        
+        function testAddProduct() {
+            const results = document.getElementById('testResults');
+            let output = '=== TEST ADD PRODUCT ===\n\n';
+            
+            try {
+                const testProduct = {
+                    id: Date.now(),
+                    name: 'Test Product ' + Date.now(),
+                    price: Math.floor(Math.random() * 1000) + 100,
+                    image: 'test.jpg',
+                    quantity: 1
+                };
+                
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(testProduct);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                output += `✅ Test product added successfully\n`;
+                output += `Product: ${testProduct.name}\n`;
+                output += `Price: Rs. ${testProduct.price}\n`;
+                output += `Cart now has ${cart.length} items\n`;
+                
+                // Try to update cart count if function exists
+                if (typeof updateCartCount === 'function') {
+                    updateCartCount();
+                    output += `✅ updateCartCount called\n`;
+                } else {
+                    output += `❌ updateCartCount function not available\n`;
+                }
+                
+            } catch (error) {
+                output += `❌ Error adding test product: ${error.message}\n`;
+            }
+            
+            results.textContent = output;
+            updateCartData();
+        }
+        
+        function testRemoveProduct() {
+            const results = document.getElementById('testResults');
+            let output = '=== TEST REMOVE PRODUCT ===\n\n';
+            
+            try {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                if (cart.length > 0) {
+                    const removed = cart.pop();
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    output += `✅ Product removed: ${removed.name}\n`;
+                    output += `Cart now has ${cart.length} items\n`;
+                } else {
+                    output += `Cart is already empty\n`;
+                }
+                
+            } catch (error) {
+                output += `❌ Error removing product: ${error.message}\n`;
+            }
+            
+            results.textContent = output;
+            updateCartData();
+        }
+        
+        function clearCart() {
+            const results = document.getElementById('testResults');
+            let output = '=== CLEAR CART ===\n\n';
+            
+            try {
+                localStorage.removeItem('cart');
+                output += `✅ Cart cleared successfully\n`;
+                
+                // Try to update cart count if function exists
+                if (typeof updateCartCount === 'function') {
+                    updateCartCount();
+                    output += `✅ updateCartCount called\n`;
+                }
+                
+            } catch (error) {
+                output += `❌ Error clearing cart: ${error.message}\n`;
+            }
+            
+            results.textContent = output;
+            updateCartData();
+        }
+        
+        function updateCartData() {
+            const cartDataDiv = document.getElementById('cartData');
+            try {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                if (cart.length === 0) {
+                    cartDataDiv.textContent = 'Cart is empty';
+                } else {
+                    let output = `Cart Items (${cart.length}):\n\n`;
+                    cart.forEach((item, index) => {
+                        output += `${index + 1}. ${item.name}\n`;
+                        output += `   Price: Rs. ${item.price}\n`;
+                        output += `   Quantity: ${item.quantity}\n`;
+                        output += `   Total: Rs. ${item.price * item.quantity}\n\n`;
+                    });
+                    
+                    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    output += `=== TOTAL: Rs. ${total} ===`;
+                    
+                    cartDataDiv.textContent = output;
+                }
+            } catch (error) {
+                cartDataDiv.textContent = `Error reading cart: ${error.message}`;
+            }
+        }
+        
+        function clearConsole() {
+            document.getElementById('consoleLog').textContent = '';
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Cart debug page loaded');
+            updateCartData();
+            
+            // Check if cart.js functions are loaded
+            setTimeout(() => {
+                if (typeof addToCart === 'function') {
+                    console.log('Cart functions loaded successfully');
+                } else {
+                    console.warn('Cart functions not loaded - cart.js may not be working');
+                }
+            }, 1000);
+        });
+    </script>
+    
+    <!-- Load cart.js to test -->
+    <script src="JS files/cart.js"></script>
+</body>
+</html> 
+ 

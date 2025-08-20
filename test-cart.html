@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Test - Auto Champain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #000;
+            color: #FFD700;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+        }
+        button {
+            background: #FFD700;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #FFA500;
+        }
+        .cart-info {
+            background: #1a0000;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .error {
+            color: #ff6b6b;
+        }
+        .success {
+            color: #51cf66;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cart Functionality Test</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Basic Cart Operations</h2>
+        <button onclick="testAddToCart()">Test Add to Cart</button>
+        <button onclick="testDisplayCart()">Test Display Cart</button>
+        <button onclick="testClearCart()">Test Clear Cart</button>
+        <button onclick="testLocalStorage()">Test LocalStorage</button>
+        <div id="testResults1" class="cart-info"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Cart Data</h2>
+        <div id="cartData" class="cart-info">
+            <p>Cart contents will appear here...</p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Cart Count</h2>
+        <div id="cartCount" class="cart-info">
+            <p>Cart count: <span id="countDisplay">0</span></p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 4: Error Log</h2>
+        <div id="errorLog" class="cart-info">
+            <p>Errors will appear here...</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple cart test functions
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logDiv = document.getElementById('errorLog');
+            const className = type === 'error' ? 'error' : type === 'success' ? 'success' : '';
+            
+            logDiv.innerHTML += `<p class="${className}">[${timestamp}] ${message}</p>`;
+        }
+        
+        function testAddToCart() {
+            try {
+                const testProduct = {
+                    id: Date.now(),
+                    name: 'Test Product',
+                    price: 100,
+                    image: 'test.jpg',
+                    quantity: 1
+                };
+                
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(testProduct);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                log('Test product added to cart successfully', 'success');
+                updateCartDisplay();
+            } catch (error) {
+                log(`Error adding to cart: ${error.message}`, 'error');
+            }
+        }
+        
+        function testDisplayCart() {
+            try {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartDataDiv = document.getElementById('cartData');
+                
+                if (cart.length === 0) {
+                    cartDataDiv.innerHTML = '<p>Cart is empty</p>';
+                } else {
+                    let html = '<h3>Cart Contents:</h3>';
+                    cart.forEach((item, index) => {
+                        html += `<p>${index + 1}. ${item.name} - Rs. ${item.price} x ${item.quantity}</p>`;
+                    });
+                    cartDataDiv.innerHTML = html;
+                }
+                
+                log('Cart display updated', 'success');
+            } catch (error) {
+                log(`Error displaying cart: ${error.message}`, 'error');
+            }
+        }
+        
+        function testClearCart() {
+            try {
+                localStorage.removeItem('cart');
+                log('Cart cleared successfully', 'success');
+                updateCartDisplay();
+            } catch (error) {
+                log(`Error clearing cart: ${error.message}`, 'error');
+            }
+        }
+        
+        function testLocalStorage() {
+            try {
+                const testData = { test: 'data' };
+                localStorage.setItem('test', JSON.stringify(testData));
+                const retrieved = JSON.parse(localStorage.getItem('test'));
+                
+                if (retrieved.test === 'data') {
+                    log('LocalStorage is working correctly', 'success');
+                } else {
+                    log('LocalStorage test failed', 'error');
+                }
+                
+                localStorage.removeItem('test');
+            } catch (error) {
+                log(`LocalStorage error: ${error.message}`, 'error');
+            }
+        }
+        
+        function updateCartDisplay() {
+            try {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const countDisplay = document.getElementById('countDisplay');
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                countDisplay.textContent = totalItems;
+                
+                testDisplayCart();
+            } catch (error) {
+                log(`Error updating display: ${error.message}`, 'error');
+            }
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            log('Cart test page loaded', 'success');
+            updateCartDisplay();
+        });
+    </script>
+</body>
+</html> 
