@@ -576,7 +576,7 @@
 
     /* Enhanced Brands Section Styles */
     .brands-section {
-      padding: 60px 0;
+      padding: 80px 0;
       background: linear-gradient(135deg, rgba(70, 130, 180, 0.05) 0%, rgba(70, 130, 180, 0.02) 100%);
       border-top: 2px solid rgba(70, 130, 180, 0.1);
       border-bottom: 2px solid rgba(70, 130, 180, 0.1);
@@ -584,21 +584,21 @@
 
     .brands-header {
        text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 70px;
     }
 
     .brands-header h2 {
-      font-size: 2.8em;
+      font-size: 3.5em;
       color: #4682B4;
        font-weight: 900;
        text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 15px;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(70, 130, 180, 0.2);
     }
 
     .brands-header p {
-      font-size: 1.2em;
+      font-size: 1.5em;
       color: #4682B4;
        font-style: italic;
       margin: 0;
@@ -607,23 +607,23 @@
 
     .brands-grid {
        display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 30px;
     }
 
     .brand-card {
       background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
-      border: 2px solid #4682B4;
-      border-radius: 20px;
-      padding: 30px;
+      border: 3px solid #4682B4;
+      border-radius: 25px;
+      padding: 40px;
        text-align: center;
       transition: all 0.4s ease;
        position: relative;
        overflow: hidden;
-      box-shadow: 0 8px 25px rgba(70, 130, 180, 0.15);
+      box-shadow: 0 12px 35px rgba(70, 130, 180, 0.15);
      }
 
     .brand-card::before {
@@ -648,8 +648,8 @@
     }
 
     .brand-logo {
-      margin-bottom: 20px;
-      height: 80px;
+      margin-bottom: 30px;
+      height: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -659,10 +659,10 @@
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      border-radius: 10px;
+      border-radius: 15px;
       background: #FFFFFF;
-      padding: 10px;
-      border: 1px solid rgba(70, 130, 180, 0.2);
+      padding: 15px;
+      border: 2px solid rgba(70, 130, 180, 0.2);
       transition: all 0.3s ease;
     }
 
@@ -672,12 +672,12 @@
     }
 
     .brand-info h3 {
-      font-size: 2.2em;
+      font-size: 2.8em;
       color: #4682B4;
       font-weight: 900;
        text-transform: uppercase;
-      letter-spacing: 3px;
-      margin: 0 0 25px 0;
+      letter-spacing: 4px;
+      margin: 0 0 35px 0;
     }
 
     .brand-action {
@@ -688,15 +688,15 @@
       background: linear-gradient(135deg, #4682B4 0%, #1976D2 100%);
       color: #FFFFFF;
       border: none;
-      padding: 12px 25px;
-      border-radius: 25px;
-      font-size: 1em;
+      padding: 18px 35px;
+      border-radius: 30px;
+      font-size: 1.2em;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       cursor: pointer;
        transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
+      box-shadow: 0 6px 20px rgba(70, 130, 180, 0.3);
     }
 
     .brand-btn:hover {
@@ -712,53 +712,68 @@
     /* Responsive Design for Brands */
     @media (max-width: 768px) {
       .brands-section {
-        padding: 40px 0;
+        padding: 60px 0;
       }
 
       .brands-header h2 {
+        font-size: 2.8em;
+        letter-spacing: 3px;
+      }
+
+      .brands-header p {
+        font-size: 1.3em;
+      }
+
+      .brands-grid {
+         grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0 20px;
+      }
+
+      .brand-card {
+        padding: 35px;
+      }
+
+      .brand-info h3 {
         font-size: 2.2em;
-        letter-spacing: 2px;
+       }
+
+      .brand-logo {
+        height: 100px;
+        margin-bottom: 25px;
+      }
+
+      .brand-btn {
+        padding: 15px 30px;
+        font-size: 1.1em;
+      }
+     }
+
+     @media (max-width: 480px) {
+      .brands-header h2 {
+        font-size: 2.2em;
       }
 
       .brands-header p {
         font-size: 1.1em;
       }
 
-      .brands-grid {
-         grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 0 15px;
-      }
-
       .brand-card {
-        padding: 25px;
+        padding: 30px;
       }
 
       .brand-info h3 {
         font-size: 1.8em;
-       }
-     }
-
-     @media (max-width: 480px) {
-      .brands-header h2 {
-        font-size: 1.8em;
       }
 
-      .brands-header p {
-        font-size: 1em;
-      }
-
-      .brand-card {
-        padding: 20px;
-      }
-
-      .brand-info h3 {
-        font-size: 1.6em;
+      .brand-logo {
+        height: 80px;
+        margin-bottom: 20px;
       }
 
       .brand-btn {
-        padding: 10px 20px;
-         font-size: 0.9em;
+        padding: 12px 25px;
+         font-size: 1em;
          }
        }
 
@@ -801,13 +816,13 @@
         .modal-content {
           position: relative;
           background: #FFFFFF;
-          border: 2px solid #4682B4;
-          border-radius: 20px;
-      max-width: 900px;
-          width: 90%;
-          max-height: 90vh;
+          border: 3px solid #4682B4;
+          border-radius: 25px;
+      max-width: 1200px;
+          width: 95%;
+          max-height: 95vh;
           overflow-y: auto;
-          box-shadow: 0 20px 60px rgba(70, 130, 180, 0.3);
+          box-shadow: 0 25px 80px rgba(70, 130, 180, 0.4);
           transform: scale(0.7);
           transition: transform 0.3s ease;
         }
@@ -820,27 +835,27 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 25px 30px;
-          border-bottom: 2px solid rgba(70, 130, 180, 0.3);
+          padding: 35px 40px;
+          border-bottom: 3px solid rgba(70, 130, 180, 0.3);
           background: #FFFFFF;
         }
 
         .modal-header h2 {
           color: #4682B4;
-          font-size: 2.5em;
+          font-size: 3.2em;
           font-weight: 900;
           text-transform: uppercase;
-          letter-spacing: 2px;
+          letter-spacing: 3px;
           margin: 0;
         }
 
         .modal-close {
           background: none;
-          border: 2px solid #4682B4;
+          border: 3px solid #4682B4;
           color: #4682B4;
-          font-size: 2em;
-          width: 50px;
-          height: 50px;
+          font-size: 2.5em;
+          width: 65px;
+          height: 65px;
           border-radius: 50%;
           cursor: pointer;
           display: flex;
@@ -857,14 +872,14 @@
         }
 
         .modal-body {
-          padding: 30px;
+          padding: 40px;
         }
 
         .brand-info-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 30px;
-          margin-bottom: 30px;
+          gap: 40px;
+          margin-bottom: 40px;
         }
 
         .brand-image-section {
@@ -873,20 +888,20 @@
 
         .brand-modal-image {
           width: 100%;
-          max-width: 300px;
-          height: 200px;
+          max-width: 400px;
+          height: 280px;
           object-fit: contain;
-          border-radius: 15px;
-          border: 2px solid rgba(70, 130, 180, 0.3);
-          margin-bottom: 20px;
+          border-radius: 20px;
+          border: 3px solid rgba(70, 130, 180, 0.3);
+          margin-bottom: 25px;
           background: #FFFFFF;
-          padding: 10px;
+          padding: 15px;
         }
 
         .brand-description {
           color: #4682B4;
-          font-size: 1.1em;
-          line-height: 1.6;
+          font-size: 1.3em;
+          line-height: 1.7;
           font-style: italic;
           margin: 0;
         }
@@ -899,18 +914,18 @@
 
     .features-section {
           background: #FFFFFF;
-          border: 2px solid rgba(70, 130, 180, 0.2);
-          border-radius: 15px;
-          padding: 20px;
+          border: 3px solid rgba(70, 130, 180, 0.2);
+          border-radius: 20px;
+          padding: 30px;
         }
 
     .features-section h3 {
           color: #4682B4;
-          font-size: 1.3em;
+          font-size: 1.6em;
           font-weight: 700;
-          margin: 0 0 15px 0;
+          margin: 0 0 20px 0;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
         }
 
     .features-list {
@@ -921,10 +936,11 @@
 
     .features-list li {
           color: #4682B4;
-          padding: 8px 0;
-          border-bottom: 1px solid rgba(70, 130, 180, 0.1);
+          padding: 12px 0;
+          border-bottom: 2px solid rgba(70, 130, 180, 0.1);
           position: relative;
-          padding-left: 20px;
+          padding-left: 25px;
+          font-size: 1.1em;
         }
 
     .features-list li:before {
@@ -941,32 +957,32 @@
 
     .products-section {
       background: #FFFFFF;
-      border: 2px solid rgba(70, 130, 180, 0.2);
-      border-radius: 15px;
-      padding: 20px;
+      border: 3px solid rgba(70, 130, 180, 0.2);
+      border-radius: 20px;
+      padding: 30px;
     }
 
     .products-section h3 {
       color: #4682B4;
-      font-size: 1.3em;
+      font-size: 1.6em;
       font-weight: 700;
-      margin: 0 0 15px 0;
+      margin: 0 0 20px 0;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
 
          .modal-products-grid {
            display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-           gap: 15px;
-           margin-top: 15px;
+           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+           gap: 20px;
+           margin-top: 20px;
          }
 
          .modal-product-card {
            background: #FFFFFF;
-           border: 2px solid rgba(70, 130, 180, 0.2);
-           border-radius: 10px;
-           padding: 15px;
+           border: 3px solid rgba(70, 130, 180, 0.2);
+           border-radius: 15px;
+           padding: 20px;
            text-align: center;
            transition: all 0.3s ease;
          }
@@ -978,8 +994,8 @@
          }
 
          .modal-product-image {
-           margin-bottom: 10px;
-           height: 80px;
+           margin-bottom: 15px;
+           height: 100px;
            display: flex;
            align-items: center;
            justify-content: center;
@@ -989,53 +1005,53 @@
            max-width: 100%;
            max-height: 100%;
            object-fit: contain;
-           border-radius: 5px;
+           border-radius: 8px;
          }
 
          .modal-product-info h4 {
            color: #4682B4;
-           font-size: 0.9em;
+           font-size: 1.1em;
            font-weight: 700;
-           margin: 0 0 5px 0;
+           margin: 0 0 8px 0;
            text-transform: uppercase;
-           letter-spacing: 0.5px;
+           letter-spacing: 1px;
          }
 
          .modal-product-price {
            color: #4682B4;
-           font-size: 1em;
+           font-size: 1.2em;
            font-weight: 900;
-           margin: 5px 0 2px 0;
+           margin: 8px 0 4px 0;
          }
 
          .modal-product-volume {
            color: #4682B4;
-           font-size: 0.8em;
+           font-size: 1em;
            font-weight: 600;
            margin: 0;
            text-transform: uppercase;
-           letter-spacing: 0.5px;
+           letter-spacing: 1px;
          }
 
          .modal-actions {
           display: flex;
-          gap: 15px;
+          gap: 20px;
           justify-content: center;
-          padding-top: 20px;
-          border-top: 2px solid rgba(70, 130, 180, 0.3);
+          padding-top: 30px;
+          border-top: 3px solid rgba(70, 130, 180, 0.3);
         }
 
         .btn-close-modal {
-          padding: 12px 25px;
-          border: 2px solid #4682B4;
-          border-radius: 25px;
-          font-size: 1em;
+          padding: 18px 35px;
+          border: 3px solid #4682B4;
+          border-radius: 30px;
+          font-size: 1.2em;
           font-weight: 700;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
           cursor: pointer;
           transition: all 0.3s ease;
-          min-width: 120px;
+          min-width: 150px;
           background: transparent;
           color: #4682B4;
         }
@@ -1046,105 +1062,105 @@
           transform: translateY(-2px);
         }
 
-               /* Mobile responsive for modal */
-        @media (max-width: 768px) {
-          .modal-content {
-            width: 95%;
-            max-height: 95vh;
-            margin: 10px;
-          }
+                               /* Mobile responsive for modal */
+         @media (max-width: 768px) {
+           .modal-content {
+             width: 98%;
+             max-height: 98vh;
+             margin: 5px;
+           }
 
-          .modal-header {
-            padding: 20px;
-          }
+           .modal-header {
+             padding: 25px;
+           }
 
-          .modal-header h2 {
-            font-size: 2em;
-          }
-
-          .modal-close {
-            width: 40px;
-            height: 40px;
-            font-size: 1.5em;
-          }
-
-          .modal-body {
-            padding: 20px;
-          }
-
-          .brand-info-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
-          }
-
-          .brand-modal-image {
-            max-width: 250px;
-            height: 150px;
-          }
-
-          .brand-description {
-            font-size: 1em;
-          }
-
-          .features-section, .products-section {
-            padding: 15px;
-          }
-
-          .features-section h3, .products-section h3 {
-            font-size: 1.1em;
-          }
-
-          .modal-actions {
-            flex-direction: column;
-            gap: 10px;
-          }
-
-          .btn-close-modal {
-            width: 100%;
-            padding: 15px;
-          }
-        }
-
-                 @media (max-width: 480px) {
            .modal-header h2 {
-             font-size: 1.5em;
+             font-size: 2.5em;
            }
- 
+
+           .modal-close {
+             width: 50px;
+             height: 50px;
+             font-size: 1.8em;
+           }
+
+           .modal-body {
+             padding: 25px;
+           }
+
+           .brand-info-grid {
+             grid-template-columns: 1fr;
+             gap: 25px;
+           }
+
            .brand-modal-image {
-             max-width: 200px;
-             height: 120px;
+             max-width: 300px;
+             height: 200px;
            }
- 
-                      .features-list li, .products-list li {
-              font-size: 0.9em;
-              padding: 6px 0;
+
+           .brand-description {
+             font-size: 1.1em;
+           }
+
+           .features-section, .products-section {
+             padding: 20px;
+           }
+
+           .features-section h3, .products-section h3 {
+             font-size: 1.3em;
+           }
+
+           .modal-actions {
+             flex-direction: column;
+             gap: 15px;
+           }
+
+           .btn-close-modal {
+             width: 100%;
+             padding: 18px;
+           }
+         }
+
+                                   @media (max-width: 480px) {
+            .modal-header h2 {
+              font-size: 2em;
             }
- 
-            .modal-products-grid {
-              grid-template-columns: 1fr;
-              gap: 10px;
+  
+            .brand-modal-image {
+              max-width: 250px;
+              height: 150px;
             }
- 
-            .modal-product-card {
-              padding: 12px;
-            }
- 
-            .modal-product-image {
-              height: 60px;
-            }
- 
-            .modal-product-info h4 {
-              font-size: 0.8em;
-            }
- 
-            .modal-product-price {
-              font-size: 0.9em;
-            }
- 
-            .modal-product-volume {
-              font-size: 0.7em;
-       }
-     }
+  
+                       .features-list li, .products-list li {
+               font-size: 1em;
+               padding: 8px 0;
+             }
+  
+             .modal-products-grid {
+               grid-template-columns: 1fr;
+               gap: 15px;
+             }
+  
+             .modal-product-card {
+               padding: 15px;
+             }
+  
+             .modal-product-image {
+               height: 80px;
+             }
+  
+             .modal-product-info h4 {
+               font-size: 1em;
+             }
+  
+             .modal-product-price {
+               font-size: 1.1em;
+             }
+  
+             .modal-product-volume {
+               font-size: 0.9em;
+        }
+      }
   </style>
 </head>
 <body>
