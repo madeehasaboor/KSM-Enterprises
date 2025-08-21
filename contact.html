@@ -4,16 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Contact Us - Auto Champion</title>
-    <link rel="icon" type="image/x-icon" href="brand logos/auto-champion-logo.jpg">
+    <link rel="icon" type="image/x-icon" href="auto-champion-logo.jpg.jfif">
     <link rel="stylesheet" href="css/vibrant-theme.css?v=1.0.2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Enhanced Logo Styles */
+        .logo-image {
+            height: 60px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+            border-radius: 10px;
+            background-color: #FFFFFF;
+            padding: 6px;
+            border: 2px solid #4682B4;
+            box-shadow: 0 4px 12px rgba(70, 130, 180, 0.4);
+            transition: all 0.3s ease;
+            display: block;
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .logo-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(70, 130, 180, 0.5);
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, #4682B4 0%, #1976D2 50%, #1565C0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(70, 130, 180, 0.3);
+            animation: logoGlow 3s ease-in-out infinite alternate;
+            position: relative;
+        }
+
+        .logo h1::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, rgba(70, 130, 180, 0.1), rgba(25, 118, 210, 0.1));
+            border-radius: 15px;
+            z-index: -1;
+            filter: blur(10px);
+        }
+
+        @keyframes logoGlow {
+            0% {
+                filter: drop-shadow(0 0 5px rgba(70, 130, 180, 0.5));
+            }
+            100% {
+                filter: drop-shadow(0 0 15px rgba(70, 130, 180, 0.8));
+            }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(70, 130, 180, 0.2);
+            box-shadow: 0 8px 25px rgba(70, 130, 180, 0.15);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(70, 130, 180, 0.25);
+            border-color: rgba(70, 130, 180, 0.4);
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="brand logos/auto-champion-logo.jpg" alt="Auto Champion Logo" class="logo-image">
+                <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="logo-image">
                 <h1>AUTO CHAMPION</h1>
             </div>
             <nav class="nav">
