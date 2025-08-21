@@ -18,9 +18,9 @@
 
         /* Enhanced Logo Styles */
         .logo-image {
-            height: 60px;
+            height: 80px;
             width: auto;
-            max-width: 150px;
+            max-width: 200px;
             object-fit: contain;
             border-radius: 10px;
             background-color: #FFFFFF;
@@ -174,6 +174,280 @@
                 min-width: 80px;
             }
         }
+
+        /* Bundle Carousel Styles */
+        .bundle-carousel {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(70, 130, 180, 0.2);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .bundle-card {
+            min-width: 350px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%);
+            border: 2px solid rgba(70, 130, 180, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(70, 130, 180, 0.15);
+        }
+
+        .bundle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(70, 130, 180, 0.3);
+            border-color: rgba(70, 130, 180, 0.4);
+        }
+
+        .bundle-image {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 15px;
+            border: 2px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .bundle-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .bundle-card:hover .bundle-image img {
+            transform: scale(1.05);
+        }
+
+        .bundle-card h3 {
+            color: #4682B4;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin: 15px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .bundle-price {
+            color: #4682B4;
+            font-size: 1.6em;
+            font-weight: 900;
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px rgba(70, 130, 180, 0.2);
+        }
+
+        .bundle-description {
+            color: #4682B4;
+            font-size: 0.95em;
+            margin: 10px 0 15px 0;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .bundle-items {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .bundle-items li {
+            color: #4682B4;
+            padding: 5px 0;
+            font-size: 0.9em;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .bundle-items li:before {
+            content: '✓';
+            color: #4682B4;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .add-to-cart-btn {
+            background: linear-gradient(135deg, #4682B4 0%, #1976D2 100%);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
+        }
+
+        .add-to-cart-btn:hover {
+            background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(70, 130, 180, 0.4);
+        }
+
+        /* Carousel Navigation Buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(70, 130, 180, 0.9);
+            color: #FFFFFF;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
+        }
+
+        .carousel-btn:hover {
+            background: rgba(70, 130, 180, 1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(70, 130, 180, 0.5);
+        }
+
+        .carousel-prev {
+            left: -25px;
+        }
+
+        .carousel-next {
+            right: -25px;
+        }
+
+        /* Carousel Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(70, 130, 180, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: #4682B4;
+            transform: scale(1.2);
+        }
+
+        .carousel-dot:hover {
+            background: rgba(70, 130, 180, 0.6);
+        }
+
+        /* Mobile Responsive for Carousel */
+        @media (max-width: 768px) {
+            .bundle-carousel {
+                padding: 15px 0;
+            }
+
+            .carousel-track {
+                gap: 20px;
+                padding: 15px;
+            }
+
+            .bundle-card {
+                min-width: 300px;
+                padding: 20px;
+            }
+
+            .bundle-image img {
+                height: 150px;
+            }
+
+            .bundle-card h3 {
+                font-size: 1.2em;
+            }
+
+            .bundle-price {
+                font-size: 1.4em;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1em;
+            }
+
+            .carousel-prev {
+                left: -20px;
+            }
+
+            .carousel-next {
+                right: -20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bundle-card {
+                min-width: 280px;
+                padding: 15px;
+            }
+
+            .bundle-image img {
+                height: 120px;
+            }
+
+            .bundle-card h3 {
+                font-size: 1.1em;
+            }
+
+            .bundle-price {
+                font-size: 1.3em;
+            }
+
+            .bundle-items li {
+                font-size: 0.85em;
+            }
+
+            .carousel-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9em;
+            }
+
+            .carousel-prev {
+                left: -17px;
+            }
+
+            .carousel-next {
+                right: -17px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -203,7 +477,9 @@
                 <h2>Exclusive Car Care Bundles</h2>
             <p>Save big with our specially curated product combinations</p>
             
-            <div class="bundle-grid">
+            <div class="bundle-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
                 <!-- Bundle 1: Complete Car Care Kit -->
                 <div class="bundle-card">
                     <div class="bundle-image">
@@ -317,7 +593,27 @@
                         <li>A-133 AIM Leather Cleaner (500ml)</li>
                         </ul>
                     <button class="add-to-cart-btn" onclick="addBundleToCart('Glass & Interior Kit', 1500, ['A-131', 'F1-117', 'A-128', 'Microfiber Cloth', 'A-133'])">Add to Cart</button>
+                </div>
                     </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-next" onclick="moveCarousel(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Carousel Dots -->
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(2)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(3)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(4)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(5)"></span>
+                </div>
             </div>
         </div>
     </section>
@@ -411,6 +707,89 @@
                 notification.remove();
             }, 3000);
         }
+
+        // Bundle Carousel Functionality
+        let currentSlide = 0;
+        const totalSlides = 6; // Number of bundle cards
+        const carouselTrack = document.querySelector('.carousel-track');
+        const carouselDots = document.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+            const slideWidth = 380; // Width of each card + gap
+            const translateX = -currentSlide * slideWidth;
+            carouselTrack.style.transform = `translateX(${translateX}px)`;
+            
+            // Update dots
+            carouselDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            
+            // Handle wrap-around
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Auto-play carousel
+        let autoPlayInterval = setInterval(() => {
+            moveCarousel(1);
+        }, 4000); // Change slide every 4 seconds
+
+        // Pause auto-play on hover
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(() => {
+                moveCarousel(1);
+            }, 4000);
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    moveCarousel(1); // Swipe left = next
+                } else {
+                    moveCarousel(-1); // Swipe right = previous
+                }
+            }
+        }
+
+        // Initialize carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCarousel();
+        });
     </script>
 </body>
 </html> 
