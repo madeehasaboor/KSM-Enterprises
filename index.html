@@ -650,6 +650,390 @@
         font-size: 0.9em;
       }
     }
+
+    /* Brand Modal Styles */
+    .brand-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .brand-modal.modal-show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .brand-modal.modal-closing {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      position: relative;
+      background: #FFFFFF;
+      border: 2px solid #4682B4;
+      border-radius: 20px;
+      max-width: 900px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(70, 130, 180, 0.3);
+      transform: scale(0.7);
+      transition: transform 0.3s ease;
+    }
+
+    .brand-modal.modal-show .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 30px;
+      border-bottom: 2px solid rgba(70, 130, 180, 0.3);
+      background: #FFFFFF;
+    }
+
+    .modal-header h2 {
+      color: #4682B4;
+      font-size: 2.5em;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    .modal-close {
+      background: none;
+      border: 2px solid #4682B4;
+      color: #4682B4;
+      font-size: 2em;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .modal-close:hover {
+      background: #4682B4;
+      color: #FFFFFF;
+      transform: scale(1.1);
+    }
+
+    .modal-body {
+      padding: 30px;
+    }
+
+    .brand-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .brand-image-section {
+      text-align: center;
+    }
+
+    .brand-modal-image {
+      width: 100%;
+      max-width: 300px;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 15px;
+      border: 2px solid rgba(70, 130, 180, 0.3);
+      margin-bottom: 20px;
+      background: #FFFFFF;
+      padding: 10px;
+    }
+
+    .brand-description {
+      color: #4682B4;
+      font-size: 1.1em;
+      line-height: 1.6;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .brand-details-section {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .features-section {
+      background: #FFFFFF;
+      border: 2px solid rgba(70, 130, 180, 0.2);
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .features-section h3 {
+      color: #4682B4;
+      font-size: 1.3em;
+      font-weight: 700;
+      margin: 0 0 15px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .features-list li {
+      color: #4682B4;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(70, 130, 180, 0.1);
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .features-list li:before {
+      content: '✓';
+      color: #4682B4;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+
+    .products-section {
+      background: #FFFFFF;
+      border: 2px solid rgba(70, 130, 180, 0.2);
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .products-section h3 {
+      color: #4682B4;
+      font-size: 1.3em;
+      font-weight: 700;
+      margin: 0 0 15px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .modal-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .modal-product-card {
+      background: #FFFFFF;
+      border: 2px solid rgba(70, 130, 180, 0.2);
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .modal-product-card:hover {
+      border-color: rgba(70, 130, 180, 0.4);
+      box-shadow: 0 5px 15px rgba(70, 130, 180, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .modal-product-image {
+      margin-bottom: 10px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-product-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+
+    .modal-product-info h4 {
+      color: #4682B4;
+      font-size: 0.9em;
+      font-weight: 700;
+      margin: 0 0 5px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .modal-product-price {
+      color: #4682B4;
+      font-size: 1em;
+      font-weight: 900;
+      margin: 5px 0 2px 0;
+    }
+
+    .modal-product-volume {
+      color: #4682B4;
+      font-size: 0.8em;
+      font-weight: 600;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      padding-top: 20px;
+      border-top: 2px solid rgba(70, 130, 180, 0.3);
+    }
+
+    .btn-close-modal {
+      padding: 12px 25px;
+      border: 2px solid #4682B4;
+      border-radius: 25px;
+      font-size: 1em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+      background: transparent;
+      color: #4682B4;
+    }
+
+    .btn-close-modal:hover {
+      background: #4682B4;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile responsive for modal */
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 95%;
+        max-height: 95vh;
+        margin: 10px;
+      }
+
+      .modal-header {
+        padding: 20px;
+      }
+
+      .modal-header h2 {
+        font-size: 2em;
+      }
+
+      .modal-close {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5em;
+      }
+
+      .modal-body {
+        padding: 20px;
+      }
+
+      .brand-info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .brand-modal-image {
+        max-width: 250px;
+        height: 150px;
+      }
+
+      .brand-description {
+        font-size: 1em;
+      }
+
+      .features-section, .products-section {
+        padding: 15px;
+      }
+
+      .features-section h3, .products-section h3 {
+        font-size: 1.1em;
+      }
+
+      .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn-close-modal {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .modal-header h2 {
+        font-size: 1.5em;
+      }
+
+      .brand-modal-image {
+        max-width: 200px;
+        height: 120px;
+      }
+
+      .features-list li, .products-list li {
+        font-size: 0.9em;
+        padding: 6px 0;
+      }
+
+      .modal-products-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .modal-product-card {
+        padding: 12px;
+      }
+
+      .modal-product-image {
+        height: 60px;
+      }
+
+      .modal-product-info h4 {
+        font-size: 0.8em;
+      }
+
+      .modal-product-price {
+        font-size: 0.9em;
+      }
+
+      .modal-product-volume {
+        font-size: 0.7em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1007,10 +1391,15 @@
     const brandCards = document.querySelectorAll('.brand-card');
     const brandButtons = document.querySelectorAll('.brand-btn');
     
+    console.log('Found brand cards:', brandCards.length);
+    console.log('Found brand buttons:', brandButtons.length);
+    
     brandCards.forEach(card => {
       card.addEventListener('click', function(e) {
+        console.log('Brand card clicked:', this.getAttribute('data-brand'));
         // Don't trigger if clicking on the button
         if (e.target.classList.contains('brand-btn')) {
+          console.log('Button clicked, not triggering card click');
           return;
         }
         const brand = this.getAttribute('data-brand');
@@ -1020,14 +1409,17 @@
 
     brandButtons.forEach(button => {
       button.addEventListener('click', function(e) {
+        console.log('Brand button clicked');
         e.stopPropagation(); // Prevent card click
         const card = this.closest('.brand-card');
         const brand = card.getAttribute('data-brand');
+        console.log('Opening modal for brand:', brand);
         showBrandModal(brand);
       });
     });
 
     function showBrandModal(brand) {
+      console.log('showBrandModal called with brand:', brand);
       const brandInfo = {
         wd40: {
           name: "WD-40",
@@ -1146,7 +1538,11 @@
       };
 
       const info = brandInfo[brand];
-      if (!info) return;
+      console.log('Brand info found:', info ? 'Yes' : 'No');
+      if (!info) {
+        console.log('No brand info found for:', brand);
+        return;
+      }
 
       // Create modal element
       const modal = document.createElement('div');
@@ -1199,6 +1595,7 @@
 
       // Add to page
       document.body.appendChild(modal);
+      console.log('Modal added to page');
 
       // Add event listeners
       const closeBtn = modal.querySelector('.modal-close');
@@ -1227,6 +1624,7 @@
       // Show modal with animation
       setTimeout(() => {
         modal.classList.add('modal-show');
+        console.log('Modal shown with animation');
       }, 10);
     }
   </script>
