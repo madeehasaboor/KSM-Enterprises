@@ -17,6 +17,7 @@ body {
     background: #FFFFFF;
     overflow-x: hidden;
     position: relative;
+    padding-top: 120px; /* Add padding to account for fixed header */
 }
 
 @keyframes gradientShift {
@@ -64,8 +65,9 @@ body::before {
 .header {
     background: #FFFFFF;
     box-shadow: 0 2px 10px rgba(70, 130, 180, 0.1);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
     transition: all 0.3s ease;
     width: 100%;
