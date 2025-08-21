@@ -42,11 +42,39 @@
 
     .logo h1 {
       margin: 0;
-      font-size: 1.8rem;
-      color: #4682B4;
+      font-size: 3.2rem;
+      background: linear-gradient(135deg, #4682B4 0%, #1976D2 50%, #1565C0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       font-weight: 900;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
       text-transform: uppercase;
+      text-shadow: 2px 2px 4px rgba(70, 130, 180, 0.3);
+      animation: logoGlow 3s ease-in-out infinite alternate;
+      position: relative;
+    }
+
+    .logo h1::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(135deg, rgba(70, 130, 180, 0.1), rgba(25, 118, 210, 0.1));
+      border-radius: 15px;
+      z-index: -1;
+      filter: blur(10px);
+    }
+
+    @keyframes logoGlow {
+      0% {
+        filter: drop-shadow(0 0 5px rgba(70, 130, 180, 0.5));
+      }
+      100% {
+        filter: drop-shadow(0 0 15px rgba(70, 130, 180, 0.8));
+      }
     }
 
     /* Header Actions */
@@ -138,8 +166,21 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
       justify-content: center;
+      padding: 15px 25px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+      border-radius: 20px;
+      border: 2px solid rgba(70, 130, 180, 0.2);
+      box-shadow: 0 8px 25px rgba(70, 130, 180, 0.15);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(70, 130, 180, 0.25);
+      border-color: rgba(70, 130, 180, 0.4);
     }
 
     /* Hero Section */
@@ -398,11 +439,16 @@
         backdrop-filter: blur(1px);
       }
 
-      header {
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px;
-      }
+             header {
+         flex-direction: column;
+         gap: 15px;
+         padding: 15px;
+       }
+
+       .logo h1 {
+         font-size: 2.5rem;
+         letter-spacing: 3px;
+       }
 
              .centered-nav {
          gap: 15px;
@@ -441,10 +487,15 @@
         padding: 20px 15px;
       }
 
-      .hero-content h2 {
-        font-size: 1.5em;
-        letter-spacing: 1px;
-      }
+             .hero-content h2 {
+         font-size: 1.5em;
+         letter-spacing: 1px;
+       }
+
+       .logo h1 {
+         font-size: 2rem;
+         letter-spacing: 2px;
+       }
 
       .hero-content p {
         font-size: 0.85em;
