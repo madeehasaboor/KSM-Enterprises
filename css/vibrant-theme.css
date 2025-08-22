@@ -17,7 +17,7 @@ body {
     background: #FFFFFF;
     overflow-x: hidden;
     position: relative;
-    padding-top: 120px; /* Add padding to account for fixed header */
+    padding-top: 90px; /* Add padding to account for fixed header */
 }
 
 @keyframes gradientShift {
@@ -1443,13 +1443,13 @@ body::before {
     /* Mobile-specific improvements */
     .centered-nav {
         flex-direction: column;
-        gap: 10px;
-        padding: 10px 0;
+        gap: 8px;
+        padding: 8px 0;
     }
     
     .centered-nav a {
-        font-size: 1rem;
-        padding: 10px 20px;
+        font-size: 0.8rem;
+        padding: 6px 12px;
         width: 100%;
         text-align: center;
     }
@@ -1500,8 +1500,8 @@ body::before {
     }
     
     .centered-nav a {
-        font-size: 0.9rem;
-        padding: 8px 16px;
+        font-size: 0.75rem;
+        padding: 5px 10px;
     }
     
     .logo-image {

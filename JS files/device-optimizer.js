@@ -1,12 +1,11 @@
-// Enhanced Mobile & Laptop Optimization Script for Auto Champion
-// Handles touch interactions, performance optimizations, and responsive behavior for all devices
+// Enhanced Device Optimization Script for Auto Champion
+// Optimizes performance for mobile, tablet, laptop, and desktop devices
 
 (function() {
     'use strict';
 
     // Performance optimizations
     function optimizePerformance() {
-        // Reduce repaints and reflows with hardware acceleration
         const style = document.createElement('style');
         style.textContent = `
             * {
@@ -16,17 +15,14 @@
                 backface-visibility: hidden;
             }
             
-            /* Optimize animations for better performance */
             .slide, .brand-card, .product, .modal-content {
                 will-change: transform, opacity;
             }
             
-            /* Smooth scrolling for all devices */
             html {
                 scroll-behavior: smooth;
             }
             
-            /* Optimize for high DPI displays */
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
                 img {
                     image-rendering: -webkit-optimize-contrast;
@@ -36,38 +32,20 @@
         `;
         document.head.appendChild(style);
 
-        // Optimize images with lazy loading
+        // Optimize images
         const images = document.querySelectorAll('img');
         images.forEach(img => {
             img.loading = 'lazy';
             img.decoding = 'async';
             
-            // Add error handling for broken images
             img.addEventListener('error', function() {
                 this.style.display = 'none';
-                console.warn('Image failed to load:', this.src);
             });
-        });
-
-        // Preload critical resources
-        const criticalImages = [
-            'auto-champion-logo.jpg.jfif',
-            'slide show 1.jpg',
-            'slide show 2.jpg'
-        ];
-        
-        criticalImages.forEach(src => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = src;
-            document.head.appendChild(link);
         });
     }
 
-    // Touch optimizations for mobile devices
+    // Touch optimizations for mobile
     function optimizeTouch() {
-        // Prevent double-tap zoom on interactive elements
         const touchElements = document.querySelectorAll('a, button, .nav a, .cta-button, .add-to-cart-btn, .brand-btn');
         touchElements.forEach(element => {
             element.addEventListener('touchstart', function(e) {
@@ -81,22 +59,7 @@
             }, { passive: true });
         });
 
-        // Improve scroll performance with throttling
-        let ticking = false;
-        function updateScroll() {
-            ticking = false;
-        }
-
-        function requestTick() {
-            if (!ticking) {
-                requestAnimationFrame(updateScroll);
-                ticking = true;
-            }
-        }
-
-        window.addEventListener('scroll', requestTick, { passive: true });
-
-        // Add swipe gestures for hero slideshow
+        // Swipe gestures for slideshow
         let touchStartX = 0;
         let touchEndX = 0;
         
@@ -114,13 +77,10 @@
             const diff = touchStartX - touchEndX;
             
             if (Math.abs(diff) > swipeThreshold) {
-                // Trigger slide change based on swipe direction
-                if (diff > 0) {
-                    // Swipe left - next slide
-                    if (window.nextSlide) window.nextSlide();
-                } else {
-                    // Swipe right - previous slide
-                    if (window.prevSlide) window.prevSlide();
+                if (diff > 0 && window.nextSlide) {
+                    window.nextSlide();
+                } else if (diff < 0 && window.prevSlide) {
+                    window.prevSlide();
                 }
             }
         }
@@ -131,15 +91,7 @@
         const isLaptop = window.innerWidth >= 1024 && window.innerWidth <= 1440;
         
         if (isLaptop) {
-            // Optimize hover effects for laptop trackpads
-            const hoverElements = document.querySelectorAll('.brand-card, .product, .logo, .centered-nav a');
-            hoverElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-                });
-            });
-
-            // Add keyboard navigation support
+            // Keyboard navigation
             document.addEventListener('keydown', function(e) {
                 switch(e.key) {
                     case 'ArrowLeft':
@@ -149,7 +101,6 @@
                         if (window.nextSlide) window.nextSlide();
                         break;
                     case 'Escape':
-                        // Close any open modals
                         const modals = document.querySelectorAll('.brand-modal.modal-show');
                         modals.forEach(modal => {
                             const closeBtn = modal.querySelector('.modal-close');
@@ -158,27 +109,14 @@
                         break;
                 }
             });
-
-            // Optimize for laptop battery life
-            if ('getBattery' in navigator) {
-                navigator.getBattery().then(battery => {
-                    if (battery.level < 0.2) {
-                        // Reduce animations when battery is low
-                        document.body.classList.add('low-battery-mode');
-                    }
-                });
-            }
         }
     }
 
-    // Responsive navigation with enhanced features
+    // Responsive navigation
     function handleResponsiveNav() {
-        const nav = document.querySelector('.centered-nav');
         const header = document.querySelector('header');
-        
-        if (!nav || !header) return;
+        if (!header) return;
 
-        // Smart navigation hiding/showing
         let lastScrollTop = 0;
         let scrollTimeout;
         
@@ -190,45 +128,31 @@
                 clearTimeout(scrollTimeout);
                 
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // Scrolling down - hide header
                     header.style.transform = 'translateY(-100%)';
                     header.style.transition = 'transform 0.3s ease';
                 } else {
-                    // Scrolling up - show header
                     header.style.transform = 'translateY(0)';
                     header.style.transition = 'transform 0.3s ease';
                 }
                 
                 lastScrollTop = scrollTop;
                 
-                // Show header after scrolling stops
                 scrollTimeout = setTimeout(() => {
                     header.style.transform = 'translateY(0)';
                 }, 1500);
             }
         }, { passive: true });
-
-        // Add active state to current page
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const navLinks = nav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            }
-        });
     }
 
-    // Enhanced form optimizations
+    // Form optimizations
     function optimizeForms() {
         const inputs = document.querySelectorAll('input, textarea, select');
         
         inputs.forEach(input => {
-            // Prevent zoom on iOS
             if (input.type === 'text' || input.type === 'email' || input.type === 'tel' || input.type === 'password') {
                 input.style.fontSize = '16px';
             }
 
-            // Add enhanced focus states
             input.addEventListener('focus', function() {
                 this.parentElement.style.transform = 'scale(1.02)';
                 this.parentElement.style.boxShadow = '0 0 0 2px rgba(70, 130, 180, 0.3)';
@@ -238,32 +162,16 @@
                 this.parentElement.style.transform = 'scale(1)';
                 this.parentElement.style.boxShadow = '';
             });
-
-            // Add autocomplete suggestions
-            if (input.type === 'email') {
-                input.setAttribute('autocomplete', 'email');
-            } else if (input.type === 'tel') {
-                input.setAttribute('autocomplete', 'tel');
-            }
         });
     }
 
-    // Advanced image loading optimization
+    // Image optimization
     function optimizeImages() {
-        // Intersection Observer for lazy loading
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const img = entry.target;
-                        
-                        // Load high-quality image for high DPI displays
-                        if (window.devicePixelRatio > 1) {
-                            const originalSrc = img.src;
-                            const highResSrc = originalSrc.replace(/\.(jpg|jpeg|png)/, '@2x.$1');
-                            img.src = highResSrc;
-                        }
-                        
                         img.classList.remove('lazy');
                         imageObserver.unobserve(img);
                     }
@@ -276,78 +184,36 @@
             const lazyImages = document.querySelectorAll('img[data-src], img.lazy');
             lazyImages.forEach(img => imageObserver.observe(img));
         }
-
-        // Progressive image loading
-        const heroImages = document.querySelectorAll('.slide');
-        heroImages.forEach(slide => {
-            const backgroundImage = slide.style.backgroundImage;
-            if (backgroundImage) {
-                const url = backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
-                const img = new Image();
-                img.onload = function() {
-                    slide.style.opacity = '1';
-                };
-                img.src = url;
-            }
-        });
     }
 
-    // Enhanced cart optimization
+    // Cart optimization
     function optimizeCart() {
         const cartIcon = document.querySelector('.cart-icon');
         const cartCount = document.querySelector('.cart-count');
         
         if (cartIcon && cartCount) {
-            // Add haptic feedback on mobile
             cartIcon.addEventListener('click', function() {
                 if ('vibrate' in navigator) {
                     navigator.vibrate(50);
                 }
                 
-                // Add click animation
                 this.style.transform = 'scale(0.9)';
                 setTimeout(() => {
                     this.style.transform = 'scale(1)';
                 }, 150);
             });
-
-            // Animate cart count changes
-            let currentCount = parseInt(cartCount.textContent) || 0;
-            
-            // Watch for cart count changes
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.type === 'childList') {
-                        const newCount = parseInt(cartCount.textContent) || 0;
-                        if (newCount !== currentCount) {
-                            // Animate the change
-                            cartCount.style.transform = 'scale(1.3)';
-                            cartCount.style.color = '#FFD700';
-                            setTimeout(() => {
-                                cartCount.style.transform = 'scale(1)';
-                                cartCount.style.color = '';
-                            }, 300);
-                            currentCount = newCount;
-                        }
-                    }
-                });
-            });
-            
-            observer.observe(cartCount, { childList: true });
         }
     }
 
-    // Device detection and optimization
+    // Device detection
     function detectDevice() {
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         const isTablet = /iPad|Android/i.test(navigator.userAgent) && window.innerWidth >= 768 && window.innerWidth <= 1024;
         const isLaptop = window.innerWidth >= 1024 && window.innerWidth <= 1440;
         const isDesktop = window.innerWidth > 1440;
         
-        // Remove existing classes
         document.body.classList.remove('mobile-device', 'tablet-device', 'laptop-device', 'desktop-device');
         
-        // Add appropriate class
         if (isMobile) {
             document.body.classList.add('mobile-device');
         } else if (isTablet) {
@@ -358,48 +224,21 @@
             document.body.classList.add('desktop-device');
         }
         
-        // Add touch class for touch devices
         if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
             document.body.classList.add('touch-device');
         }
 
-        // Add high DPI class
         if (window.devicePixelRatio > 1) {
             document.body.classList.add('high-dpi');
         }
 
-        // Add reduced motion class for accessibility
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             document.body.classList.add('reduced-motion');
         }
     }
 
-    // Performance monitoring
-    function monitorPerformance() {
-        // Monitor Core Web Vitals
-        if ('PerformanceObserver' in window) {
-            try {
-                const observer = new PerformanceObserver((list) => {
-                    for (const entry of list.getEntries()) {
-                        if (entry.entryType === 'largest-contentful-paint') {
-                            console.log('LCP:', entry.startTime);
-                        }
-                        if (entry.entryType === 'first-input') {
-                            console.log('FID:', entry.processingStart - entry.startTime);
-                        }
-                    }
-                });
-                
-                observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
-            } catch (e) {
-                console.warn('Performance monitoring not supported');
-            }
-        }
-    }
-
-    // Initialize all optimizations
+    // Initialize optimizations
     function init() {
-        // Wait for DOM to be ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', init);
             return;
@@ -413,9 +252,8 @@
         optimizeForms();
         optimizeImages();
         optimizeCart();
-        monitorPerformance();
 
-        // Add resize handler for responsive behavior
+        // Resize handler
         let resizeTimeout;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimeout);
@@ -426,7 +264,7 @@
             }, 250);
         }, { passive: true });
 
-        // Add orientation change handler
+        // Orientation change handler
         window.addEventListener('orientationchange', function() {
             setTimeout(function() {
                 detectDevice();
@@ -434,13 +272,13 @@
             }, 500);
         });
 
-        console.log('🚀 Mobile & Laptop optimization initialized successfully!');
+        console.log('🚀 Device optimization initialized successfully!');
     }
 
     // Start optimizations
     init();
 
-    // Export functions for external use
+    // Export functions
     window.DeviceOptimizer = {
         optimizePerformance,
         optimizeTouch,
@@ -449,8 +287,7 @@
         optimizeForms,
         optimizeImages,
         optimizeCart,
-        detectDevice,
-        monitorPerformance
+        detectDevice
     };
 
 })(); 
