@@ -99,6 +99,18 @@
             width: 100%;
             height: 150px;
             object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .product-image.error {
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+            object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
         }
@@ -766,6 +778,10 @@
             <i class="fas fa-download"></i>
             Download Website PDF
         </button>
+        <button class="download-btn fallback" onclick="generateSimplePDF()" style="margin-left: 10px; background: #6b7280;">
+            <i class="fas fa-file-alt"></i>
+            Download Simple PDF
+        </button>
     </div>
 
     <script>
@@ -781,42 +797,218 @@
         // Generate PDF function
         function generateSitePDF() {
             const element = document.getElementById('sitePDF');
-            const opt = {
-                margin: 1,
-                filename: 'Auto-Champion-Complete-Website-2024.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: true
-                },
-                jsPDF: { 
-                    unit: 'in', 
-                    format: 'a4', 
-                    orientation: 'portrait' 
-                }
-            };
-
+            
             // Show loading message
             const btn = event.target;
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
             btn.disabled = true;
 
-            // Generate PDF
-            html2pdf().set(opt).from(element).save().then(() => {
-                // Restore button
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-                
-                // Show success message
-                alert('Website PDF generated successfully!');
-            }).catch(err => {
-                console.error('PDF generation failed:', err);
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-                alert('PDF generation failed. Please try again.');
+            // Wait for images to load
+            const images = element.querySelectorAll('img');
+            const imagePromises = Array.from(images).map(img => {
+                return new Promise((resolve) => {
+                    if (img.complete) {
+                        resolve();
+                    } else {
+                        img.onload = () => resolve();
+                        img.onerror = () => resolve(); // Continue even if image fails
+                    }
+                });
             });
+
+            Promise.all(imagePromises).then(() => {
+                const opt = {
+                    margin: [0.5, 0.5, 0.5, 0.5],
+                    filename: 'Auto-Champion-Complete-Website-2024.pdf',
+                    image: { type: 'jpeg', quality: 0.8 },
+                    html2canvas: { 
+                        scale: 1.5,
+                        useCORS: true,
+                        allowTaint: true,
+                        logging: false,
+                        letterRendering: true
+                    },
+                    jsPDF: { 
+                        unit: 'in', 
+                        format: 'a4', 
+                        orientation: 'portrait',
+                        compress: true
+                    }
+                };
+
+                // Generate PDF with better error handling
+                html2pdf().set(opt).from(element).save().then(() => {
+                    // Restore button
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    
+                    // Show success message
+                    showMessage('Website PDF generated successfully!', 'success');
+                }).catch(err => {
+                    console.error('PDF generation failed:', err);
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    showMessage('PDF generation failed. Please try again.', 'error');
+                });
+            }).catch(err => {
+                console.error('Image loading failed:', err);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                showMessage('PDF generation failed. Please try again.', 'error');
+            });
+        }
+
+        // Show message function
+        function showMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 20px;
+                border-radius: 8px;
+                color: white;
+                font-weight: bold;
+                z-index: 10000;
+                background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            `;
+            messageDiv.textContent = message;
+            document.body.appendChild(messageDiv);
+            
+            // Show message
+            setTimeout(() => {
+                messageDiv.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Hide message after 3 seconds
+            setTimeout(() => {
+                messageDiv.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    document.body.removeChild(messageDiv);
+                }, 300);
+            }, 3000);
+        }
+
+        // Handle image errors
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.className = 'product-image error';
+                    fallback.textContent = 'Image not available';
+                    this.parentNode.insertBefore(fallback, this);
+                };
+            });
+        });
+
+        // Simple PDF generation (fallback)
+        function generateSimplePDF() {
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+            btn.disabled = true;
+
+            // Create a simple text-based PDF content
+            const content = `
+Auto Champion - Complete Website Overview
+=========================================
+
+Generated on: ${new Date().toLocaleDateString()}
+
+HOME PAGE
+---------
+Welcome to Auto Champion - Your trusted partner for premium automotive care products.
+Professional-grade solutions for the ultimate finish.
+
+Our Premium Brands:
+- WD-40: Multi-function products and lubricants
+- Formula 1: Professional car care products
+- AIM: Cleaning and maintenance products
+- DTR: Brake and engine cleaners
+- Areon: Air fresheners and interior care
+- Microfiber: Premium cleaning towels and cloths
+
+SHOP PAGE
+---------
+Complete product catalog with all brands and categories:
+
+Formula 1 Products:
+- F1-120 Protectant Spray (680ML) - Rs. 1750
+- F1-131 Black Gold Tire Shine (680ML) - Rs. 1750
+- F1-121 Protectant Spray Cherry (295ML) - Rs. 1125
+- F1-125 Protectant Spray Vanilla (295ML) - Rs. 1125
+
+AIM Products:
+- AIM Degreaser - Rs. 425
+- AIM Tire Foam - Rs. 425
+- AIM Brake Cleaner - Rs. 550
+- AIM Carburetor Cleaner - Rs. 350
+
+WD-40 Products:
+- WD-40 Multi-Function - Rs. 375
+- WD-40 Multi-Purpose 450 - Rs. 1250
+- WD-40 Specialist - Rs. 800
+- WD-40 Contact Cleaner - Rs. 600
+
+DTR Products:
+- DTR Brake Cleaner - Rs. 550
+- DTR Carburetor Cleaner - Rs. 350
+- DTR Contact Cleaner - Rs. 450
+- DTR Engine Cleaner - Rs. 425
+
+Areon Products:
+- Areon Air Freshener - Rs. 150
+- Areon Fabric Freshener - Rs. 200
+- Areon Interior Spray - Rs. 250
+
+Microfiber Products:
+- Single Microfiber Towel - Rs. 600
+- Single Microfiber Cloth - Rs. 400
+- Pack of 2 Microfiber Cloths - Rs. 700
+- Pack of 2 Microfiber Towels - Rs. 1050
+- Pack of 4 Microfiber Towels - Rs. 1350
+
+SPECIAL BUNDLES
+--------------
+Premium product packages and bundles for professional use.
+
+CONTACT INFORMATION
+------------------
+Phone: +92 323 4890184
+Email: info@autochampion.com
+WhatsApp: +92 300 1234567
+
+Business Hours:
+- Weekdays: 10:00 AM - 8:00 PM
+- Saturday: 10:00 AM - 8:00 PM
+- Sunday: Closed
+
+For inquiries and orders, please contact us through any of the above channels.
+
+© 2025 Auto Champion. All rights reserved.
+            `;
+
+            // Create and download text file
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Auto-Champion-Website-Overview.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            // Restore button
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            showMessage('Simple overview downloaded successfully!', 'success');
         }
 
         // Add FontAwesome icons
