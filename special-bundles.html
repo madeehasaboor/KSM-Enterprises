@@ -5,655 +5,413 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Special Bundles - Auto Champion</title>
     <link rel="icon" type="image/x-icon" href="auto-champion-logo.jpg.jfif">
-    <link rel="stylesheet" href="css/vibrant-theme.css?v=1.0.3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        secondary: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                            900: '#713f12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        /* Only essential mobile optimizations */
         body {
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-            text-size-adjust: 100%;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            padding-top: 90px; /* Add padding to account for fixed header */
-        }
-
-        /* Enhanced Logo Styles - Compact Version */
-        .logo-image {
-            height: 60px;
-            width: auto;
-            max-width: 150px;
-            object-fit: contain;
-            border-radius: 8px;
-            background-color: #FFFFFF;
-            padding: 4px;
-            border: 2px solid #4682B4;
-            box-shadow: 0 3px 8px rgba(70, 130, 180, 0.4);
-            transition: all 0.3s ease;
-            display: block;
-            visibility: visible;
-            opacity: 1;
-        }
-        
-        .logo-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(70, 130, 180, 0.5);
-        }
-
-        .logo h1 {
-            margin: 0;
-            font-size: 2.4rem;
-            background: linear-gradient(135deg, #4682B4 0%, #1976D2 50%, #1565C0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 900;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(70, 130, 180, 0.3);
-            animation: logoGlow 3s ease-in-out infinite alternate;
-            position: relative;
-        }
-
-        .logo h1::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            background: linear-gradient(135deg, rgba(70, 130, 180, 0.1), rgba(25, 118, 210, 0.1));
-            border-radius: 15px;
-            z-index: -1;
-            filter: blur(10px);
-        }
-
-        @keyframes logoGlow {
-            0% {
-                filter: drop-shadow(0 0 5px rgba(70, 130, 180, 0.5));
-            }
-            100% {
-                filter: drop-shadow(0 0 15px rgba(70, 130, 180, 0.8));
-            }
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            justify-content: center;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
-            border-radius: 15px;
-            border: 2px solid rgba(70, 130, 180, 0.2);
-            box-shadow: 0 6px 20px rgba(70, 130, 180, 0.15);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(70, 130, 180, 0.25);
-            border-color: rgba(70, 130, 180, 0.4);
-        }
-
-        /* Enhanced Navigation Styles - Compact Version */
-        .centered-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 0;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .centered-nav a {
-            background: linear-gradient(135deg, #4682B4 0%, #1976D2 100%);
-            color: #FFFFFF !important;
-            text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            border: 1px solid #4682B4;
-            transition: all 0.3s ease;
-            box-shadow: 0 1px 4px rgba(70, 130, 180, 0.3);
-            min-width: 65px;
-            text-align: center;
-            display: inline-block;
-        }
-
-        .centered-nav a:hover {
-            background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
-            transform: translateY(-1px);
-            box-shadow: 0 3px 12px rgba(70, 130, 180, 0.4);
-            border-color: #1976D2;
-        }
-
-        .centered-nav a:active {
-            transform: translateY(0px);
-            box-shadow: 0 2px 8px rgba(70, 130, 180, 0.3);
-        }
-
-        /* Enhanced Header Layout - Compact Version */
-        header {
-            background: linear-gradient(135deg, rgba(70, 130, 180, 0.1) 0%, rgba(70, 130, 180, 0.05) 100%);
-            padding: 6px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            border-bottom: 2px solid rgba(70, 130, 180, 0.2);
-            box-shadow: 0 4px 20px rgba(70, 130, 180, 0.1);
-            width: 100%;
-        }
-
-        /* Responsive navigation - Compact Version */
-        @media (max-width: 768px) {
-            .centered-nav {
-                gap: 5px;
-                padding: 5px 0;
-            }
-            .centered-nav a {
-                padding: 4px 10px;
-                font-size: 0.7rem;
-                min-width: 60px;
-            }
-        }
-        @media (max-width: 480px) {
-            .centered-nav {
-                gap: 4px;
-                padding: 4px 0;
-            }
-            .centered-nav a {
-                padding: 3px 8px;
-                font-size: 0.65rem;
-                min-width: 50px;
-            }
-        }
-
-        /* Bundle Carousel Styles */
-        .bundle-carousel {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(70, 130, 180, 0.2);
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            gap: 30px;
-            padding: 20px;
         }
 
         .bundle-card {
-            min-width: 350px;
-            flex-shrink: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%);
-            border: 2px solid rgba(70, 130, 180, 0.2);
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 25px rgba(70, 130, 180, 0.15);
+            transition: all 0.4s ease;
         }
 
         .bundle-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(70, 130, 180, 0.3);
-            border-color: rgba(70, 130, 180, 0.4);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
         .bundle-image {
-            margin-bottom: 20px;
-            border-radius: 15px;
-            overflow: hidden;
-            background: #FFFFFF;
-            padding: 15px;
-            border: 2px solid rgba(70, 130, 180, 0.1);
+            transition: all 0.4s ease;
         }
-
-        .bundle-image img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .bundle-card:hover .bundle-image img {
+        
+        .bundle-card:hover .bundle-image {
             transform: scale(1.05);
         }
 
-        .bundle-card h3 {
-            color: #4682B4;
-            font-size: 1.4em;
-            font-weight: 700;
-            margin: 15px 0 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .bundle-price {
-            color: #4682B4;
-            font-size: 1.6em;
-            font-weight: 900;
-            margin: 10px 0;
-            text-shadow: 1px 1px 2px rgba(70, 130, 180, 0.2);
-        }
-
-        .bundle-description {
-            color: #4682B4;
-            font-size: 0.95em;
-            margin: 10px 0 15px 0;
-            font-style: italic;
-            line-height: 1.4;
-        }
-
-        .bundle-items {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0;
-            text-align: left;
-        }
-
-        .bundle-items li {
-            color: #4682B4;
-            padding: 5px 0;
-            font-size: 0.9em;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .bundle-items li:before {
-            content: '✓';
-            color: #4682B4;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
         .add-to-cart-btn {
-            background: linear-gradient(135deg, #4682B4 0%, #1976D2 100%);
-            color: #FFFFFF;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 1em;
-            font-weight: 700;
-            cursor: pointer;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 15px;
-            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
         }
 
         .add-to-cart-btn:hover {
-            background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(70, 130, 180, 0.4);
         }
-
-        /* Carousel Navigation Buttons */
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(70, 130, 180, 0.9);
-            color: #FFFFFF;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-            z-index: 10;
-            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
-        }
-
-        .carousel-btn:hover {
-            background: rgba(70, 130, 180, 1);
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 20px rgba(70, 130, 180, 0.5);
-        }
-
-        .carousel-prev {
-            left: -25px;
-        }
-
-        .carousel-next {
-            right: -25px;
-        }
-
-        /* Carousel Dots */
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(70, 130, 180, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-dot.active {
-            background: #4682B4;
-            transform: scale(1.2);
-        }
-
-        .carousel-dot:hover {
-            background: rgba(70, 130, 180, 0.6);
-        }
-
-        /* Mobile Responsive for Carousel */
-        @media (max-width: 768px) {
-            .bundle-carousel {
-                padding: 15px 0;
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
             }
-
-            .carousel-track {
-                gap: 20px;
-                padding: 15px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
             }
 
             .bundle-card {
-                min-width: 300px;
-                padding: 20px;
-            }
-
-            .bundle-image img {
-                height: 150px;
-            }
-
-            .bundle-card h3 {
-                font-size: 1.2em;
-            }
-
-            .bundle-price {
-                font-size: 1.4em;
-            }
-
-            .carousel-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1em;
-            }
-
-            .carousel-prev {
-                left: -20px;
-            }
-
-            .carousel-next {
-                right: -20px;
-            }
+            animation: slideInUp 0.8s ease forwards;
         }
-
-        @media (max-width: 480px) {
-            .bundle-card {
-                min-width: 280px;
-                padding: 15px;
-            }
-
-            .bundle-image img {
-                height: 120px;
-            }
-
-            .bundle-card h3 {
-                font-size: 1.1em;
-            }
-
-            .bundle-price {
-                font-size: 1.3em;
-            }
-
-            .bundle-items li {
-                font-size: 0.85em;
-            }
-
-            .carousel-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 0.9em;
-            }
-
-            .carousel-prev {
-                left: -17px;
-            }
-
-            .carousel-next {
-                right: -17px;
-            }
+        
+        .bundle-card:nth-child(1) { animation-delay: 0.1s; }
+        .bundle-card:nth-child(2) { animation-delay: 0.2s; }
+        .bundle-card:nth-child(3) { animation-delay: 0.3s; }
+        .bundle-card:nth-child(4) { animation-delay: 0.4s; }
+        .bundle-card:nth-child(5) { animation-delay: 0.5s; }
+        .bundle-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50">
     <!-- Header -->
-    <header class="header">
-            <div class="logo">
-            <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="logo-image">
-        <h1>AUTO CHAMPION</h1>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-4">
+                    <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="h-16 w-auto rounded-lg border-2 border-primary-500 shadow-lg">
+                    <h1 class="text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-800 uppercase tracking-wider">
+                        Auto Champion
+                    </h1>
             </div>
-        <nav class="centered-nav">
-            <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="special-bundles.html">Special Bundles</a>
-            <a href="contact.html">Contact</a>
+                
+                <!-- Navigation -->
+                <nav class="flex flex-wrap gap-2 lg:gap-4">
+                    <a href="index.html" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-semibold hover:bg-primary-600 hover:text-white transition-colors">
+                        Home
+                    </a>
+                    <a href="shop.html" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-semibold hover:bg-primary-600 hover:text-white transition-colors">
+                        Shop
+                    </a>
+                    <a href="special-bundles.html" class="px-4 py-2 bg-primary-600 text-white rounded-full text-sm font-semibold hover:bg-primary-700 transition-colors">
+                        Special Bundles
+                    </a>
+                    <a href="contact.html" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-semibold hover:bg-primary-600 hover:text-white transition-colors">
+                        Contact
+                    </a>
             </nav>
-            <div class="header-actions">
-                <a href="cart.html" class="cart-icon">
+                
+                <!-- Cart Icon -->
+                <div class="relative">
+                    <a href="cart.html" class="text-primary-600 text-2xl hover:text-primary-700 transition-colors">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count" id="cartCount">0</span>
+                        <span class="absolute -top-2 -right-2 bg-primary-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold" id="cartCount">0</span>
                 </a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Special Bundles Section -->
-    <section class="bundle-section">
-        <div class="container">
-                <h2>Exclusive Car Care Bundles</h2>
-            <p>Save big with our specially curated product combinations</p>
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-5xl lg:text-7xl font-black uppercase tracking-wider mb-6">
+                    Exclusive Car Care Bundles
+                </h1>
+                <p class="text-xl lg:text-2xl font-medium mb-8 max-w-3xl mx-auto">
+                    Save big with our specially curated product combinations. Premium quality at unbeatable prices.
+                </p>
+                
+                <!-- Floating Elements -->
+                <div class="absolute top-10 left-10 w-20 h-20 bg-secondary-400/30 rounded-full animate-bounce"></div>
+                <div class="absolute top-20 right-20 w-16 h-16 bg-white/20 rounded-full animate-pulse"></div>
+                <div class="absolute bottom-10 left-1/4 w-12 h-12 bg-secondary-400/40 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-20 right-1/3 w-14 h-14 bg-white/30 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bundles Grid Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-800 mb-4">
+                    Premium Bundles
+                </h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose from our carefully crafted bundles designed to meet all your car care needs
+                </p>
+            </div>
             
-            <div class="bundle-carousel">
-                <div class="carousel-container">
-                    <div class="carousel-track">
+            <!-- Bundles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <!-- Bundle 1: Complete Car Care Kit -->
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="products/CAR WASH & WAX/F1-113 CERAMIC LIQUID WAX.jpeg?v=1.0.3" alt="Complete Car Care Kit">
+                <div class="bundle-card bg-white rounded-3xl p-8 border-2 border-gray-200 shadow-lg hover:border-primary-300 relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="badge bg-gradient-to-r from-secondary-500 to-secondary-600 text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                            BEST VALUE
+                        </span>
                     </div>
-                    <h3>Complete Car Care Kit</h3>
-                    <div class="bundle-price">Rs. 2,500</div>
-                    <div class="bundle-description">Complete car care solution with premium products</div>
-                    <ul class="bundle-items">
-                                    <li>F1-113 Ceramic Liquid Wax (500ml)</li>
-                                    <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
-                                    <li>Microfiber Towel Pack (6 pieces)</li>
-                                    <li>F1-117 Glass Cleaner (500ml)</li>
-                        <li>F1-130 Scratch Out Paste</li>
-                        <li>F1-101 Carnuba Wash & Wax</li>
-                        <li>A-131 AIM Glass Cleaner</li>
+                    
+                    <div class="relative mb-6">
+                        <div class="bundle-image bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border-2 border-gray-100">
+                            <img src="products/CAR WASH & WAX/F1-113 CERAMIC LIQUID WAX.jpeg?v=1.0.3" alt="Complete Car Care Kit" class="w-full h-48 object-contain rounded-xl">
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h3 class="text-2xl font-black text-gray-800 mb-4">Complete Car Care Kit</h3>
+                        <div class="text-4xl font-black text-primary-600 mb-4">₨ 2,500</div>
+                        <p class="text-gray-600 mb-6 italic">Complete car care solution with premium products</p>
+                        
+                        <div class="bg-gray-50 rounded-2xl p-4 mb-6">
+                            <ul class="text-left space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-113 Ceramic Liquid Wax (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Microfiber Towel Pack (6 pieces)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-117 Glass Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-130 Scratch Out Paste</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-101 Carnuba Wash & Wax</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>A-131 AIM Glass Cleaner</li>
                                 </ul>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('Complete Car Care Kit', 2500, ['F1-113', 'F1-132', 'Microfiber Pack', 'F1-117', 'F1-130', 'F1-101', 'A-131'])">Add to Cart</button>
+                        </div>
+                        
+                        <button class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all add-to-cart-btn shadow-lg" onclick="addBundleToCart('Complete Car Care Kit', 2500, ['F1-113', 'F1-132', 'Microfiber Pack', 'F1-117', 'F1-130', 'F1-101', 'A-131'])">
+                            <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Bundle 2: Interior Care Package -->
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="products/CLEANERS/F1-119 LEATHER CLEANER +CONDITIONER.jpeg?v=1.0.3" alt="Interior Care Package">
+                <div class="bundle-card bg-white rounded-3xl p-8 border-2 border-gray-200 shadow-lg hover:border-primary-300 relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="badge bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                            POPULAR
+                        </span>
                     </div>
-                    <h3>Interior Care Package</h3>
-                    <div class="bundle-price">Rs. 1,800</div>
-                    <div class="bundle-description">Complete interior cleaning and protection</div>
-                    <ul class="bundle-items">
-                        <li>AIM Interior Spray (500ml)</li>
-                        <li>AIM Fabric Freshener (500ml)</li>
-                        <li>Microfiber Cloth Pack (4 pieces)</li>
-                        <li>AIM Furniture Polish (500ml)</li>
-                        <li>Leather & Tyre Wax</li>
+                    
+                    <div class="relative mb-6">
+                        <div class="bundle-image bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border-2 border-gray-100">
+                            <img src="products/CLEANERS/F1-119 LEATHER CLEANER +CONDITIONER.jpeg?v=1.0.3" alt="Interior Care Package" class="w-full h-48 object-contain rounded-xl">
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h3 class="text-2xl font-black text-gray-800 mb-4">Interior Care Package</h3>
+                        <div class="text-4xl font-black text-primary-600 mb-4">₨ 1,800</div>
+                        <p class="text-gray-600 mb-6 italic">Complete interior cleaning and protection</p>
+                        
+                        <div class="bg-gray-50 rounded-2xl p-4 mb-6">
+                            <ul class="text-left space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>AIM Interior Spray (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>AIM Fabric Freshener (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Microfiber Cloth Pack (4 pieces)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>AIM Furniture Polish (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Leather & Tyre Wax</li>
                          </ul>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('Interior Care Package', 1800, ['AIM Interior', 'AIM Fabric', 'Microfiber Cloth', 'AIM Polish', 'Leather Wax'])">Add to Cart</button>
+                        </div>
+                        
+                        <button class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all add-to-cart-btn shadow-lg" onclick="addBundleToCart('Interior Care Package', 1800, ['AIM Interior', 'AIM Fabric', 'Microfiber Cloth', 'AIM Polish', 'Leather Wax'])">
+                            <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Bundle 3: Exterior Protection Kit -->
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="products/CAR WASH & WAX/F1-101 CARNAUBA WASH &WAX.jpeg?v=1.0.3" alt="Exterior Protection Kit">
+                <div class="bundle-card bg-white rounded-3xl p-8 border-2 border-gray-200 shadow-lg hover:border-primary-300 relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="badge bg-gradient-to-r from-secondary-500 to-secondary-600 text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                            PREMIUM
+                        </span>
                     </div>
-                    <h3>Exterior Protection Kit</h3>
-                    <div class="bundle-price">Rs. 2,200</div>
-                    <div class="bundle-description">Professional exterior protection and shine</div>
-                    <ul class="bundle-items">
-                        <li>F1-113 Ceramic Liquid Wax (500ml)</li>
-                        <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
-                        <li>F1-117 Glass Cleaner (500ml)</li>
-                            <li>Microfiber Towel Pack (4 pieces)</li>
-                        <li>F1-101 Carnuba Wash & Wax</li>
-                        <li>Scratch Out Liquid</li>
+                    
+                    <div class="relative mb-6">
+                        <div class="bundle-image bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border-2 border-gray-100">
+                            <img src="products/CAR WASH & WAX/F1-101 CARNAUBA WASH &WAX.jpeg?v=1.0.3" alt="Exterior Protection Kit" class="w-full h-48 object-contain rounded-xl">
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h3 class="text-2xl font-black text-gray-800 mb-4">Exterior Protection Kit</h3>
+                        <div class="text-4xl font-black text-primary-600 mb-4">₨ 2,200</div>
+                        <p class="text-gray-600 mb-6 italic">Professional exterior protection and shine</p>
+                        
+                        <div class="bg-gray-50 rounded-2xl p-4 mb-6">
+                            <ul class="text-left space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-113 Ceramic Liquid Wax (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-117 Glass Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Microfiber Towel Pack (4 pieces)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-101 Carnuba Wash & Wax</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Scratch Out Liquid</li>
                         </ul>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('Exterior Protection Kit', 2200, ['F1-113', 'F1-132', 'F1-117', 'Microfiber Pack', 'F1-101', 'Scratch Out'])">Add to Cart</button>
+                        </div>
+                        
+                        <button class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all add-to-cart-btn shadow-lg" onclick="addBundleToCart('Exterior Protection Kit', 2200, ['F1-113', 'F1-132', 'F1-117', 'Microfiber Pack', 'F1-101', 'Scratch Out'])">
+                            <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                        </button>
+                    </div>
                     </div>
 
                 <!-- Bundle 4: Professional Detailer Kit -->
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg?v=1.0.3" alt="Professional Detailer Kit">
+                <div class="bundle-card bg-white rounded-3xl p-8 border-2 border-gray-200 shadow-lg hover:border-primary-300 relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="badge bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                            PRO
+                        </span>
                     </div>
-                    <h3>Professional Detailer Kit</h3>
-                    <div class="bundle-price">Rs. 3,500</div>
-                    <div class="bundle-description">Complete professional detailing solution</div>
-                    <ul class="bundle-items">
-                        <li>F1-113 Ceramic Liquid Wax (500ml)</li>
-                        <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
-                        <li>F1-117 Glass Cleaner (500ml)</li>
-                        <li>AIM Interior Spray (500ml)</li>
-                        <li>Microfiber Towel Pack (8 pieces)</li>
-                        <li>F1-101 Carnuba Wash & Wax</li>
-                        <li>Scratch Out Paste</li>
-                        <li>Leather & Tyre Wax</li>
-                        <li>AIM Furniture Polish (500ml)</li>
+                    
+                    <div class="relative mb-6">
+                        <div class="bundle-image bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border-2 border-gray-100">
+                            <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg?v=1.0.3" alt="Professional Detailer Kit" class="w-full h-48 object-contain rounded-xl">
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h3 class="text-2xl font-black text-gray-800 mb-4">Professional Detailer Kit</h3>
+                        <div class="text-4xl font-black text-primary-600 mb-4">₨ 3,500</div>
+                        <p class="text-gray-600 mb-6 italic">Complete professional detailing solution</p>
+                        
+                        <div class="bg-gray-50 rounded-2xl p-4 mb-6">
+                            <ul class="text-left space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-113 Ceramic Liquid Wax (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-117 Glass Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>AIM Interior Spray (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Microfiber Towel Pack (8 pieces)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-101 Carnuba Wash & Wax</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Scratch Out Paste</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Leather & Tyre Wax</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>AIM Furniture Polish (500ml)</li>
                     </ul>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('Professional Detailer Kit', 3500, ['F1-113', 'F1-132', 'F1-117', 'AIM Interior', 'Microfiber Pack', 'F1-101', 'Scratch Out', 'Leather Wax', 'AIM Polish'])">Add to Cart</button>
+                        </div>
+                        
+                        <button class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all add-to-cart-btn shadow-lg" onclick="addBundleToCart('Professional Detailer Kit', 3500, ['F1-113', 'F1-132', 'F1-117', 'AIM Interior', 'Microfiber Pack', 'F1-101', 'Scratch Out', 'Leather Wax', 'AIM Polish'])">
+                            <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Bundle 5: Engine Care Kit -->
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="products/CLEANERS/A-125 AIM ENGINE CLEANER.jpeg?v=1.0.3" alt="Engine Care Kit">
+                <div class="bundle-card bg-white rounded-3xl p-8 border-2 border-gray-200 shadow-lg hover:border-primary-300 relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="badge bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                            SPECIALTY
+                        </span>
                     </div>
-                    <h3>Engine Care Kit</h3>
-                    <div class="bundle-price">Rs. 1,800</div>
-                    <div class="bundle-description">Complete engine maintenance and cleaning</div>
-                    <ul class="bundle-items">
-                            <li>A-125 AIM Engine Cleaner (500ml)</li>
-                            <li>A-109 AIM Injector Cleaner (300ml)</li>
-                            <li>A-123 AIM Anti-Rust (300ml)</li>
-                            <li>A-135 AIM Fuel Injector Cleaner (300ml)</li>
-                            <li>A-136 AIM Catalytic System Cleaner (300ml)</li>
+                    
+                    <div class="relative mb-6">
+                        <div class="bundle-image bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border-2 border-gray-100">
+                            <img src="products/CLEANERS/A-125 AIM ENGINE CLEANER.jpeg?v=1.0.3" alt="Engine Care Kit" class="w-full h-48 object-contain rounded-xl">
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h3 class="text-2xl font-black text-gray-800 mb-4">Engine Care Kit</h3>
+                        <div class="text-4xl font-black text-primary-600 mb-4">₨ 1,800</div>
+                        <p class="text-gray-600 mb-6 italic">Complete engine maintenance and cleaning</p>
+                        
+                        <div class="bg-gray-50 rounded-2xl p-4 mb-6">
+                            <ul class="text-left space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>A-125 AIM Engine Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>A-109 AIM Injector Cleaner (300ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>A-123 AIM Anti-Rust (300ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>A-135 AIM Fuel Injector Cleaner (300ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>A-136 AIM Catalytic System Cleaner (300ml)</li>
                         </ul>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('Engine Care Kit', 1800, ['A-125', 'A-109', 'A-123', 'A-135', 'A-136'])">Add to Cart</button>
+                        </div>
+                        
+                        <button class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all add-to-cart-btn shadow-lg" onclick="addBundleToCart('Engine Care Kit', 1800, ['A-125', 'A-109', 'A-123', 'A-135', 'A-136'])">
+                            <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Bundle 6: Glass & Interior Kit -->
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="products/CLEANERS/A-131 AIM GLASS CLEANER.jpeg?v=1.0.3" alt="Glass & Interior Kit">
+                <div class="bundle-card bg-white rounded-3xl p-8 border-2 border-gray-200 shadow-lg hover:border-primary-300 relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="badge bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                            ESSENTIAL
+                        </span>
                     </div>
-                    <h3>Glass & Interior Kit</h3>
-                    <div class="bundle-price">Rs. 1,500</div>
-                    <div class="bundle-description">Perfect for interior and glass cleaning</div>
-                    <ul class="bundle-items">
-                        <li>A-131 AIM Glass Cleaner (500ml)</li>
-                        <li>F1-117 Glass Cleaner (500ml)</li>
-                        <li>A-128 AIM Foamy Cleaner (500ml)</li>
-                        <li>Microfiber Cloth Pack (4 pieces)</li>
-                        <li>A-133 AIM Leather Cleaner (500ml)</li>
-                        </ul>
-                    <button class="add-to-cart-btn" onclick="addBundleToCart('Glass & Interior Kit', 1500, ['A-131', 'F1-117', 'A-128', 'Microfiber Cloth', 'A-133'])">Add to Cart</button>
-                </div>
+                    
+                    <div class="relative mb-6">
+                        <div class="bundle-image bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border-2 border-gray-100">
+                            <img src="products/CLEANERS/A-131 AIM GLASS CLEANER.jpeg?v=1.0.3" alt="Glass & Interior Kit" class="w-full h-48 object-contain rounded-xl">
                     </div>
                 </div>
                 
-                <!-- Carousel Navigation -->
-                <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">
-                    <i class="fas fa-chevron-left"></i>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-black text-gray-800 mb-4">Glass & Interior Kit</h3>
+                        <div class="text-4xl font-black text-primary-600 mb-4">₨ 1,500</div>
+                        <p class="text-gray-600 mb-6 italic">Perfect for interior and glass cleaning</p>
+                        
+                        <div class="bg-gray-50 rounded-2xl p-4 mb-6">
+                            <ul class="text-left space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>A-131 AIM Glass Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>F1-117 Glass Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>A-128 AIM Foamy Cleaner (500ml)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Microfiber Cloth Pack (4 pieces)</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>A-133 AIM Leather Cleaner (500ml)</li>
+                            </ul>
+                        </div>
+                        
+                        <button class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all add-to-cart-btn shadow-lg" onclick="addBundleToCart('Glass & Interior Kit', 1500, ['A-131', 'F1-117', 'A-128', 'Microfiber Cloth', 'A-133'])">
+                            <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
                 </button>
-                <button class="carousel-btn carousel-next" onclick="moveCarousel(1)">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                
-                <!-- Carousel Dots -->
-                <div class="carousel-dots">
-                    <span class="carousel-dot active" onclick="goToSlide(0)"></span>
-                    <span class="carousel-dot" onclick="goToSlide(1)"></span>
-                    <span class="carousel-dot" onclick="goToSlide(2)"></span>
-                    <span class="carousel-dot" onclick="goToSlide(3)"></span>
-                    <span class="carousel-dot" onclick="goToSlide(4)"></span>
-                    <span class="carousel-dot" onclick="goToSlide(5)"></span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Auto Champion</h3>
-                    <p>Pakistan's leading car care distribution company with 40 years of excellence.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-phone"></i> Sales: 04237103750 - 1</p>
-                    <p><i class="fas fa-headset"></i> 24/7 Helpline: +923234890184</p>
-                    <p><i class="fas fa-envelope"></i> ksmenterprises22@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Badami Bagh Centre, Badami Bagh, Lahore</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Our Brands</h4>
-                    <ul>
-                        <li><a href="#">Formula 1</a></li>
-                        <li><a href="#">AIM Car Care</a></li>
-                        <li><a href="#">WD-40 Products</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Auto Champion. All rights reserved.</p>
-            </div>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg font-medium">
+                &copy; 2025 Auto Champion. All rights reserved.
+            </p>
         </div>
     </footer>
 
@@ -699,101 +457,28 @@
         // Function to show notification
         function showNotification(message, type = 'success') {
             const notification = document.createElement('div');
-            notification.className = `notification ${type} show`;
+            notification.className = `fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform transition-all duration-300 translate-x-full`;
             notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i>
                 <span>${message}</span>
-                <button onclick="this.parentElement.remove()">&times;</button>
+                </div>
             `;
             document.body.appendChild(notification);
             
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Animate out and remove
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
             setTimeout(() => {
                 notification.remove();
+                }, 300);
             }, 3000);
         }
-
-        // Bundle Carousel Functionality
-        let currentSlide = 0;
-        const totalSlides = 6; // Number of bundle cards
-        const carouselTrack = document.querySelector('.carousel-track');
-        const carouselDots = document.querySelectorAll('.carousel-dot');
-
-        function updateCarousel() {
-            const slideWidth = 380; // Width of each card + gap
-            const translateX = -currentSlide * slideWidth;
-            carouselTrack.style.transform = `translateX(${translateX}px)`;
-            
-            // Update dots
-            carouselDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
-
-        function moveCarousel(direction) {
-            currentSlide += direction;
-            
-            // Handle wrap-around
-            if (currentSlide < 0) {
-                currentSlide = totalSlides - 1;
-            } else if (currentSlide >= totalSlides) {
-                currentSlide = 0;
-            }
-            
-            updateCarousel();
-        }
-
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateCarousel();
-        }
-
-        // Auto-play carousel
-        let autoPlayInterval = setInterval(() => {
-            moveCarousel(1);
-        }, 4000); // Change slide every 4 seconds
-
-        // Pause auto-play on hover
-        const carouselContainer = document.querySelector('.carousel-container');
-        carouselContainer.addEventListener('mouseenter', () => {
-            clearInterval(autoPlayInterval);
-        });
-
-        carouselContainer.addEventListener('mouseleave', () => {
-            autoPlayInterval = setInterval(() => {
-                moveCarousel(1);
-            }, 4000);
-        });
-
-        // Touch/swipe support for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        carouselContainer.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        carouselContainer.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    moveCarousel(1); // Swipe left = next
-                } else {
-                    moveCarousel(-1); // Swipe right = previous
-                }
-            }
-        }
-
-        // Initialize carousel
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCarousel();
-        });
     </script>
-    <script src="JS files/device-optimizer.js"></script>
 </body>
 </html> 
