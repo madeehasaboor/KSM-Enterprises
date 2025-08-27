@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Champion - Complete Website PDF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .pdf-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .page-section {
+            margin-bottom: 60px;
+            page-break-inside: avoid;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #0A4174, #1a5a8f);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0A4174;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0A4174;
+            padding-bottom: 10px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 20px;
+            background: white;
+        }
+        
+        .card:hover {
+            border-color: #0A4174;
+        }
+        
+        .product-card {
+            text-align: center;
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 20px;
+            background: white;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #0A4174;
+            margin-bottom: 10px;
+        }
+        
+        .bundle-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 25px;
+            background: white;
+            position: relative;
+        }
+        
+        .bundle-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .bundle-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .bundle-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        
+        .bundle-price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0A4174;
+            margin-bottom: 15px;
+        }
+        
+        .bundle-items {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .bundle-items li {
+            padding: 5px 0;
+            color: #4b5563;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .bundle-items li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #0A4174;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .contact-details h4 {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+        
+        .contact-details p {
+            color: #6b7280;
+            margin: 0;
+        }
+        
+        .business-hours {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: 15px;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #0A4174, #1a5a8f);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(10, 65, 116, 0.3);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+            color: #6b7280;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .pdf-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .download-section {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pdf-container" id="sitePDF">
+        <!-- Cover Page -->
+        <div class="page-section">
+            <div class="page-header">
+                <h1 class="page-title">Auto Champion</h1>
+                <p class="page-subtitle">Complete Website Overview</p>
+                <p>Premium Automotive Care Products</p>
+                <p>Generated on: <span id="currentDate"></span></p>
+            </div>
+        </div>
+
+        <!-- Home Page Section -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2 class="page-title">Home Page</h2>
+                <p class="page-subtitle">Welcome to Auto Champion</p>
+            </div>
+            
+            <div class="content-section">
+                <h3 class="section-title">Welcome Banner</h3>
+                <div class="card">
+                    <h4 style="font-size: 2rem; font-weight: 900; color: #0A4174; margin-bottom: 15px;">Auto Champion</h4>
+                    <p style="font-size: 1.2rem; color: #6b7280; margin-bottom: 20px;">
+                        Your trusted partner for premium automotive care products. Professional-grade solutions for the ultimate finish.
+                    </p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span style="background: #ef4444; color: white; padding: 8px 16px; border-radius: 20px; font-weight: 600;">Explore Brands</span>
+                        <span style="background: white; color: #0A4174; padding: 8px 16px; border-radius: 20px; font-weight: 600; border: 2px solid #0A4174;">View Products</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">Featured Brands</h3>
+                <div class="grid-3">
+                    <div class="card">
+                        <div style="text-align: center;">
+                            <div style="background: #ef4444; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">🚗</div>
+                            <h4 style="font-weight: 700; color: #1f2937; margin-bottom: 8px;">Formula 1</h4>
+                            <p style="color: #6b7280; font-size: 0.9rem;">Premium car care products</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="text-align: center;">
+                            <div style="background: #3b82f6; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">🔧</div>
+                            <h4 style="font-weight: 700; color: #1f2937; margin-bottom: 8px;">AIM</h4>
+                            <p style="color: #6b7280; font-size: 0.9rem;">Professional cleaning solutions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="text-align: center;">
+                            <div style="background: #f59e0b; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">🛢️</div>
+                            <h4 style="font-weight: 700; color: #1f2937; margin-bottom: 8px;">WD-40</h4>
+                            <p style="color: #6b7280; font-size: 0.9rem;">Multi-purpose lubricants</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shop Page Section -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2 class="page-title">Shop Page</h2>
+                <p class="page-subtitle">Complete Product Catalog</p>
+            </div>
+            
+            <!-- Formula 1 Products -->
+            <div class="content-section">
+                <h3 class="section-title">Formula 1 Car Care Products</h3>
+                <div class="grid-3">
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.23 AM.jpeg" alt="F1-120 Protectant Spray" class="product-image">
+                        <h4 class="product-name">F1-120 Protectant Spray</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Cleans, shines & protects - 680ML</p>
+                        <div class="product-price">Rs. 1750</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.24 AM.jpeg" alt="F1-121 Protectant Spray Cherry" class="product-image">
+                        <h4 class="product-name">F1-121 Protectant Spray</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Cherry fragrance - 295ML</p>
+                        <div class="product-price">Rs. 1125</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.25 AM.jpeg" alt="F1-122 Protectant Spray" class="product-image">
+                        <h4 class="product-name">F1-122 Protectant Spray</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Professional protection</p>
+                        <div class="product-price">Rs. 1750</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.26 AM.jpeg" alt="F1-123 Protectant Spray" class="product-image">
+                        <h4 class="product-name">F1-123 Protectant Spray</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Interior care solution</p>
+                        <div class="product-price">Rs. 1750</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.27 AM.jpeg" alt="F1-125 Protectant Spray Vanilla" class="product-image">
+                        <h4 class="product-name">F1-125 Protectant Spray</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Vanilla fragrance - 295ML</p>
+                        <div class="product-price">Rs. 1125</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.28 AM.jpeg" alt="F1-126 Protectant Spray" class="product-image">
+                        <h4 class="product-name">F1-126 Protectant Spray</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Premium protection</p>
+                        <div class="product-price">Rs. 1750</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.29 AM.jpeg" alt="F1-127 Protectant Spray" class="product-image">
+                        <h4 class="product-name">F1-127 Protectant Spray</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Advanced formula</p>
+                        <div class="product-price">Rs. 1750</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.30 AM.jpeg" alt="F1-128 Protectant Spray" class="product-image">
+                        <h4 class="product-name">F1-128 Protectant Spray</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Professional grade</p>
+                        <div class="product-price">Rs. 1750</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="F1-131 Black Gold Tire Shine" class="product-image">
+                        <h4 class="product-name">F1-131 Black Gold Tire Shine</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">High shine, dries fast - 680ML</p>
+                        <div class="product-price">Rs. 1750</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AIM Products -->
+            <div class="content-section">
+                <h3 class="section-title">AIM Cleaning Products</h3>
+                <div class="grid-3">
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="AIM Degreaser" class="product-image">
+                        <h4 class="product-name">AIM Degreaser</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Heavy-duty engine degreaser</p>
+                        <div class="product-price">Rs. 425</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg" alt="AIM Glass Cleaner" class="product-image">
+                        <h4 class="product-name">AIM Glass Cleaner</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Professional glass cleaning</p>
+                        <div class="product-price">Rs. 425</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg" alt="AIM Dashboard Cleaner" class="product-image">
+                        <h4 class="product-name">AIM Dashboard Cleaner</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Interior dashboard cleaner</p>
+                        <div class="product-price">Rs. 375</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg" alt="AIM Tire Foam" class="product-image">
+                        <h4 class="product-name">AIM Tire Foam</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Tire cleaning and dressing</p>
+                        <div class="product-price">Rs. 425</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg" alt="AIM Brake Cleaner" class="product-image">
+                        <h4 class="product-name">AIM Brake Cleaner</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Brake system cleaner</p>
+                        <div class="product-price">Rs. 550</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.36 AM.jpeg" alt="AIM Carburetor Cleaner" class="product-image">
+                        <h4 class="product-name">AIM Carburetor Cleaner</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Carburetor cleaning solution</p>
+                        <div class="product-price">Rs. 350</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WD-40 Products -->
+            <div class="content-section">
+                <h3 class="section-title">WD-40 Multi-Use Products</h3>
+                <div class="grid-3">
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Multi-Function Product.jpg" alt="WD-40 Multi-Function" class="product-image">
+                        <h4 class="product-name">WD-40 Multi-Function</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Multi-purpose lubricant</p>
+                        <div class="product-price">Rs. 375</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Multi-Purpose 450.jpg" alt="WD-40 Multi-Purpose 450" class="product-image">
+                        <h4 class="product-name">WD-40 Multi-Purpose 450</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">450ml multi-purpose</p>
+                        <div class="product-price">Rs. 1250</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Specialist.jpg" alt="WD-40 Specialist" class="product-image">
+                        <h4 class="product-name">WD-40 Specialist</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Specialist formula</p>
+                        <div class="product-price">Rs. 800</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Contact Cleaner.jpg" alt="WD-40 Contact Cleaner" class="product-image">
+                        <h4 class="product-name">WD-40 Contact Cleaner</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Electrical contact cleaner</p>
+                        <div class="product-price">Rs. 600</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DTR Products -->
+            <div class="content-section">
+                <h3 class="section-title">DTR Cleaning Products</h3>
+                <div class="grid-3">
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/WD-40/DTR Brake Cleaner.jpg" alt="DTR Brake Cleaner" class="product-image">
+                        <h4 class="product-name">DTR Brake Cleaner</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Brake system cleaner</p>
+                        <div class="product-price">Rs. 550</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/WD-40/DTR Carburetor Cleaner.jpg" alt="DTR Carburetor Cleaner" class="product-image">
+                        <h4 class="product-name">DTR Carburetor Cleaner</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Carburetor cleaning</p>
+                        <div class="product-price">Rs. 350</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/WD-40/DTR Contact Cleaner.jpg" alt="DTR Contact Cleaner" class="product-image">
+                        <h4 class="product-name">DTR Contact Cleaner</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Electrical contact cleaner</p>
+                        <div class="product-price">Rs. 450</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/WD-40/DTR Engine Cleaner.jpg" alt="DTR Engine Cleaner" class="product-image">
+                        <h4 class="product-name">DTR Engine Cleaner</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Engine cleaning solution</p>
+                        <div class="product-price">Rs. 425</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Areon Products -->
+            <div class="content-section">
+                <h3 class="section-title">Areon Air Fresheners</h3>
+                <div class="grid-3">
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/AERON/Areon Air Freshener.jpg" alt="Areon Air Freshener" class="product-image">
+                        <h4 class="product-name">Areon Air Freshener</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Car air freshener</p>
+                        <div class="product-price">Rs. 150</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/AERON/Areon Fabric Freshener.jpg" alt="Areon Fabric Freshener" class="product-image">
+                        <h4 class="product-name">Areon Fabric Freshener</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Fabric freshener spray</p>
+                        <div class="product-price">Rs. 200</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/AERON/Areon Interior Spray.jpg" alt="Areon Interior Spray" class="product-image">
+                        <h4 class="product-name">Areon Interior Spray</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Interior freshener</p>
+                        <div class="product-price">Rs. 250</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Microfiber Products -->
+            <div class="content-section">
+                <h3 class="section-title">Microfiber Towels & Cloths</h3>
+                <div class="grid-3">
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/SINGLE MICROFIBER TOWEL.jpeg" alt="Single Microfiber Towel" class="product-image">
+                        <h4 class="product-name">Single Microfiber Towel</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Premium microfiber towel</p>
+                        <div class="product-price">Rs. 600</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/SINGLE PACK MICROFIBER CLOTH.jpeg" alt="Single Microfiber Cloth" class="product-image">
+                        <h4 class="product-name">Single Microfiber Cloth</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Professional cleaning cloth</p>
+                        <div class="product-price">Rs. 400</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/PACK OF 2 MICROFIBER CLOTH.jpeg" alt="Pack of 2 Microfiber Cloths" class="product-image">
+                        <h4 class="product-name">Pack of 2 Microfiber Cloths</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Value pack cleaning cloths</p>
+                        <div class="product-price">Rs. 700</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/PACK OF 2 MICROFIBER TOWEL.jpeg" alt="Pack of 2 Microfiber Towels" class="product-image">
+                        <h4 class="product-name">Pack of 2 Microfiber Towels</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Value pack towels</p>
+                        <div class="product-price">Rs. 1050</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/PACK OF 4  MICROFIBER TOWEL.jpeg" alt="Pack of 4 Microfiber Towels" class="product-image">
+                        <h4 class="product-name">Pack of 4 Microfiber Towels</h4>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 10px;">Bulk pack towels</p>
+                        <div class="product-price">Rs. 1350</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Special Bundles Section -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2 class="page-title">Special Bundles</h2>
+                <p class="page-subtitle">Premium Product Packages</p>
+            </div>
+            
+            <div class="content-section">
+                <h3 class="section-title">Featured Bundles</h3>
+                <div class="grid-2">
+                    <div class="bundle-card">
+                        <div class="bundle-badge">BEST VALUE</div>
+                        <img src="products/CAR WASH & WAX/F1-113 CERAMIC LIQUID WAX.jpeg?v=1.0.3" alt="Complete Car Care Kit" class="bundle-image">
+                        <h4 class="bundle-title">Complete Car Care Kit</h4>
+                        <div class="bundle-price">Rs. 2,500</div>
+                        <p style="color: #6b7280; margin-bottom: 15px;">Complete car care solution with premium products</p>
+                        <ul class="bundle-items">
+                            <li>F1-113 Ceramic Liquid Wax (500ml)</li>
+                            <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
+                            <li>Microfiber Towel Pack (6 pieces)</li>
+                            <li>F1-117 Glass Cleaner (500ml)</li>
+                            <li>F1-130 Scratch Out Paste</li>
+                            <li>F1-101 Carnuba Wash & Wax</li>
+                            <li>A-131 AIM Glass Cleaner</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bundle-card">
+                        <img src="products/CLEANERS/F1-119 LEATHER CLEANER +CONDITIONER.jpeg?v=1.0.3" alt="Interior Care Package" class="bundle-image">
+                        <h4 class="bundle-title">Interior Care Package</h4>
+                        <div class="bundle-price">Rs. 1,800</div>
+                        <p style="color: #6b7280; margin-bottom: 15px;">Complete interior cleaning and protection</p>
+                        <ul class="bundle-items">
+                            <li>AIM Interior Spray (500ml)</li>
+                            <li>AIM Fabric Freshener (500ml)</li>
+                            <li>Microfiber Cloth Pack (4 pieces)</li>
+                            <li>AIM Furniture Polish (500ml)</li>
+                            <li>Leather & Tyre Wax</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page Section -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2 class="page-title">Contact Information</h2>
+                <p class="page-subtitle">Get in Touch</p>
+            </div>
+            
+            <div class="content-section">
+                <h3 class="section-title">Contact Details</h3>
+                <div class="grid-2">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+92 323 4890184</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@autochampion.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p>+92 323 4890184</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Pakistan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">Business Hours</h3>
+                <div class="business-hours">
+                    <div class="hours-row">
+                        <span style="font-weight: 600; color: #1f2937;">Monday - Friday</span>
+                        <span style="font-weight: 700; color: #0A4174;">10:00 AM - 8:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span style="font-weight: 600; color: #1f2937;">Saturday</span>
+                        <span style="font-weight: 700; color: #0A4174;">10:00 AM - 8:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span style="font-weight: 600; color: #1f2937;">Sunday</span>
+                        <span style="font-weight: 700; color: #0A4174;">Closed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">Contact Form</h3>
+                <div class="card">
+                    <p style="color: #6b7280; margin-bottom: 20px;">Our contact form includes the following fields:</p>
+                    <ul style="list-style: none; padding: 0; space-y: 10px;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">
+                            <strong>Full Name *</strong> - Required field for customer identification
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">
+                            <strong>Email Address *</strong> - Required for communication
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">
+                            <strong>Phone Number</strong> - Optional contact method
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">
+                            <strong>Company Name</strong> - For business inquiries
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">
+                            <strong>Product Interest</strong> - Dropdown selection of product categories
+                        </li>
+                        <li style="padding: 8px 0;">
+                            <strong>Message *</strong> - Required field for inquiry details
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3>Auto Champion - Your Trusted Partner for Premium Automotive Care</h3>
+            <p>For inquiries and orders, contact us at +92 323 4890184 or info@autochampion.com</p>
+            <p>Website PDF generated on: <span id="currentDate2"></span></p>
+        </div>
+    </div>
+
+    <!-- Download Section -->
+    <div class="download-section">
+        <h2>Download Complete Website PDF</h2>
+        <p>Get the full Auto Champion website overview in PDF format</p>
+        <button class="download-btn" onclick="generateSitePDF()">
+            <i class="fas fa-download"></i>
+            Download Website PDF
+        </button>
+    </div>
+
+    <script>
+        // Set current date
+        const currentDate = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        document.getElementById('currentDate').textContent = currentDate;
+        document.getElementById('currentDate2').textContent = currentDate;
+
+        // Generate PDF function
+        function generateSitePDF() {
+            const element = document.getElementById('sitePDF');
+            const opt = {
+                margin: 1,
+                filename: 'Auto-Champion-Complete-Website-2024.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+
+            // Show loading message
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            btn.disabled = true;
+
+            // Generate PDF
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Restore button
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                
+                // Show success message
+                alert('Website PDF generated successfully!');
+            }).catch(err => {
+                console.error('PDF generation failed:', err);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('PDF generation failed. Please try again.');
+            });
+        }
+
+        // Add FontAwesome icons
+        const script = document.createElement('script');
+        script.src = 'https://kit.fontawesome.com/your-fontawesome-kit.js';
+        script.crossOrigin = 'anonymous';
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>

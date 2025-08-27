@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Champion - Complete Product Catalogue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .catalogue-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #0A4174;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #0A4174;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #0A4174;
+            font-weight: 600;
+        }
+        
+        .brand-section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+        
+        .brand-header {
+            background: linear-gradient(135deg, #0A4174, #1a5a8f);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .brand-icon {
+            font-size: 2rem;
+        }
+        
+        .brand-title {
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .product-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .product-card:hover {
+            border-color: #0A4174;
+            box-shadow: 0 10px 25px rgba(10, 65, 116, 0.1);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .product-description {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #0A4174;
+            margin-bottom: 15px;
+        }
+        
+        .product-code {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .features-list li {
+            padding: 5px 0;
+            color: #4b5563;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .features-list li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: 15px;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #0A4174, #1a5a8f);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(10, 65, 116, 0.3);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+            color: #6b7280;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .catalogue-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .download-section {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="catalogue-container" id="catalogue">
+        <!-- Header -->
+        <div class="header">
+            <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="logo">
+            <h1 class="title">Auto Champion</h1>
+            <p class="subtitle">Complete Product Catalogue 2024</p>
+            <p>Premium Automotive Care Products</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+92 300 1234567</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@autochampion.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Pakistan</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formula 1 Products -->
+        <div class="brand-section">
+            <div class="brand-header">
+                <i class="fas fa-car brand-icon"></i>
+                <h2 class="brand-title">Formula 1 Car Care</h2>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.23 AM.jpeg" alt="F1-120 Protectant Spray" class="product-image">
+                    <div class="product-code">F1-120</div>
+                    <h3 class="product-name">F1-120 Protectant Spray</h3>
+                    <p class="product-description">Cleans, shines & protects - 680ML</p>
+                    <div class="product-price">Rs. 1750</div>
+                    <ul class="features-list">
+                        <li>Professional grade protection</li>
+                        <li>Long-lasting shine</li>
+                        <li>Safe for all surfaces</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="F1-131 Black Gold Tire Shine" class="product-image">
+                    <div class="product-code">F1-131</div>
+                    <h3 class="product-name">F1-131 Black Gold Tire Shine</h3>
+                    <p class="product-description">High shine, dries fast - 680ML</p>
+                    <div class="product-price">Rs. 1750</div>
+                    <ul class="features-list">
+                        <li>High gloss finish</li>
+                        <li>Quick drying formula</li>
+                        <li>UV protection</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.27 AM.jpeg" alt="F1-125 Protectant Spray Vanilla" class="product-image">
+                    <div class="product-code">F1-125</div>
+                    <h3 class="product-name">F1-125 Protectant Spray</h3>
+                    <p class="product-description">Vanilla fragrance - 295ML</p>
+                    <div class="product-price">Rs. 1125</div>
+                    <ul class="features-list">
+                        <li>Vanilla fragrance</li>
+                        <li>Interior protection</li>
+                        <li>Fresh scent</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.37 AM.jpeg" alt="F1-110 Color Wax Ceramic" class="product-image">
+                    <div class="product-code">F1-110</div>
+                    <h3 class="product-name">F1-110 Color Wax Ceramic</h3>
+                    <p class="product-description">Restores color & UV protection - 680ML</p>
+                    <div class="product-price">Rs. 1750</div>
+                    <ul class="features-list">
+                        <li>Color restoration</li>
+                        <li>UV protection</li>
+                        <li>Ceramic coating</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.38 AM.jpeg" alt="F1-104 Carnauba Liquid Wax" class="product-image">
+                    <div class="product-code">F1-104</div>
+                    <h3 class="product-name">F1-104 Carnauba Liquid Wax</h3>
+                    <p class="product-description">Brilliant shine, long lasting - 473ML</p>
+                    <div class="product-price">Rs. 1400</div>
+                    <ul class="features-list">
+                        <li>Natural carnauba wax</li>
+                        <li>Long-lasting protection</li>
+                        <li>Deep shine</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.39 AM.jpeg" alt="F1-111 Color Wax Ceramic" class="product-image">
+                    <div class="product-code">F1-111</div>
+                    <h3 class="product-name">F1-111 Color Wax Ceramic</h3>
+                    <p class="product-description">Restores color & UV protection - 680ML</p>
+                    <div class="product-price">Rs. 1750</div>
+                    <ul class="features-list">
+                        <li>Color enhancement</li>
+                        <li>UV protection</li>
+                        <li>Ceramic technology</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- AIM Products -->
+        <div class="brand-section">
+            <div class="brand-header">
+                <i class="fas fa-tools brand-icon"></i>
+                <h2 class="brand-title">AIM Cleaning Products</h2>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="AIM Degreaser" class="product-image">
+                    <div class="product-code">A-101</div>
+                    <h3 class="product-name">AIM Degreaser</h3>
+                    <p class="product-description">Heavy-duty engine degreaser</p>
+                    <div class="product-price">Rs. 425</div>
+                    <ul class="features-list">
+                        <li>Heavy-duty cleaning</li>
+                        <li>Engine safe</li>
+                        <li>Fast acting</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg" alt="AIM Glass Cleaner" class="product-image">
+                    <div class="product-code">A-131</div>
+                    <h3 class="product-name">AIM Glass Cleaner</h3>
+                    <p class="product-description">Professional glass cleaning solution</p>
+                    <div class="product-price">Rs. 425</div>
+                    <ul class="features-list">
+                        <li>Streak-free finish</li>
+                        <li>Safe for all glass</li>
+                        <li>Professional grade</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg" alt="AIM Dashboard Cleaner" class="product-image">
+                    <div class="product-code">A-103</div>
+                    <h3 class="product-name">AIM Dashboard Cleaner</h3>
+                    <p class="product-description">Interior dashboard cleaner</p>
+                    <div class="product-price">Rs. 375</div>
+                    <ul class="features-list">
+                        <li>Interior safe</li>
+                        <li>Anti-static</li>
+                        <li>UV protection</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg" alt="AIM Tire Foam" class="product-image">
+                    <div class="product-code">A-127</div>
+                    <h3 class="product-name">AIM Tire Foam</h3>
+                    <p class="product-description">Tire cleaning and dressing foam</p>
+                    <div class="product-price">Rs. 425</div>
+                    <ul class="features-list">
+                        <li>Foam application</li>
+                        <li>Deep cleaning</li>
+                        <li>Long-lasting shine</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg" alt="AIM Brake Cleaner" class="product-image">
+                    <div class="product-code">A-105</div>
+                    <h3 class="product-name">AIM Brake Cleaner</h3>
+                    <p class="product-description">Brake system cleaner</p>
+                    <div class="product-price">Rs. 550</div>
+                    <ul class="features-list">
+                        <li>Brake system safe</li>
+                        <li>Fast evaporation</li>
+                        <li>No residue</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.36 AM.jpeg" alt="AIM Carburetor Cleaner" class="product-image">
+                    <div class="product-code">A-112</div>
+                    <h3 class="product-name">AIM Carburetor Cleaner</h3>
+                    <p class="product-description">Carburetor cleaning solution</p>
+                    <div class="product-price">Rs. 350</div>
+                    <ul class="features-list">
+                        <li>Carburetor specific</li>
+                        <li>Removes deposits</li>
+                        <li>Improves performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- WD-40 Products -->
+        <div class="brand-section">
+            <div class="brand-header">
+                <i class="fas fa-oil-can brand-icon"></i>
+                <h2 class="brand-title">WD-40 Multi-Use Products</h2>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/WD-40/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="WD-40 50ML" class="product-image">
+                    <div class="product-code">WD-40</div>
+                    <h3 class="product-name">WD-40 Multi-Use 50ML</h3>
+                    <p class="product-description">Multi-purpose lubricant and cleaner</p>
+                    <div class="product-price">Rs. 375</div>
+                    <ul class="features-list">
+                        <li>Multi-purpose use</li>
+                        <li>Lubricates and protects</li>
+                        <li>Removes rust</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/WD-40/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg" alt="WD-40 100ML" class="product-image">
+                    <div class="product-code">WD-40</div>
+                    <h3 class="product-name">WD-40 Multi-Use 100ML</h3>
+                    <p class="product-description">Multi-purpose lubricant and cleaner</p>
+                    <div class="product-price">Rs. 600</div>
+                    <ul class="features-list">
+                        <li>Larger size</li>
+                        <li>Better value</li>
+                        <li>Same quality</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/WD-40/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg" alt="WD-40 200ML" class="product-image">
+                    <div class="product-code">WD-40</div>
+                    <h3 class="product-name">WD-40 Multi-Use 200ML</h3>
+                    <p class="product-description">Multi-purpose lubricant and cleaner</p>
+                    <div class="product-price">Rs. 800</div>
+                    <ul class="features-list">
+                        <li>Professional size</li>
+                        <li>Cost effective</li>
+                        <li>Long lasting</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/WD-40/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg" alt="WD-40 330ML" class="product-image">
+                    <div class="product-code">WD-40</div>
+                    <h3 class="product-name">WD-40 Multi-Use 330ML</h3>
+                    <p class="product-description">Multi-purpose lubricant and cleaner</p>
+                    <div class="product-price">Rs. 1100</div>
+                    <ul class="features-list">
+                        <li>Large size</li>
+                        <li>Best value</li>
+                        <li>Professional use</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/WD-40/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg" alt="WD-40 440ML" class="product-image">
+                    <div class="product-code">WD-40</div>
+                    <h3 class="product-name">WD-40 Multi-Use 440ML</h3>
+                    <p class="product-description">Multi-purpose lubricant and cleaner</p>
+                    <div class="product-price">Rs. 1250</div>
+                    <ul class="features-list">
+                        <li>Extra large size</li>
+                        <li>Maximum value</li>
+                        <li>Workshop ready</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Microfiber Products -->
+        <div class="brand-section">
+            <div class="brand-header">
+                <i class="fas fa-tshirt brand-icon"></i>
+                <h2 class="brand-title">Microfiber Products</h2>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Microfiber/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="Microfiber Cloth X Large" class="product-image">
+                    <div class="product-code">MF-001</div>
+                    <h3 class="product-name">Microfiber Cloth X Large</h3>
+                    <p class="product-description">Extra large microfiber cleaning cloth</p>
+                    <div class="product-price">Rs. 400</div>
+                    <ul class="features-list">
+                        <li>Extra large size</li>
+                        <li>Ultra-soft material</li>
+                        <li>Lint-free cleaning</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Microfiber/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg" alt="Microfiber Towel X Large" class="product-image">
+                    <div class="product-code">MF-002</div>
+                    <h3 class="product-name">Microfiber Towel X Large</h3>
+                    <p class="product-description">Extra large microfiber towel</p>
+                    <div class="product-price">Rs. 600</div>
+                    <ul class="features-list">
+                        <li>High absorbency</li>
+                        <li>Quick drying</li>
+                        <li>Scratch-free</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Microfiber/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg" alt="Microfiber Glass Cleaner" class="product-image">
+                    <div class="product-code">MF-003</div>
+                    <h3 class="product-name">Microfiber Glass Cleaner</h3>
+                    <p class="product-description">Specialized glass cleaning cloth</p>
+                    <div class="product-price">Rs. 350</div>
+                    <ul class="features-list">
+                        <li>Glass specific</li>
+                        <li>Streak-free finish</li>
+                        <li>Ultra-fine fibers</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Microfiber/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg" alt="Microfiber Designed Cloth Mix" class="product-image">
+                    <div class="product-code">MF-004</div>
+                    <h3 class="product-name">Microfiber Designed Cloth Mix</h3>
+                    <p class="product-description">Assorted microfiber cloths</p>
+                    <div class="product-price">Rs. 550</div>
+                    <ul class="features-list">
+                        <li>Assorted colors</li>
+                        <li>Multiple sizes</li>
+                        <li>Versatile use</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Microfiber/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg" alt="Microfiber Cloth Pack of 2" class="product-image">
+                    <div class="product-code">MF-005</div>
+                    <h3 class="product-name">Microfiber Cloth Pack of 2</h3>
+                    <p class="product-description">Two-pack microfiber cloths</p>
+                    <div class="product-price">Rs. 700</div>
+                    <ul class="features-list">
+                        <li>Two cloths included</li>
+                        <li>Better value</li>
+                        <li>Backup ready</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="BRANDWISE PRODUCTS/Microfiber/WhatsApp Image 2025-08-01 at 11.11.36 AM.jpeg" alt="Microfiber Towel Pack of 2" class="product-image">
+                    <div class="product-code">MF-006</div>
+                    <h3 class="product-name">Microfiber Towel Pack of 2</h3>
+                    <p class="product-description">Two-pack microfiber towels</p>
+                    <div class="product-price">Rs. 1050</div>
+                    <ul class="features-list">
+                        <li>Two towels included</li>
+                        <li>High absorbency</li>
+                        <li>Professional grade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Special Bundles -->
+        <div class="brand-section">
+            <div class="brand-header">
+                <i class="fas fa-gift brand-icon"></i>
+                <h2 class="brand-title">Special Bundles</h2>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="products/CAR WASH & WAX/F1-113 CERAMIC LIQUID WAX.jpeg?v=1.0.3" alt="Complete Car Care Kit" class="product-image">
+                    <div class="product-code">BUNDLE-001</div>
+                    <h3 class="product-name">Complete Car Care Kit</h3>
+                    <p class="product-description">Complete car care solution with premium products</p>
+                    <div class="product-price">Rs. 2,500</div>
+                    <ul class="features-list">
+                        <li>F1-113 Ceramic Liquid Wax (500ml)</li>
+                        <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
+                        <li>Microfiber Towel Pack (6 pieces)</li>
+                        <li>F1-117 Glass Cleaner (500ml)</li>
+                        <li>F1-130 Scratch Out Paste</li>
+                        <li>F1-101 Carnuba Wash & Wax</li>
+                        <li>A-131 AIM Glass Cleaner</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="products/CLEANERS/F1-119 LEATHER CLEANER +CONDITIONER.jpeg?v=1.0.3" alt="Interior Care Package" class="product-image">
+                    <div class="product-code">BUNDLE-002</div>
+                    <h3 class="product-name">Interior Care Package</h3>
+                    <p class="product-description">Complete interior cleaning and protection</p>
+                    <div class="product-price">Rs. 1,800</div>
+                    <ul class="features-list">
+                        <li>AIM Interior Spray (500ml)</li>
+                        <li>AIM Fabric Freshener (500ml)</li>
+                        <li>Microfiber Cloth Pack (4 pieces)</li>
+                        <li>AIM Furniture Polish (500ml)</li>
+                        <li>Leather & Tyre Wax</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="products/CAR WASH & WAX/F1-101 CARNAUBA WASH &WAX.jpeg?v=1.0.3" alt="Exterior Protection Kit" class="product-image">
+                    <div class="product-code">BUNDLE-003</div>
+                    <h3 class="product-name">Exterior Protection Kit</h3>
+                    <p class="product-description">Professional exterior protection and shine</p>
+                    <div class="product-price">Rs. 2,200</div>
+                    <ul class="features-list">
+                        <li>F1-113 Ceramic Liquid Wax (500ml)</li>
+                        <li>F1-132 Wheel & Tire Foam Cleaner (500ml)</li>
+                        <li>F1-117 Glass Cleaner (500ml)</li>
+                        <li>Microfiber Towel Pack (4 pieces)</li>
+                        <li>F1-101 Carnuba Wash & Wax</li>
+                        <li>Scratch Out Liquid</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3>Auto Champion - Your Trusted Partner for Premium Automotive Care</h3>
+            <p>For inquiries and orders, contact us at +92 300 1234567 or info@autochampion.com</p>
+            <p>Catalogue generated on: <span id="currentDate"></span></p>
+        </div>
+    </div>
+
+    <!-- Download Section -->
+    <div class="download-section">
+        <h2>Download Complete Catalogue</h2>
+        <p>Get the full Auto Champion product catalogue in PDF format</p>
+        <button class="download-btn" onclick="generatePDF()">
+            <i class="fas fa-download"></i>
+            Download PDF Catalogue
+        </button>
+    </div>
+
+    <script>
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Generate PDF function
+        function generatePDF() {
+            const element = document.getElementById('catalogue');
+            const opt = {
+                margin: 1,
+                filename: 'Auto-Champion-Complete-Catalogue-2024.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+
+            // Show loading message
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            btn.disabled = true;
+
+            // Generate PDF
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Restore button
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                
+                // Show success message
+                alert('PDF Catalogue generated successfully!');
+            }).catch(err => {
+                console.error('PDF generation failed:', err);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('PDF generation failed. Please try again.');
+            });
+        }
+
+        // Add FontAwesome icons
+        const script = document.createElement('script');
+        script.src = 'https://kit.fontawesome.com/your-fontawesome-kit.js';
+        script.crossOrigin = 'anonymous';
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>

@@ -238,6 +238,203 @@
                         </div>
     </section>
 
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-800 mb-4">
+                        Send us a Message
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Get in touch with us for inquiries, orders, or technical support. We're here to help you with all your automotive care needs.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 border-2 border-gray-200 shadow-xl">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Form</h3>
+                        
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Full Name *
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="fullName" 
+                                        name="fullName" 
+                                        placeholder="Your full name"
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none transition-colors"
+                                        required
+                                    >
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Email Address *
+                                    </label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        placeholder="your.email@company.com"
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none transition-colors"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Phone Number
+                                    </label>
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        name="phone" 
+                                        placeholder="+92 300 1234567"
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none transition-colors"
+                                    >
+                                </div>
+                                
+                                <div>
+                                    <label for="company" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Company Name
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="company" 
+                                        name="company" 
+                                        placeholder="Your company name"
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none transition-colors"
+                                    >
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="productInterest" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Product Interest
+                                </label>
+                                <select 
+                                    id="productInterest" 
+                                    name="productInterest"
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none transition-colors"
+                                >
+                                    <option value="">Select a product</option>
+                                    <option value="formula1">Formula 1 Car Care Products</option>
+                                    <option value="aim">AIM Cleaning Products</option>
+                                    <option value="wd40">WD-40 Multi-Use Products</option>
+                                    <option value="microfiber">Microfiber Products</option>
+                                    <option value="areon">Areon Air Fresheners</option>
+                                    <option value="dtr">DTR Cleaning Products</option>
+                                    <option value="bundles">Special Bundles</option>
+                                    <option value="other">Other Products</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Message *
+                                </label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    rows="5"
+                                    placeholder="Tell us about your packaging needs..."
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none transition-colors resize-none"
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button 
+                                    type="submit" 
+                                    class="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-105 shadow-lg"
+                                >
+                                    <i class="fas fa-paper-plane mr-2"></i>
+                                    Send Message
+                                </button>
+                                
+                                <a 
+                                    href="https://wa.me/923234890184?text=Hi, I'm interested in Auto Champion products. Can you help me?" 
+                                    target="_blank"
+                                    class="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg text-center"
+                                >
+                                    <i class="fab fa-whatsapp mr-2"></i>
+                                    Chat on WhatsApp
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-3xl p-8 border-2 border-gray-200 shadow-xl">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Quick Contact</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4 p-4 bg-gradient-to-r from-primary-50 to-primary-100 rounded-xl">
+                                    <div class="bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-phone text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800">Phone</p>
+                                        <p class="text-primary-600 font-bold">+92 323 4890184</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4 p-4 bg-gradient-to-r from-secondary-50 to-secondary-100 rounded-xl">
+                                    <div class="bg-secondary-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-envelope text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800">Email</p>
+                                        <p class="text-secondary-600 font-bold">info@autochampion.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-xl">
+                                    <div class="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                        <i class="fab fa-whatsapp text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800">WhatsApp</p>
+                                        <p class="text-green-600 font-bold">+92 323 4890184</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-3xl p-8 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Why Contact Us?</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-green-300"></i>
+                                    <span>Bulk order discounts</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-green-300"></i>
+                                    <span>Technical support</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-green-300"></i>
+                                    <span>Product recommendations</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-green-300"></i>
+                                    <span>Custom solutions</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Business Hours Section -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -296,7 +493,77 @@
             const cartCount = document.getElementById('cartCount');
             const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
             cartCount.textContent = totalItems;
+
+            // Contact form handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleContactForm);
+            }
         });
+
+        // Handle contact form submission
+        function handleContactForm(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const formObject = Object.fromEntries(formData);
+            
+            // Validate required fields
+            if (!formObject.fullName || !formObject.email || !formObject.message) {
+                showNotification('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formObject.email)) {
+                showNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            // Simulate form submission (in real implementation, this would send to server)
+            showNotification('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Show notification
+        function showNotification(message, type = 'success') {
+            // Remove existing notification
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `fixed top-20 right-4 z-50 p-4 rounded-xl shadow-lg transform translate-x-full transition-transform duration-300 ${
+                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+            }`;
+            
+            notification.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                    <span class="font-semibold">${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Hide notification after 5 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(full)';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 5000);
+        }
     </script>
 </body>
 </html> 

@@ -122,286 +122,442 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
+        <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-900 to-primary-800 shadow-xl">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+        <div class="container mx-auto px-3 sm:px-4 py-2 sm:py-4">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4">
                 <!-- Logo -->
-                <div class="flex items-center gap-4">
-                    <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="h-16 w-auto rounded-lg border-2 border-white shadow-lg">
-                    <h1 class="text-3xl lg:text-4xl font-black text-white uppercase tracking-wider">
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="h-12 sm:h-16 w-auto rounded-lg border-2 border-white shadow-lg">
+                    <h1 class="text-xl sm:text-3xl lg:text-4xl font-black text-white uppercase tracking-wider">
                         Auto Champion
                     </h1>
                 </div>
                 
                 <!-- Navigation -->
-                <nav class="flex flex-wrap gap-2 lg:gap-4">
-                    <a href="index.html" class="px-4 py-2 bg-primary-700 text-white rounded-full text-sm font-semibold hover:bg-secondary-600 transition-colors">
+                <nav class="flex flex-wrap gap-1 sm:gap-2 lg:gap-4 justify-center">
+                    <a href="index.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
                         Home
                     </a>
-                    <a href="shop.html" class="px-4 py-2 bg-white text-primary-900 rounded-full text-sm font-semibold hover:bg-secondary-600 hover:text-white transition-colors">
+                    <a href="shop.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-primary-900 rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 hover:text-white transition-colors">
                         Shop
                     </a>
-                    <a href="special-bundles.html" class="px-4 py-2 bg-primary-700 text-white rounded-full text-sm font-semibold hover:bg-secondary-600 transition-colors">
+                    <a href="special-bundles.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
                         Special Bundles
                     </a>
-                    <a href="catalogue.html" class="px-4 py-2 bg-primary-700 text-white rounded-full text-sm font-semibold hover:bg-secondary-600 transition-colors">
+                    <a href="catalogue.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
                         Catalogue
                     </a>
-                    <a href="contact.html" class="px-4 py-2 bg-primary-700 text-white rounded-full text-sm font-semibold hover:bg-secondary-600 transition-colors">
+                    <a href="contact.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
                         Contact
                     </a>
-                </nav>
+        </nav>
                 
                 <!-- Cart Icon -->
                 <div class="relative">
                     <a href="cart.html" class="text-white text-2xl hover:text-secondary-400 transition-colors">
-                        <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-cart"></i>
                         <span class="absolute -top-2 -right-2 bg-secondary-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold" id="cartCount">0</span>
-                    </a>
+            </a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="pt-24 pb-16">
+    <main class="pt-20 sm:pt-24 pb-16">
         <div class="container mx-auto px-4">
-            <!-- Hero Section -->
-            <section class="text-center py-16">
-                <h1 class="text-4xl lg:text-6xl font-bold text-primary-900 mb-6">
+    <!-- Hero Section -->
+            <section class="text-center py-8 sm:py-16">
+                <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-primary-900 mb-4 sm:mb-6">
                     Our Products
                 </h1>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
                     Discover our comprehensive range of automotive care products
                 </p>
-            </section>
+    </section>
 
             <!-- Content Area -->
-            <section class="py-8">
+            <section class="py-6 sm:py-8">
                 <!-- Brand Navigation -->
-                <div class="mb-8">
-                    <h2 class="text-2xl font-bold text-primary-900 mb-6 text-center">Shop by Brand</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                        <button class="brand-btn active bg-gradient-to-r from-red-500 to-red-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-transform" data-brand="formula1">
-                            <i class="fas fa-car text-2xl mb-2"></i>
-                            <div class="font-bold">Formula 1</div>
-                        </button>
-                        <button class="brand-btn bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-transform" data-brand="aim">
-                            <i class="fas fa-tools text-2xl mb-2"></i>
-                            <div class="font-bold">AIM</div>
-                        </button>
-                        <button class="brand-btn bg-gradient-to-r from-purple-500 to-purple-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-transform" data-brand="areon">
-                            <i class="fas fa-spray-can text-2xl mb-2"></i>
-                            <div class="font-bold">Areon</div>
-                        </button>
-                        <button class="brand-btn bg-gradient-to-r from-yellow-500 to-yellow-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-transform" data-brand="wd40">
-                            <i class="fas fa-oil-can text-2xl mb-2"></i>
-                            <div class="font-bold">WD-40</div>
-                        </button>
-                        <button class="brand-btn bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-transform" data-brand="dtr">
-                            <i class="fas fa-cog text-2xl mb-2"></i>
-                            <div class="font-bold">DTR</div>
-                        </button>
-                        <button class="brand-btn bg-gradient-to-r from-gray-500 to-gray-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-transform" data-brand="microfiber">
-                            <i class="fas fa-tshirt text-2xl mb-2"></i>
-                            <div class="font-bold">Microfiber</div>
-                        </button>
-                    </div>
+                <div class="mb-6 sm:mb-8">
+                    <h2 class="text-xl sm:text-2xl font-bold text-primary-900 mb-4 sm:mb-6 text-center">Shop by Brand</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4">
+                        <button class="brand-btn active bg-gradient-to-r from-red-500 to-red-600 text-white p-2 sm:p-4 rounded-lg sm:rounded-xl text-center hover:scale-105 transition-transform" data-brand="formula1">
+                            <i class="fas fa-car text-lg sm:text-2xl mb-1 sm:mb-2"></i>
+                            <div class="font-bold text-xs sm:text-sm">Formula 1</div>
+                    </button>
+                        <button class="brand-btn bg-gradient-to-r from-blue-500 to-blue-600 text-white p-2 sm:p-4 rounded-lg sm:rounded-xl text-center hover:scale-105 transition-transform" data-brand="aim">
+                            <i class="fas fa-tools text-lg sm:text-2xl mb-1 sm:mb-2"></i>
+                            <div class="font-bold text-xs sm:text-sm">AIM</div>
+                    </button>
+                        <button class="brand-btn bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-4 rounded-lg sm:rounded-xl text-center hover:scale-105 transition-transform" data-brand="areon">
+                            <i class="fas fa-spray-can text-lg sm:text-2xl mb-1 sm:mb-2"></i>
+                            <div class="font-bold text-xs sm:text-sm">Areon</div>
+                    </button>
+                        <button class="brand-btn bg-gradient-to-r from-yellow-500 to-yellow-600 text-white p-2 sm:p-4 rounded-lg sm:rounded-xl text-center hover:scale-105 transition-transform" data-brand="wd40">
+                            <i class="fas fa-oil-can text-lg sm:text-2xl mb-1 sm:mb-2"></i>
+                            <div class="font-bold text-xs sm:text-sm">WD-40</div>
+                    </button>
+                        <button class="brand-btn bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-4 rounded-lg sm:rounded-xl text-center hover:scale-105 transition-transform" data-brand="dtr">
+                            <i class="fas fa-cog text-lg sm:text-2xl mb-1 sm:mb-2"></i>
+                            <div class="font-bold text-xs sm:text-sm">DTR</div>
+                    </button>
+                        <button class="brand-btn bg-gradient-to-r from-gray-500 to-gray-600 text-white p-2 sm:p-4 rounded-lg sm:rounded-xl text-center hover:scale-105 transition-transform" data-brand="microfiber">
+                            <i class="fas fa-tshirt text-lg sm:text-2xl mb-1 sm:mb-2"></i>
+                            <div class="font-bold text-xs sm:text-sm">Microfiber</div>
+                    </button>
                 </div>
+            </div>
 
                 <!-- Formula 1 Products -->
                 <div id="formula1" class="brand-section">
-                    <h3 class="text-2xl font-bold text-red-600 mb-6 text-center">Formula 1 Car Care Products</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="formula1-products">
+                    <h3 class="text-xl sm:text-2xl font-bold text-red-600 mb-4 sm:mb-6 text-center">Formula 1 Car Care Products</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" id="formula1-products">
                         <!-- Initial 8 products shown -->
-                        <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.23 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">Formula 1 Car Wash</h4>
-                                <p class="text-gray-600 text-sm mb-3">Professional car wash solution</p>
+                    <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.23 AM.jpeg" alt="F1-120 Protectant Spray" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <div class="p-3 sm:p-4">
+                                <h4 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">F1-120 Protectant Spray</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Cleans, shines & protects - 680ML</p>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 850</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Car Wash', 850, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.23 AM.jpeg')">
+                                    <span class="text-primary-600 font-bold text-sm sm:text-base">Rs. 1750</span>
+                                    <button class="add-to-cart-btn text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2" onclick="addToCart('F1-120 Protectant Spray', 1750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.23 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
+            </div>
                         </div>
-                        <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.24 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                    </div>
+                    <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.24 AM.jpeg" alt="F1-121 Protectant Spray Cherry" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">Formula 1 Wax</h4>
-                                <p class="text-gray-600 text-sm mb-3">Premium car wax protection</p>
+                                <h4 class="font-semibold text-lg mb-2">F1-121 Protectant Spray</h4>
+                                <p class="text-gray-600 text-sm mb-3">Cherry fragrance - 295ML</p>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 1400</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Wax', 1400, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.24 AM.jpeg')">
+                                    <span class="text-primary-600 font-bold">Rs. 1125</span>
+                                    <button class="add-to-cart-btn" onclick="addToCart('F1-121 Protectant Spray Cherry', 1125, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.24 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.25 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">Formula 1 Polish</h4>
-                                <p class="text-gray-600 text-sm mb-3">Professional car polish</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 1200</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Polish', 1200, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.25 AM.jpeg')">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.26 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                    </div>
+                    <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.25 AM.jpeg" alt="F1-122 Protectant Spray Citrus" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">Formula 1 Tire Shine</h4>
-                                <p class="text-gray-600 text-sm mb-3">Tire dressing and protection</p>
+                                <h4 class="font-semibold text-lg mb-2">F1-122 Protectant Spray</h4>
+                                <p class="text-gray-600 text-sm mb-3">Citrus fragrance - 295ML</p>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 950</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Tire Shine', 950, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.26 AM.jpeg')">
+                                    <span class="text-primary-600 font-bold">Rs. 1125</span>
+                                    <button class="add-to-cart-btn" onclick="addToCart('F1-122 Protectant Spray Citrus', 1125, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.25 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.27 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">Formula 1 Interior Cleaner</h4>
-                                <p class="text-gray-600 text-sm mb-3">Interior surface cleaner</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 750</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Interior Cleaner', 750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.27 AM.jpeg')">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.28 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                    </div>
+                    <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.26 AM.jpeg" alt="F1-123 Protectant Spray New Car" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">Formula 1 Glass Cleaner</h4>
-                                <p class="text-gray-600 text-sm mb-3">Streak-free glass cleaner</p>
+                                <h4 class="font-semibold text-lg mb-2">F1-123 Protectant Spray</h4>
+                                <p class="text-gray-600 text-sm mb-3">New car fragrance - 295ML</p>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 650</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Glass Cleaner', 650, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.28 AM.jpeg')">
+                                    <span class="text-primary-600 font-bold">Rs. 1125</span>
+                                    <button class="add-to-cart-btn" onclick="addToCart('F1-123 Protectant Spray New Car', 1125, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.26 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.29 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">Formula 1 Wheel Cleaner</h4>
-                                <p class="text-gray-600 text-sm mb-3">Professional wheel cleaner</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 900</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Wheel Cleaner', 900, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.29 AM.jpeg')">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.30 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                    </div>
+                    <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.27 AM.jpeg" alt="F1-125 Protectant Spray Vanilla" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">Formula 1 Leather Cleaner</h4>
-                                <p class="text-gray-600 text-sm mb-3">Leather upholstery cleaner</p>
+                                <h4 class="font-semibold text-lg mb-2">F1-125 Protectant Spray</h4>
+                                <p class="text-gray-600 text-sm mb-3">Vanilla fragrance - 295ML</p>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 1100</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Leather Cleaner', 1100, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.30 AM.jpeg')">
+                                    <span class="text-primary-600 font-bold">Rs. 1125</span>
+                                    <button class="add-to-cart-btn" onclick="addToCart('F1-125 Protectant Spray Vanilla', 1125, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.27 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.28 AM.jpeg" alt="F1-126 Protectant Spray" class="w-full h-48 object-cover rounded-t-lg">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lg mb-2">F1-126 Protectant Spray</h4>
+                                <p class="text-gray-600 text-sm mb-3">Shines, protects & freshens - 295ML</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary-600 font-bold">Rs. 1125</span>
+                                    <button class="add-to-cart-btn" onclick="addToCart('F1-126 Protectant Spray', 1125, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.28 AM.jpeg')">
+                                        Add to Cart
+                                    </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.29 AM.jpeg" alt="F1-127 Leather Cleaner + Conditioner" class="w-full h-48 object-cover rounded-t-lg">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lg mb-2">F1-127 Leather Cleaner</h4>
+                                <p class="text-gray-600 text-sm mb-3">+ Conditioner - 237ML</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary-600 font-bold">Rs. 1625</span>
+                                    <button class="add-to-cart-btn" onclick="addToCart('F1-127 Leather Cleaner + Conditioner', 1625, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.29 AM.jpeg')">
+                                        Add to Cart
+                                    </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.30 AM.jpeg" alt="F1-119 Leather Cleaner + Conditioner" class="w-full h-48 object-cover rounded-t-lg">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lg mb-2">F1-119 Leather Cleaner</h4>
+                                <p class="text-gray-600 text-sm mb-3">+ Conditioner - 473ML</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary-600 font-bold">Rs. 1950</span>
+                                    <button class="add-to-cart-btn" onclick="addToCart('F1-119 Leather Cleaner + Conditioner', 1950, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.30 AM.jpeg')">
+                                        Add to Cart
+                </button>
+            </div>
+                        </div>
                         </div>
                     </div>
                     
                     <!-- Hidden products for Formula 1 -->
                     <div class="hidden" id="formula1-more">
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                            <div class="product-card">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="F1-131 Black Gold Tire Shine" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-lg mb-2">Formula 1 Engine Cleaner</h4>
-                                    <p class="text-gray-600 text-sm mb-3">Engine bay cleaner</p>
+                                    <h4 class="font-semibold text-lg mb-2">F1-131 Black Gold Tire Shine</h4>
+                                    <p class="text-gray-600 text-sm mb-3">High shine, dries fast - 680ML</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1750</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-131 Black Gold Tire Shine', 1750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg" alt="F1-130 Scratch Out Paste" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-130 Scratch Out Paste</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Polishing compound - 227G</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1950</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-130 Scratch Out Paste', 1950, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg" alt="F1-132 Wheel + Tire Foam Cleaner" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-132 Wheel + Tire Foam</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Dissolves brake dust & dirt - 680ML</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1750</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-132 Wheel + Tire Foam Cleaner', 1750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg" alt="F1-129 Scratch Out Fine" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-129 Scratch Out Fine</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Fine scratch & swirl remover - 207ML</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1950</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-129 Scratch Out Fine', 1950, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg" alt="F1-109 Color Wax Ceramic Spray" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-109 Color Wax Ceramic</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Restores color & UV protection - 680ML</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1750</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-109 Color Wax Ceramic Spray', 1750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg')">
+                                            Add to Cart
+                </button>
+            </div>
+                        </div>
+                        </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.36 AM.jpeg" alt="F1-107 Carnauba Wax Paste" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-107 Carnauba Wax Paste</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Brilliant shine, long lasting - 12 OZ</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1850</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-107 Carnauba Wax Paste', 1850, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.36 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.37 AM.jpeg" alt="F1-110 Color Wax Ceramic Spray" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-110 Color Wax Ceramic</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Restores color & UV protection - 680ML</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1750</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-110 Color Wax Ceramic Spray', 1750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.37 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.38 AM.jpeg" alt="F1-104 Carnauba Liquid Wax" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-104 Carnauba Liquid Wax</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Brilliant shine, long lasting - 473ML</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1400</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-104 Carnauba Liquid Wax', 1400, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.38 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.39 AM.jpeg" alt="F1-111 Color Wax Ceramic Spray" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-111 Color Wax Ceramic</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Restores color & UV protection - 680ML</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1750</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-111 Color Wax Ceramic Spray', 1750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.39 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.40 AM.jpeg" alt="F1-114 Ceramic Spray Wax" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-114 Ceramic Spray Wax</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Protects better, high gloss shine - 680ML</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1750</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-114 Ceramic Spray Wax', 1750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.40 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.41 AM.jpeg" alt="F1-102 Carnauba Wash + Wax" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-102 Carnauba Wash + Wax</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Deep clean & brilliant shine - 946ML</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-primary-600 font-bold">Rs. 850</span>
-                                        <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Engine Cleaner', 850, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg')">
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-102 Carnauba Wash + Wax', 850, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.41 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.42 AM.jpeg" alt="F1-101 Carnauba Wash + Wax" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-lg mb-2">Formula 1 Clay Bar</h4>
-                                    <p class="text-gray-600 text-sm mb-3">Paint decontamination clay</p>
+                                    <h4 class="font-semibold text-lg mb-2">F1-101 Carnauba Wash + Wax</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Deep clean & brilliant shine - 473ML</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-primary-600 font-bold">Rs. 1200</span>
-                                        <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Clay Bar', 1200, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg')">
+                                        <span class="text-primary-600 font-bold">Rs. 500</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-101 Carnauba Wash + Wax', 500, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.42 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.43 AM.jpeg" alt="F1-108 Color Wax Ceramic Spray" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-lg mb-2">Formula 1 Sealant</h4>
-                                    <p class="text-gray-600 text-sm mb-3">Paint protection sealant</p>
+                                    <h4 class="font-semibold text-lg mb-2">F1-108 Color Wax Ceramic</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Restores color & UV protection - 680ML</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1750</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-108 Color Wax Ceramic Spray', 1750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.43 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.44 AM.jpeg" alt="F1-106 Carnauba Wax Paste" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-106 Carnauba Wax Paste</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Brilliant shine, long lasting - 8 OZ</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1400</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-106 Carnauba Wax Paste', 1400, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.44 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.45 AM.jpeg" alt="F1-103 Carnauba Wash + Wax" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">F1-103 Carnauba Wash + Wax</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Deep clean & brilliant shine - 1.9L</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-primary-600 font-bold">Rs. 1500</span>
-                                        <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Sealant', 1500, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg')">
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-103 Carnauba Wash + Wax', 1500, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.45 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.46 AM.jpeg" alt="F1-117 Glass Cleaner with Rain Repellent" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-lg mb-2">Formula 1 Quick Detailer</h4>
-                                    <p class="text-gray-600 text-sm mb-3">Quick detailing spray</p>
+                                    <h4 class="font-semibold text-lg mb-2">F1-117 Glass Cleaner</h4>
+                                    <p class="text-gray-600 text-sm mb-3">With rain repellent - 680ML</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-primary-600 font-bold">Rs. 700</span>
-                                        <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Quick Detailer', 700, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg')">
+                                        <span class="text-primary-600 font-bold">Rs. 1750</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-117 Glass Cleaner with Rain Repellent', 1750, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.46 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.47 AM.jpeg" alt="F1-115 Ceramic Wash & Wax" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-lg mb-2">Formula 1 Bug Remover</h4>
-                                    <p class="text-gray-600 text-sm mb-3">Bug and tar remover</p>
+                                    <h4 class="font-semibold text-lg mb-2">F1-115 Ceramic Wash & Wax</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Powerful cleaning, deeper shine - 946ML</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-primary-600 font-bold">Rs. 800</span>
-                                        <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Bug Remover', 800, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg')">
+                                        <span class="text-primary-600 font-bold">Rs. 850</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-115 Ceramic Wash & Wax', 850, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.47 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.36 AM.jpeg" alt="Formula 1 Product" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.48 AM.jpeg" alt="F1-113 Ceramic Liquid Wax" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-lg mb-2">Formula 1 Trim Restorer</h4>
-                                    <p class="text-gray-600 text-sm mb-3">Plastic trim restorer</p>
+                                    <h4 class="font-semibold text-lg mb-2">F1-113 Ceramic Liquid Wax</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Powerful protection, high gloss - 473ML</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-primary-600 font-bold">Rs. 950</span>
-                                        <button class="add-to-cart-btn" onclick="addToCart('Formula 1 Trim Restorer', 950, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.36 AM.jpeg')">
+                                        <span class="text-primary-600 font-bold">Rs. 1400</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('F1-113 Ceramic Liquid Wax', 1400, 'BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.48 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                        </div>
+                    </div>
                         </div>
                     </div>
                     
@@ -410,15 +566,15 @@
                         <button id="formula1-view-more" class="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors" onclick="toggleViewMore('formula1')">
                             View More Products
                         </button>
+                        </div>
                     </div>
-                </div>
-
+                    
                 <!-- AIM Products -->
                 <div id="aim" class="brand-section hidden">
                     <h3 class="text-2xl font-bold text-blue-600 mb-6 text-center">AIM Cleaning Products</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="aim-products">
                         <!-- Initial 8 products shown -->
-                        <div class="product-card">
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">AIM Degreaser</h4>
@@ -428,10 +584,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('AIM Degreaser', 425, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">AIM Glass Cleaner</h4>
@@ -441,10 +597,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('AIM Glass Cleaner', 425, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">AIM Dashboard Cleaner</h4>
@@ -454,10 +610,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('AIM Dashboard Cleaner', 375, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">AIM Tire Foam</h4>
@@ -466,11 +622,11 @@
                                     <span class="text-primary-600 font-bold">Rs. 425</span>
                                     <button class="add-to-cart-btn" onclick="addToCart('AIM Tire Foam', 425, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg')">
                                         Add to Cart
-                                    </button>
-                                </div>
-                            </div>
+                </button>
+            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">AIM Brake Cleaner</h4>
@@ -480,10 +636,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('AIM Brake Cleaner', 550, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.35 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.36 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">AIM Carburetor Cleaner</h4>
@@ -493,10 +649,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('AIM Carburetor Cleaner', 350, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.36 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.37 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">AIM Engine Cleaner</h4>
@@ -506,10 +662,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('AIM Engine Cleaner', 425, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.37 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.38 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">AIM Upholstery Cleaner</h4>
@@ -519,15 +675,15 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('AIM Upholstery Cleaner', 500, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.38 AM.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
+                        </div>
+                        </div>
                         </div>
                     </div>
                     
                     <!-- Hidden products for AIM -->
                     <div class="hidden" id="aim-more">
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                            <div class="product-card">
+                    <div class="product-card">
                                 <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.39 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
                                     <h4 class="font-semibold text-lg mb-2">AIM Leather Cleaner</h4>
@@ -537,10 +693,10 @@
                                         <button class="add-to-cart-btn" onclick="addToCart('AIM Leather Cleaner', 650, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.39 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
                                 <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.40 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
                                     <h4 class="font-semibold text-lg mb-2">AIM Wheel Cleaner</h4>
@@ -550,10 +706,10 @@
                                         <button class="add-to-cart-btn" onclick="addToCart('AIM Wheel Cleaner', 600, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.40 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
                                 <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.41 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
                                     <h4 class="font-semibold text-lg mb-2">AIM Bug Remover</h4>
@@ -563,10 +719,10 @@
                                         <button class="add-to-cart-btn" onclick="addToCart('AIM Bug Remover', 450, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.41 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
                                 <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.42 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
                                     <h4 class="font-semibold text-lg mb-2">AIM Trim Restorer</h4>
@@ -575,11 +731,11 @@
                                         <span class="text-primary-600 font-bold">Rs. 550</span>
                                         <button class="add-to-cart-btn" onclick="addToCart('AIM Trim Restorer', 550, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.42 AM.jpeg')">
                                             Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
+                </button>
+            </div>
+                        </div>
+                        </div>
+                    <div class="product-card">
                                 <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.43 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
                                     <h4 class="font-semibold text-lg mb-2">AIM Metal Polish</h4>
@@ -589,10 +745,10 @@
                                         <button class="add-to-cart-btn" onclick="addToCart('AIM Metal Polish', 700, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.43 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
                                 <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.44 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
                                 <div class="p-4">
                                     <h4 class="font-semibold text-lg mb-2">AIM Fabric Protector</h4>
@@ -602,9 +758,166 @@
                                         <button class="add-to-cart-btn" onclick="addToCart('AIM Fabric Protector', 750, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.44 AM.jpeg')">
                                             Add to Cart
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- Additional AIM Products from images -->
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.45 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Car Shampoo</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Professional car wash shampoo</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 500</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Car Shampoo', 500, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.45 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.46 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Tire Shine</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Tire dressing and shine</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 400</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Tire Shine', 400, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.46 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.47 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Interior Cleaner</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Interior surface cleaner</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 450</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Interior Cleaner', 450, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.47 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.48 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Wax</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Car wax and protectant</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 600</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Wax', 600, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.48 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.49 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Quick Detailer</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Quick detail spray</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 350</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Quick Detailer', 350, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.49 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.50 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Clay Bar</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Clay bar for paint decontamination</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 800</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Clay Bar', 800, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.50 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.51 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Scratch Remover</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Paint scratch remover</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 550</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Scratch Remover', 550, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.51 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.52 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Paint Sealant</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Paint protection sealant</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 900</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Paint Sealant', 900, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.52 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.53 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Ceramic Coating</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Ceramic paint protection</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 1200</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Ceramic Coating', 1200, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.53 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.54 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Headlight Restorer</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Headlight restoration kit</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 750</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Headlight Restorer', 750, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.54 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.55 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Engine Bay Cleaner</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Engine compartment cleaner</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 500</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Engine Bay Cleaner', 500, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.55 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.56 AM.jpeg" alt="AIM Product" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="p-4">
+                                    <h4 class="font-semibold text-lg mb-2">AIM Undercarriage Cleaner</h4>
+                                    <p class="text-gray-600 text-sm mb-3">Undercarriage cleaning solution</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-primary-600 font-bold">Rs. 450</span>
+                                        <button class="add-to-cart-btn" onclick="addToCart('AIM Undercarriage Cleaner', 450, 'BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.56 AM.jpeg')">
+                                            Add to Cart
+                                        </button>
+                        </div>
+                        </div>
+                    </div>
                         </div>
                     </div>
                     
@@ -612,15 +925,15 @@
                     <div class="text-center mt-8">
                         <button id="aim-view-more" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors" onclick="toggleViewMore('aim')">
                             View More Products
-                        </button>
+                </button>
+                        </div>
                     </div>
-                </div>
-
+                    
                 <!-- Areon Products -->
                 <div id="areon" class="brand-section hidden">
                     <h3 class="text-2xl font-bold text-purple-600 mb-6 text-center">Areon Air Fresheners</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        <div class="product-card">
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AERON/Areon Air Freshener.jpg" alt="Areon Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">Areon Air Freshener</h4>
@@ -630,10 +943,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('Areon Air Freshener', 350, 'BRANDWISE PRODUCTS/AERON/Areon Air Freshener.jpg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AERON/Areon Fabric Freshener.jpg" alt="Areon Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">Areon Fabric Freshener</h4>
@@ -643,10 +956,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('Areon Fabric Freshener', 400, 'BRANDWISE PRODUCTS/AERON/Areon Fabric Freshener.jpg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/AERON/Areon Interior Spray.jpg" alt="Areon Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">Areon Interior Spray</h4>
@@ -656,17 +969,17 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('Areon Interior Spray', 450, 'BRANDWISE PRODUCTS/AERON/Areon Interior Spray.jpg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
+                        </div>
                         </div>
                     </div>
-                </div>
-
+                        </div>
+                    </div>
+                    
                 <!-- WD-40 Products -->
                 <div id="wd40" class="brand-section hidden">
                     <h3 class="text-2xl font-bold text-yellow-600 mb-6 text-center">WD-40 Products</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        <div class="product-card">
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Multi-Purpose 450.jpg" alt="WD-40 Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">WD-40 Multi-Purpose 450ml</h4>
@@ -676,10 +989,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('WD-40 Multi-Purpose 450ml', 1250, 'BRANDWISE PRODUCTS/WD-40/WD-40 Multi-Purpose 450.jpg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Contact Cleaner.jpg" alt="WD-40 Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">WD-40 Contact Cleaner</h4>
@@ -689,10 +1002,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('WD-40 Contact Cleaner', 800, 'BRANDWISE PRODUCTS/WD-40/WD-40 Contact Cleaner.jpg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Specialist.jpg" alt="WD-40 Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">WD-40 Specialist</h4>
@@ -701,18 +1014,18 @@
                                     <span class="text-primary-600 font-bold">Rs. 1100</span>
                                     <button class="add-to-cart-btn" onclick="addToCart('WD-40 Specialist', 1100, 'BRANDWISE PRODUCTS/WD-40/WD-40 Specialist.jpg')">
                                         Add to Cart
-                                    </button>
-                                </div>
-                            </div>
+                </button>
+            </div>
+                        </div>
+                        </div>
                         </div>
                     </div>
-                </div>
-
+                    
                 <!-- DTR Products -->
                 <div id="dtr" class="brand-section hidden">
                     <h3 class="text-2xl font-bold text-green-600 mb-6 text-center">DTR Cleaning Products</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        <div class="product-card">
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/WD-40/DTR Brake Cleaner.jpg" alt="DTR Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">DTR Brake Cleaner</h4>
@@ -722,10 +1035,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('DTR Brake Cleaner', 550, 'BRANDWISE PRODUCTS/WD-40/DTR Brake Cleaner.jpg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/WD-40/DTR Carburetor Cleaner.jpg" alt="DTR Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">DTR Carburetor Cleaner</h4>
@@ -735,10 +1048,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('DTR Carburetor Cleaner', 350, 'BRANDWISE PRODUCTS/WD-40/DTR Carburetor Cleaner.jpg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/WD-40/DTR Engine Cleaner.jpg" alt="DTR Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">DTR Engine Cleaner</h4>
@@ -748,17 +1061,17 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('DTR Engine Cleaner', 425, 'BRANDWISE PRODUCTS/WD-40/DTR Engine Cleaner.jpg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
+                        </div>
                         </div>
                     </div>
-                </div>
-
+                        </div>
+                    </div>
+                    
                 <!-- Microfiber Products -->
                 <div id="microfiber" class="brand-section hidden">
                     <h3 class="text-2xl font-bold text-gray-600 mb-6 text-center">Microfiber Products</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        <div class="product-card">
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/SINGLE MICROFIBER TOWEL.jpeg" alt="Microfiber Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">Microfiber Towel Large</h4>
@@ -768,10 +1081,10 @@
                                     <button class="add-to-cart-btn" onclick="addToCart('Microfiber Towel Large', 600, 'BRANDWISE PRODUCTS/MICROFIBER TOWELS/SINGLE MICROFIBER TOWEL.jpeg')">
                                         Add to Cart
                                     </button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/SINGLE PACK MICROFIBER CLOTH.jpeg" alt="Microfiber Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">Microfiber Cloth Large</h4>
@@ -780,11 +1093,11 @@
                                     <span class="text-primary-600 font-bold">Rs. 400</span>
                                     <button class="add-to-cart-btn" onclick="addToCart('Microfiber Cloth Large', 400, 'BRANDWISE PRODUCTS/MICROFIBER TOWELS/SINGLE PACK MICROFIBER CLOTH.jpeg')">
                                         Add to Cart
-                                    </button>
-                                </div>
-                            </div>
+                </button>
+            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/PACK OF 2 MICROFIBER TOWEL.jpeg" alt="Microfiber Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">Microfiber Towel Pack of 2</h4>
@@ -793,11 +1106,11 @@
                                     <span class="text-primary-600 font-bold">Rs. 1050</span>
                                     <button class="add-to-cart-btn" onclick="addToCart('Microfiber Towel Pack of 2', 1050, 'BRANDWISE PRODUCTS/MICROFIBER TOWELS/PACK OF 2 MICROFIBER TOWEL.jpeg')">
                                         Add to Cart
-                                    </button>
-                                </div>
-                            </div>
+                </button>
+            </div>
                         </div>
-                        <div class="product-card">
+                        </div>
+                    <div class="product-card">
                             <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/PACK OF 4  MICROFIBER TOWEL.jpeg" alt="Microfiber Product" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="p-4">
                                 <h4 class="font-semibold text-lg mb-2">Microfiber Towel Pack of 4</h4>
@@ -806,14 +1119,14 @@
                                     <span class="text-primary-600 font-bold">Rs. 1350</span>
                                     <button class="add-to-cart-btn" onclick="addToCart('Microfiber Towel Pack of 4', 1350, 'BRANDWISE PRODUCTS/MICROFIBER TOWELS/PACK OF 4  MICROFIBER TOWEL.jpeg')">
                                         Add to Cart
-                                    </button>
-                                </div>
-                            </div>
+                </button>
+            </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                        </div>
+            </div>
         </div>
+    </section>
+                </div>
     </main>
 
     <!-- Footer -->
@@ -825,7 +1138,7 @@
                     <p class="text-gray-300">
                         Your trusted partner for premium automotive care products.
                     </p>
-                </div>
+                    </div>
                 <div>
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
@@ -841,7 +1154,7 @@
                         <p><i class="fas fa-phone mr-2"></i> +92 300 1234567</p>
                         <p><i class="fas fa-envelope mr-2"></i> info@autochampion.com</p>
                         <p><i class="fas fa-map-marker-alt mr-2"></i> Karachi, Pakistan</p>
-                    </div>
+                </div>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
@@ -849,7 +1162,7 @@
             </div>
         </div>
     </footer>
-
+    
     <script>
         // Initialize cart count
         document.addEventListener('DOMContentLoaded', function() {
@@ -908,6 +1221,22 @@
             showNotification(`${name} added to cart!`);
         }
 
+        // Toggle View More functionality
+        function toggleViewMore(brand) {
+            const moreSection = document.getElementById(`${brand}-more`);
+            const viewMoreBtn = document.getElementById(`${brand}-view-more`);
+            
+            if (moreSection && viewMoreBtn) {
+                if (moreSection.classList.contains('hidden')) {
+                    moreSection.classList.remove('hidden');
+                    viewMoreBtn.textContent = 'Show Less';
+                } else {
+                    moreSection.classList.add('hidden');
+                    viewMoreBtn.textContent = 'View More Products';
+                }
+            }
+        }
+
         // Notification function
         function showNotification(message) {
             // Remove existing notification
@@ -927,14 +1256,14 @@
             `;
             
             document.body.appendChild(notification);
-            
+
             // Show notification
             setTimeout(() => {
                 notification.classList.add('show');
             }, 100);
             
             // Hide notification after 3 seconds
-            setTimeout(() => {
+                setTimeout(() => {
                 notification.classList.remove('show');
                 setTimeout(() => {
                     notification.remove();

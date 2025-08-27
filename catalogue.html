@@ -52,77 +52,6 @@
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
-        
-        .catalogue-card {
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .catalogue-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .download-btn {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .download-btn:hover {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            transform: scale(1.05);
-        }
-        
-        .brand-section {
-            transition: all 0.3s ease;
-        }
-        
-        .brand-section.hidden {
-            display: none;
-        }
-        
-        .brand-btn {
-            border: none;
-            background: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .brand-btn.active div {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-        }
-        
-        .notification {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: #10b981;
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            transform: translateX(400px);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .notification.show {
-            transform: translateX(0);
-        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -177,794 +106,270 @@
                     Product Catalogue
                 </h1>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                    Download our comprehensive product catalogues featuring all premium automotive care products with high-quality images and current pricing from leading brands.
+                    Download our comprehensive website overview and product catalogues
                 </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <div class="px-6 py-3 bg-primary-600 text-white rounded-full font-semibold hover:bg-primary-700 transition-colors">
-                        <i class="fas fa-download mr-2"></i>Free Downloads
-                    </div>
-                    <div class="px-6 py-3 bg-secondary-500 text-white rounded-full font-semibold hover:bg-secondary-600 transition-colors">
-                        <i class="fas fa-file-pdf mr-2"></i>PDF Format
-                    </div>
-                    <div class="px-6 py-3 bg-green-500 text-white rounded-full font-semibold hover:bg-green-600 transition-colors">
-                        <i class="fas fa-star mr-2"></i>Premium Quality
-                    </div>
-                </div>
             </div>
 
-            <!-- Brand Navigation -->
-            <div class="mb-12">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Download by Brand</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                    <button class="brand-btn active" data-brand="formula1">
-                        <div class="bg-gradient-to-r from-red-500 to-red-600 p-4 rounded-xl text-white text-center hover:scale-105 transition-transform">
-                            <i class="fas fa-car text-2xl mb-2"></i>
-                            <div class="font-bold">Formula 1</div>
-                        </div>
-                    </button>
-                    <button class="brand-btn" data-brand="aim">
-                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-4 rounded-xl text-white text-center hover:scale-105 transition-transform">
-                            <i class="fas fa-tools text-2xl mb-2"></i>
-                            <div class="font-bold">AIM</div>
-                        </div>
-                    </button>
-                    <button class="brand-btn" data-brand="areon">
-                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-4 rounded-xl text-white text-center hover:scale-105 transition-transform">
-                            <i class="fas fa-spray-can text-2xl mb-2"></i>
-                            <div class="font-bold">Areon</div>
-                        </div>
-                    </button>
-                    <button class="brand-btn" data-brand="dtr">
-                        <div class="bg-gradient-to-r from-green-500 to-green-600 p-4 rounded-xl text-white text-center hover:scale-105 transition-transform">
-                            <i class="fas fa-cog text-2xl mb-2"></i>
-                            <div class="font-bold">DTR</div>
-                        </div>
-                    </button>
-                    <button class="brand-btn" data-brand="wd40">
-                        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 p-4 rounded-xl text-white text-center hover:scale-105 transition-transform">
-                            <i class="fas fa-oil-can text-2xl mb-2"></i>
-                            <div class="font-bold">WD-40</div>
-                        </div>
-                    </button>
-                    <button class="brand-btn" data-brand="complete">
-                        <div class="bg-gradient-to-r from-gray-500 to-gray-600 p-4 rounded-xl text-white text-center hover:scale-105 transition-transform">
-                            <i class="fas fa-book text-2xl mb-2"></i>
-                            <div class="font-bold">Complete</div>
-                        </div>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Formula 1 Catalogue -->
-            <div id="formula1" class="brand-section active">
-                <h3 class="text-2xl font-bold mb-8 text-center text-red-600">Formula 1 Product Catalogue</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.23 AM.jpeg" alt="Formula 1 Car Wash" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Formula 1 Car Wash</h4>
-                                <p class="text-gray-600">Professional car wash solution</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 850</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Professional Grade Formula
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Safe for All Paint Types
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    High Foaming Action
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Long-lasting Protection
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('formula1')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.24 AM.jpeg" alt="Formula 1 Wax" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Formula 1 Wax</h4>
-                                <p class="text-gray-600">Premium car wax protection</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 1400</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Carnauba Wax Formula
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Deep Shine & Protection
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    UV Protection
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Water Beading Effect
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('formula1-wax')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.25 AM.jpeg" alt="Formula 1 Polish" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Formula 1 Polish</h4>
-                                <p class="text-gray-600">Professional car polish</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 1200</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Scratch Removal
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Paint Restoration
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Mirror Finish
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Professional Results
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('formula1-polish')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
+            <!-- PDF Download Section -->
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-8 lg:p-12 border-2 border-primary-100 shadow-xl">
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-800 mb-4">
+                            Complete Website PDF
+                        </h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Download a comprehensive PDF overview of our entire website including Home, Shop, Special Bundles, and Contact pages with ALL products from all brands.
+                        </p>
                     </div>
 
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.26 AM.jpeg" alt="Formula 1 Tire Shine" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Formula 1 Tire Shine</h4>
-                                <p class="text-gray-600">Tire dressing and protection</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 950</p>
+                    <!-- PDF Preview -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl mb-8">
+                        <div class="text-center mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-file-pdf text-3xl text-white"></i>
                             </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Long-lasting Shine
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    UV Protection
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Non-greasy Formula
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Tire Conditioning
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('formula1-tireshine')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
+                            <h3 class="text-2xl font-bold text-primary-600 mb-2">Auto Champion Complete Website Overview</h3>
+                            <p class="text-gray-600">Complete website documentation with all pages and ALL products from all brands</p>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- AIM Catalogue -->
-            <div id="aim" class="brand-section hidden">
-                <h3 class="text-2xl font-bold mb-8 text-center text-blue-600">AIM Product Catalogue</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="AIM Degreaser" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">AIM Degreaser</h4>
-                                <p class="text-gray-600">Heavy-duty engine degreaser</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 425</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                            <div class="text-center p-4 bg-gradient-to-br from-red-50 to-red-100 rounded-xl">
+                                <i class="fas fa-home text-2xl text-red-600 mb-2"></i>
+                                <h4 class="font-bold text-red-700">Home Page</h4>
+                                <p class="text-sm text-red-600">Welcome & Brands</p>
                             </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Industrial Strength
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Safe for All Surfaces
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Fast Acting Formula
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Professional Results
-                                </div>
+                            <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                                <i class="fas fa-shopping-cart text-2xl text-blue-600 mb-2"></i>
+                                <h4 class="font-bold text-blue-700">Shop Page</h4>
+                                <p class="text-sm text-blue-600">All Brands & Products</p>
                             </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('aim')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
+                            <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
+                                <i class="fas fa-gift text-2xl text-green-600 mb-2"></i>
+                                <h4 class="font-bold text-green-700">Special Bundles</h4>
+                                <p class="text-sm text-green-600">Product Packages</p>
+                            </div>
+                            <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
+                                <i class="fas fa-phone text-2xl text-purple-600 mb-2"></i>
+                                <h4 class="font-bold text-purple-700">Contact Page</h4>
+                                <p class="text-sm text-purple-600">Get in Touch</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.32 AM.jpeg" alt="AIM Glass Cleaner" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">AIM Glass Cleaner</h4>
-                                <p class="text-gray-600">Professional glass cleaning solution</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 425</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Streak-free Cleaning
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Anti-fog Formula
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Safe for Tinted Glass
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Quick Drying
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('aim-glass')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.33 AM.jpeg" alt="AIM Dashboard Cleaner" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">AIM Dashboard Cleaner</h4>
-                                <p class="text-gray-600">Interior dashboard cleaner</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 375</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Non-greasy Finish
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    UV Protection
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Safe for All Plastics
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Fresh Scent
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('aim-dashboard')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
+
+                                                 <div class="text-center">
+                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                 <button onclick="downloadFeature('overview')" class="flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-4 py-3 rounded-xl font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-lg">
+                                     <i class="fas fa-star"></i>
+                                     <span>Complete Overview</span>
+                                 </button>
+                                 <button onclick="downloadFeature('pdf')" class="flex items-center justify-center gap-2 bg-gradient-to-r from-red-400 to-red-500 text-white px-4 py-3 rounded-xl font-semibold hover:from-red-500 hover:to-red-600 transition-all transform hover:scale-105 shadow-lg">
+                                     <i class="fas fa-file-pdf"></i>
+                                     <span>PDF Format</span>
+                                 </button>
+                                 <button onclick="downloadFeature('quality')" class="flex items-center justify-center gap-2 bg-gradient-to-r from-green-400 to-green-500 text-white px-4 py-3 rounded-xl font-semibold hover:from-green-500 hover:to-green-600 transition-all transform hover:scale-105 shadow-lg">
+                                     <i class="fas fa-download"></i>
+                                     <span>Premium Quality</span>
+                                 </button>
+                             </div>
+                         </div>
                     </div>
 
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.34 AM.jpeg" alt="AIM Tire Foam" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">AIM Tire Foam</h4>
-                                <p class="text-gray-600">Tire cleaning and dressing foam</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 425</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Foam Application
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Deep Cleaning Action
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Long-lasting Shine
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Easy Application
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('aim-tirefoam')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <!-- Download Button -->
+                    <div class="text-center">
+                        <a href="generate-site-pdf.html" target="_blank" class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                            <i class="fas fa-download mr-3"></i>
+                            Generate Website PDF
+                        </a>
+                        <p class="text-gray-500 mt-4 text-sm">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            Opens in new tab - Click to generate and download the complete website PDF
+                        </p>
+                                         </div>
+                 </div>
+             </div>
 
-            <!-- Areon Catalogue -->
-            <div id="areon" class="brand-section hidden">
-                <h3 class="text-2xl font-bold mb-8 text-center text-purple-600">Areon Product Catalogue</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/AERON/Areon Air Freshener.jpg" alt="Areon Air Freshener" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Areon Air Freshener</h4>
-                                <p class="text-gray-600">Long-lasting car air freshener</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 350</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Long-lasting Fragrance
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Multiple Scents Available
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Easy to Use
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Safe for All Vehicles
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('areon')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/AERON/Areon Fabric Freshener.jpg" alt="Areon Fabric Freshener" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Areon Fabric Freshener</h4>
-                                <p class="text-gray-600">Fabric and upholstery freshener</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 400</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Fabric Safe Formula
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Odor Elimination
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Fresh Scent
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Easy Application
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('areon-fabric')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/AERON/Areon Interior Spray.jpg" alt="Areon Interior Spray" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Areon Interior Spray</h4>
-                                <p class="text-gray-600">Interior cleaning and freshening spray</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 450</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Multi-surface Cleaner
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Fresh Fragrance
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Quick Drying
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Professional Results
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('areon-interior')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+             <!-- Interactive Catalogue Section -->
+             <div class="max-w-6xl mx-auto mt-16">
+                 <div class="bg-gradient-to-br from-secondary-50 to-primary-50 rounded-3xl p-8 lg:p-12 border-2 border-secondary-100 shadow-xl">
+                     <div class="text-center mb-8">
+                         <h2 class="text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-secondary-600 to-primary-800 mb-4">
+                             Interactive Catalogue
+                         </h2>
+                         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                             Explore our products interactively with brand-wise filtering and detailed product information
+                         </p>
+                     </div>
 
-            <!-- WD-40 Catalogue -->
-            <div id="wd40" class="brand-section hidden">
-                <h3 class="text-2xl font-bold mb-8 text-center text-yellow-600">WD-40 Product Catalogue</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Multi-Purpose 450.jpg" alt="WD-40 Multi-Purpose" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">WD-40 Multi-Purpose 450ml</h4>
-                                <p class="text-gray-600">Multi-purpose lubricant and cleaner</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 1250</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Multi-purpose Formula
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Penetrates Rust
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Displaces Moisture
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Protects Metal
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('wd40')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Contact Cleaner.jpg" alt="WD-40 Contact Cleaner" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">WD-40 Contact Cleaner</h4>
-                                <p class="text-gray-600">Electrical contact cleaner</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 800</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Electrical Safe
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Fast Drying
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Removes Corrosion
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Non-conductive
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('wd40-contact')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Specialist.jpg" alt="WD-40 Specialist" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">WD-40 Specialist</h4>
-                                <p class="text-gray-600">Specialized cleaning solution</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 1100</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Specialized Formula
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Professional Grade
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Heavy-duty Cleaning
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Long-lasting Protection
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('wd40-specialist')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                     <!-- Brand Filter Buttons -->
+                     <div class="flex flex-wrap justify-center gap-4 mb-8">
+                         <button onclick="filterBrand('all')" class="brand-filter-btn active bg-primary-600 text-white" data-brand="all">
+                             <i class="fas fa-th-large mr-2"></i>
+                             All Brands
+                         </button>
+                         <button onclick="filterBrand('formula1')" class="brand-filter-btn bg-red-100 text-red-700 hover:bg-red-200" data-brand="formula1">
+                             <i class="fas fa-car mr-2"></i>
+                             Formula 1
+                         </button>
+                         <button onclick="filterBrand('aim')" class="brand-filter-btn bg-blue-100 text-blue-700 hover:bg-blue-200" data-brand="aim">
+                             <i class="fas fa-tools mr-2"></i>
+                             AIM
+                         </button>
+                         <button onclick="filterBrand('wd40')" class="brand-filter-btn bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-brand="wd40">
+                             <i class="fas fa-oil-can mr-2"></i>
+                             WD-40
+                         </button>
+                         <button onclick="filterBrand('dtr')" class="brand-filter-btn bg-green-100 text-green-700 hover:bg-green-200" data-brand="dtr">
+                             <i class="fas fa-broom mr-2"></i>
+                             DTR
+                         </button>
+                         <button onclick="filterBrand('areon')" class="brand-filter-btn bg-purple-100 text-purple-700 hover:bg-purple-200" data-brand="areon">
+                             <i class="fas fa-spray-can mr-2"></i>
+                             Areon
+                         </button>
+                         <button onclick="filterBrand('microfiber')" class="brand-filter-btn bg-indigo-100 text-indigo-700 hover:bg-indigo-200" data-brand="microfiber">
+                             <i class="fas fa-tshirt mr-2"></i>
+                             Microfiber
+                         </button>
+                     </div>
 
-            <!-- DTR Catalogue -->
-            <div id="dtr" class="brand-section hidden">
-                <h3 class="text-2xl font-bold mb-8 text-center text-green-600">DTR Product Catalogue</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/WD-40/DTR Brake Cleaner.jpg" alt="DTR Brake Cleaner" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">DTR Brake Cleaner</h4>
-                                <p class="text-gray-600">Professional brake system cleaner</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 550</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Brake System Safe
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Fast Drying
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Removes Grease
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Professional Grade
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('dtr-brake')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/WD-40/DTR Carburetor Cleaner.jpg" alt="DTR Carburetor Cleaner" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">DTR Carburetor Cleaner</h4>
-                                <p class="text-gray-600">Carburetor cleaning solution</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 350</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Carburetor Specific
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Removes Deposits
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Fast Acting
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Safe for Metal Parts
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('dtr-carburetor')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/WD-40/DTR Engine Cleaner.jpg" alt="DTR Engine Cleaner" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">DTR Engine Cleaner</h4>
-                                <p class="text-gray-600">Engine degreasing and cleaning</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 425</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Engine Safe Formula
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Heavy-duty Degreasing
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Removes Oil & Grease
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Professional Results
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('dtr-engine')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                     <!-- Product Grid -->
+                     <div id="interactive-products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                         <!-- Formula 1 Products -->
+                         <div class="product-item" data-brand="formula1">
+                             <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-100">
+                                 <div class="relative mb-4">
+                                     <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.23 AM.jpeg" alt="F1-120 Protectant Spray" class="w-full h-48 object-cover rounded-xl">
+                                     <div class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">Formula 1</div>
+                                 </div>
+                                 <h3 class="text-lg font-bold text-gray-800 mb-2">F1-120 Protectant Spray</h3>
+                                 <p class="text-gray-600 text-sm mb-3">Cleans, shines & protects - 680ML</p>
+                                 <div class="flex justify-between items-center">
+                                     <span class="text-xl font-bold text-primary-600">Rs. 1750</span>
+                                     <button onclick="addToCart('F1-120 Protectant Spray', 1750)" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
+                                         <i class="fas fa-cart-plus"></i>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
 
-            <!-- Microfiber Catalogue -->
-            <div id="microfiber" class="brand-section hidden">
-                <h3 class="text-2xl font-bold mb-8 text-center text-gray-600">Microfiber Product Catalogue</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/SINGLE MICROFIBER TOWEL.jpeg" alt="Microfiber Towel Large" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Microfiber Towel Large</h4>
-                                <p class="text-gray-600">Premium microfiber towel</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 600</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Premium Quality
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Ultra-soft Material
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Streak-free Cleaning
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Reusable & Washable
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('microfiber')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/SINGLE PACK MICROFIBER CLOTH.jpeg" alt="Microfiber Cloth Large" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Microfiber Cloth Large</h4>
-                                <p class="text-gray-600">Professional microfiber cloth</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 400</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Professional Grade
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Lint-free Cleaning
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    High Absorbency
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Durable Material
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('microfiber-cloth')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/PACK OF 2 MICROFIBER TOWEL.jpeg" alt="Microfiber Towel Pack of 2" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Microfiber Towel Pack of 2</h4>
-                                <p class="text-gray-600">Value pack microfiber towels</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 1050</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Value Pack
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Two Premium Towels
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Cost Effective
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Perfect for Daily Use
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('microfiber-pack2')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
+                         <div class="product-item" data-brand="formula1">
+                             <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-100">
+                                 <div class="relative mb-4">
+                                     <img src="BRANDWISE PRODUCTS/Formula 1/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="F1-131 Black Gold Tire Shine" class="w-full h-48 object-cover rounded-xl">
+                                     <div class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">Formula 1</div>
+                                 </div>
+                                 <h3 class="text-lg font-bold text-gray-800 mb-2">F1-131 Black Gold Tire Shine</h3>
+                                 <p class="text-gray-600 text-sm mb-3">High shine, dries fast - 680ML</p>
+                                 <div class="flex justify-between items-center">
+                                     <span class="text-xl font-bold text-primary-600">Rs. 1750</span>
+                                     <button onclick="addToCart('F1-131 Black Gold Tire Shine', 1750)" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
+                                         <i class="fas fa-cart-plus"></i>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
 
-                    <div class="catalogue-card">
-                        <div class="p-6">
-                            <div class="text-center mb-6">
-                                <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/PACK OF 4  MICROFIBER TOWEL.jpeg" alt="Microfiber Towel Pack of 4" class="w-32 h-32 object-cover rounded-lg mx-auto mb-4">
-                                <h4 class="font-bold text-xl mb-2">Microfiber Towel Pack of 4</h4>
-                                <p class="text-gray-600">Bulk pack microfiber towels</p>
-                                <p class="text-primary-600 font-bold text-lg mt-2">Rs. 1350</p>
-                            </div>
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Bulk Pack
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Four Premium Towels
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Best Value
-                                </div>
-                                <div class="flex items-center text-sm text-gray-600">
-                                    <i class="fas fa-check text-green-500 mr-2"></i>
-                                    Professional Use
-                                </div>
-                            </div>
-                            <button class="download-btn w-full" onclick="downloadCatalogue('microfiber-pack4')">
-                                <i class="fas fa-download"></i>
-                                Download Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                         <!-- AIM Products -->
+                         <div class="product-item" data-brand="aim">
+                             <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-100">
+                                 <div class="relative mb-4">
+                                     <img src="BRANDWISE PRODUCTS/AIm/WhatsApp Image 2025-08-01 at 11.11.31 AM.jpeg" alt="AIM Degreaser" class="w-full h-48 object-cover rounded-xl">
+                                     <div class="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">AIM</div>
+                                 </div>
+                                 <h3 class="text-lg font-bold text-gray-800 mb-2">AIM Degreaser</h3>
+                                 <p class="text-gray-600 text-sm mb-3">Heavy-duty engine degreaser</p>
+                                 <div class="flex justify-between items-center">
+                                     <span class="text-xl font-bold text-primary-600">Rs. 425</span>
+                                     <button onclick="addToCart('AIM Degreaser', 425)" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
+                                         <i class="fas fa-cart-plus"></i>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+
+                         <!-- WD-40 Products -->
+                         <div class="product-item" data-brand="wd40">
+                             <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-100">
+                                 <div class="relative mb-4">
+                                     <img src="BRANDWISE PRODUCTS/WD-40/WD-40 Multi-Function Product.jpg" alt="WD-40 Multi-Function" class="w-full h-48 object-cover rounded-xl">
+                                     <div class="absolute top-2 left-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">WD-40</div>
+                                 </div>
+                                 <h3 class="text-lg font-bold text-gray-800 mb-2">WD-40 Multi-Function</h3>
+                                 <p class="text-gray-600 text-sm mb-3">Multi-purpose lubricant</p>
+                                 <div class="flex justify-between items-center">
+                                     <span class="text-xl font-bold text-primary-600">Rs. 375</span>
+                                     <button onclick="addToCart('WD-40 Multi-Function', 375)" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
+                                         <i class="fas fa-cart-plus"></i>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+
+                         <!-- DTR Products -->
+                         <div class="product-item" data-brand="dtr">
+                             <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-100">
+                                 <div class="relative mb-4">
+                                     <img src="BRANDWISE PRODUCTS/WD-40/DTR Brake Cleaner.jpg" alt="DTR Brake Cleaner" class="w-full h-48 object-cover rounded-xl">
+                                     <div class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">DTR</div>
+                                 </div>
+                                 <h3 class="text-lg font-bold text-gray-800 mb-2">DTR Brake Cleaner</h3>
+                                 <p class="text-gray-600 text-sm mb-3">Brake system cleaner</p>
+                                 <div class="flex justify-between items-center">
+                                     <span class="text-xl font-bold text-primary-600">Rs. 550</span>
+                                     <button onclick="addToCart('DTR Brake Cleaner', 550)" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
+                                         <i class="fas fa-cart-plus"></i>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+
+                         <!-- Areon Products -->
+                         <div class="product-item" data-brand="areon">
+                             <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-100">
+                                 <div class="relative mb-4">
+                                     <img src="BRANDWISE PRODUCTS/AERON/Areon Air Freshener.jpg" alt="Areon Air Freshener" class="w-full h-48 object-cover rounded-xl">
+                                     <div class="absolute top-2 left-2 bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-bold">Areon</div>
+                                 </div>
+                                 <h3 class="text-lg font-bold text-gray-800 mb-2">Areon Air Freshener</h3>
+                                 <p class="text-gray-600 text-sm mb-3">Car air freshener</p>
+                                 <div class="flex justify-between items-center">
+                                     <span class="text-xl font-bold text-primary-600">Rs. 150</span>
+                                     <button onclick="addToCart('Areon Air Freshener', 150)" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
+                                         <i class="fas fa-cart-plus"></i>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+
+                         <!-- Microfiber Products -->
+                         <div class="product-item" data-brand="microfiber">
+                             <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-100">
+                                 <div class="relative mb-4">
+                                     <img src="BRANDWISE PRODUCTS/MICROFIBER TOWELS/SINGLE MICROFIBER TOWEL.jpeg" alt="Single Microfiber Towel" class="w-full h-48 object-cover rounded-xl">
+                                     <div class="absolute top-2 left-2 bg-indigo-500 text-white px-2 py-1 rounded-full text-xs font-bold">Microfiber</div>
+                                 </div>
+                                 <h3 class="text-lg font-bold text-gray-800 mb-2">Single Microfiber Towel</h3>
+                                 <p class="text-gray-600 text-sm mb-3">Premium microfiber towel</p>
+                                 <div class="flex justify-between items-center">
+                                     <span class="text-xl font-bold text-primary-600">Rs. 600</span>
+                                     <button onclick="addToCart('Single Microfiber Towel', 600)" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
+                                         <i class="fas fa-cart-plus"></i>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                     <!-- View All Products Button -->
+                     <div class="text-center mt-8">
+                         <a href="shop.html" class="inline-flex items-center bg-gradient-to-r from-secondary-600 to-secondary-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-secondary-700 hover:to-secondary-800 transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                             <i class="fas fa-eye mr-3"></i>
+                             View All Products
+                         </a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -975,486 +380,141 @@
         </div>
     </footer>
 
-    <script>
-        // Initialize cart count
-        document.addEventListener('DOMContentLoaded', function() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartCount = document.getElementById('cartCount');
-            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCount.textContent = totalItems;
-            
-            // Brand navigation functionality
-            const brandButtons = document.querySelectorAll('.brand-btn');
-            const brandSections = document.querySelectorAll('.brand-section');
-            
-            brandButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const targetBrand = this.getAttribute('data-brand');
-                    
-                    // Remove active class from all buttons and sections
-                    brandButtons.forEach(btn => btn.classList.remove('active'));
-                    brandSections.forEach(section => section.classList.add('hidden'));
-                    
-                    // Add active class to clicked button and show target section
-                    this.classList.add('active');
-                    document.getElementById(targetBrand).classList.remove('hidden');
-                });
-            });
-        });
-        
-        // Download catalogue function
-        function downloadCatalogue(type) {
-            // Show notification
-            showNotification(`Downloading ${type} catalogue...`);
-            
-            // Create download link based on catalogue type
-            let downloadUrl = '';
-            let fileName = '';
-            let catalogueContent = '';
-            
-            switch(type) {
-                case 'formula1':
-                case 'formula1-carwash':
-                case 'formula1-wax':
-                case 'formula1-polish':
-                case 'formula1-tireshine':
-                    fileName = 'Formula1-Product-Catalogue.txt';
-                    catalogueContent = createFormula1Catalogue();
-                    break;
-                case 'aim':
-                case 'aim-degreaser':
-                case 'aim-glass':
-                case 'aim-dashboard':
-                case 'aim-tirefoam':
-                    fileName = 'AIM-Product-Catalogue.txt';
-                    catalogueContent = createAIMCatalogue();
-                    break;
-                case 'areon':
-                case 'areon-air':
-                case 'areon-fabric':
-                case 'areon-interior':
-                    fileName = 'Areon-Product-Catalogue.txt';
-                    catalogueContent = createAreonCatalogue();
-                    break;
-                case 'wd40':
-                case 'wd40-multipurpose':
-                case 'wd40-contact':
-                case 'wd40-specialist':
-                    fileName = 'WD40-Product-Catalogue.txt';
-                    catalogueContent = createWD40Catalogue();
-                    break;
-                case 'dtr':
-                case 'dtr-brake':
-                case 'dtr-carburetor':
-                case 'dtr-engine':
-                    fileName = 'DTR-Product-Catalogue.txt';
-                    catalogueContent = createDTRCatalogue();
-                    break;
-                case 'microfiber':
-                case 'microfiber-towel':
-                case 'microfiber-cloth':
-                case 'microfiber-pack2':
-                case 'microfiber-pack4':
-                    fileName = 'Microfiber-Product-Catalogue.txt';
-                    catalogueContent = createMicrofiberCatalogue();
-                    break;
-                case 'complete':
-                case 'price-list':
-                case 'business':
-                    fileName = 'Complete-Product-Catalogue.txt';
-                    catalogueContent = createCompleteCatalogue();
-                    break;
-                default:
-                    fileName = 'Auto-Champion-Catalogue.txt';
-                    catalogueContent = createCompleteCatalogue();
-            }
-            
-            // Create downloadable text file
-            const blob = new Blob([catalogueContent], { type: 'text/plain' });
-            const url = window.URL.createObjectURL(blob);
-            
-            // Create temporary download link
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = fileName;
-            link.style.display = 'none';
-            
-            // Add to document and trigger download
-            document.body.appendChild(link);
-            link.click();
-            
-            // Clean up
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
-            
-            // Show success notification
-            setTimeout(() => {
-                showNotification(`${fileName} downloaded successfully!`);
-            }, 1000);
-        }
-
-        // Catalogue content creation functions
-        function createFormula1Catalogue() {
-            return `FORMULA 1 PRODUCT CATALOGUE
-=====================================
-
-Auto Champion - Premium Car Care Products
-Contact: +92 300 1234567 | Email: info@autochampion.com
-
-FORMULA 1 CAR CARE PRODUCTS
-============================
-
-1. Formula 1 Car Wash
-   Price: Rs. 850
-   Description: Professional car wash solution
-   Features: Professional Grade Formula, Safe for All Paint Types, High Foaming Action
-
-2. Formula 1 Wax
-   Price: Rs. 1400
-   Description: Premium car wax protection
-   Features: Carnauba Wax Formula, Deep Shine & Protection, UV Protection
-
-3. Formula 1 Polish
-   Price: Rs. 1200
-   Description: Professional car polish
-   Features: Scratch Removal, Paint Restoration, Mirror Finish
-
-4. Formula 1 Tire Shine
-   Price: Rs. 950
-   Description: Tire dressing and protection
-   Features: Long-lasting Shine, UV Protection, Non-greasy Formula
-
-5. Formula 1 Interior Cleaner
-   Price: Rs. 750
-   Description: Interior surface cleaner
-   Features: Safe for All Surfaces, Fresh Scent, Quick Drying
-
-6. Formula 1 Glass Cleaner
-   Price: Rs. 650
-   Description: Streak-free glass cleaner
-   Features: Anti-fog Formula, Safe for Tinted Glass, Quick Drying
-
-7. Formula 1 Wheel Cleaner
-   Price: Rs. 900
-   Description: Professional wheel cleaner
-   Features: Removes Brake Dust, Safe for All Wheels, Professional Results
-
-8. Formula 1 Leather Cleaner
-   Price: Rs. 1100
-   Description: Leather upholstery cleaner
-   Features: Leather Safe Formula, Conditioning Properties, Long-lasting Protection
-
-9. Formula 1 Engine Cleaner
-   Price: Rs. 850
-   Description: Engine bay cleaner
-   Features: Engine Safe Formula, Heavy-duty Degreasing, Professional Results
-
-10. Formula 1 Clay Bar
-    Price: Rs. 1200
-    Description: Paint decontamination clay
-    Features: Removes Contaminants, Safe for All Paint Types, Professional Results
-
-11. Formula 1 Sealant
-    Price: Rs. 1500
-    Description: Paint protection sealant
-    Features: Long-lasting Protection, UV Resistance, Professional Grade
-
-12. Formula 1 Quick Detailer
-    Price: Rs. 700
-    Description: Quick detailing spray
-    Features: Fast Application, Streak-free Finish, Safe for All Surfaces
-
-13. Formula 1 Bug Remover
-    Price: Rs. 800
-    Description: Bug and tar remover
-    Features: Fast Acting, Safe for Paint, Professional Results
-
-14. Formula 1 Trim Restorer
-    Price: Rs. 950
-    Description: Plastic trim restorer
-    Features: Restores Color, UV Protection, Long-lasting Results
-
-=====================================
-For bulk orders and wholesale pricing, please contact us.
-Visit our website: www.autochampion.com
-=====================================`;
-        }
-
-        function createAIMCatalogue() {
-            return `AIM PRODUCT CATALOGUE
-========================
-
-Auto Champion - Premium Car Care Products
-Contact: +92 300 1234567 | Email: info@autochampion.com
-
-AIM CLEANING PRODUCTS
-=====================
-
-1. AIM Degreaser
-   Price: Rs. 425
-   Description: Heavy-duty engine degreaser
-   Features: Industrial Strength, Safe for All Surfaces, Fast Acting Formula
-
-2. AIM Glass Cleaner
-   Price: Rs. 425
-   Description: Professional glass cleaning solution
-   Features: Streak-free Cleaning, Anti-fog Formula, Safe for Tinted Glass
-
-3. AIM Dashboard Cleaner
-   Price: Rs. 375
-   Description: Interior dashboard cleaner
-   Features: Non-greasy Finish, UV Protection, Safe for All Plastics
-
-4. AIM Tire Foam
-   Price: Rs. 425
-   Description: Tire cleaning and dressing foam
-   Features: Foam Application, Deep Cleaning Action, Long-lasting Shine
-
-5. AIM Brake Cleaner
-   Price: Rs. 550
-   Description: Brake system cleaner
-   Features: Brake System Safe, Fast Drying, Removes Grease
-
-6. AIM Carburetor Cleaner
-   Price: Rs. 350
-   Description: Carburetor cleaning solution
-   Features: Carburetor Specific, Removes Deposits, Fast Acting
-
-7. AIM Engine Cleaner
-   Price: Rs. 425
-   Description: Engine degreasing cleaner
-   Features: Engine Safe Formula, Heavy-duty Degreasing, Professional Results
-
-8. AIM Upholstery Cleaner
-   Price: Rs. 500
-   Description: Fabric upholstery cleaner
-   Features: Fabric Safe Formula, Odor Elimination, Fresh Scent
-
-9. AIM Leather Cleaner
-   Price: Rs. 650
-   Description: Leather upholstery cleaner
-   Features: Leather Safe Formula, Conditioning Properties, Professional Results
-
-10. AIM Wheel Cleaner
-    Price: Rs. 600
-    Description: Professional wheel cleaner
-    Features: Removes Brake Dust, Safe for All Wheels, Professional Results
-
-11. AIM Bug Remover
-    Price: Rs. 450
-    Description: Bug and tar remover
-    Features: Fast Acting, Safe for Paint, Professional Results
-
-12. AIM Trim Restorer
-    Price: Rs. 550
-    Description: Plastic trim restorer
-    Features: Restores Color, UV Protection, Long-lasting Results
-
-13. AIM Metal Polish
-    Price: Rs. 700
-    Description: Metal surface polish
-    Features: Professional Grade, Mirror Finish, Long-lasting Results
-
-14. AIM Fabric Protector
-    Price: Rs. 750
-    Description: Fabric protection spray
-    Features: Water Repellent, UV Protection, Long-lasting Protection
-
-=====================================
-For bulk orders and wholesale pricing, please contact us.
-Visit our website: www.autochampion.com
-=====================================`;
-        }
-
-        function createAreonCatalogue() {
-            return `AREON PRODUCT CATALOGUE
-==========================
-
-Auto Champion - Premium Car Care Products
-Contact: +92 300 1234567 | Email: info@autochampion.com
-
-AREON AIR FRESHENERS
-====================
-
-1. Areon Air Freshener
-   Price: Rs. 350
-   Description: Long-lasting car air freshener
-   Features: Long-lasting Fragrance, Multiple Scents Available, Easy to Use
-
-2. Areon Fabric Freshener
-   Price: Rs. 400
-   Description: Fabric and upholstery freshener
-   Features: Fabric Safe Formula, Odor Elimination, Fresh Scent
-
-3. Areon Interior Spray
-   Price: Rs. 450
-   Description: Interior cleaning and freshening spray
-   Features: Multi-surface Cleaner, Fresh Fragrance, Quick Drying
-
-=====================================
-For bulk orders and wholesale pricing, please contact us.
-Visit our website: www.autochampion.com
-=====================================`;
-        }
-
-        function createWD40Catalogue() {
-            return `WD-40 PRODUCT CATALOGUE
-==========================
-
-Auto Champion - Premium Car Care Products
-Contact: +92 300 1234567 | Email: info@autochampion.com
-
-WD-40 PRODUCTS
-==============
-
-1. WD-40 Multi-Purpose 450ml
-   Price: Rs. 1250
-   Description: Multi-purpose lubricant and cleaner
-   Features: Multi-purpose Formula, Penetrates Rust, Displaces Moisture
-
-2. WD-40 Contact Cleaner
-   Price: Rs. 800
-   Description: Electrical contact cleaner
-   Features: Electrical Safe, Fast Drying, Removes Corrosion
-
-3. WD-40 Specialist
-   Price: Rs. 1100
-   Description: Specialized cleaning solution
-   Features: Specialized Formula, Professional Grade, Heavy-duty Cleaning
-
-=====================================
-For bulk orders and wholesale pricing, please contact us.
-Visit our website: www.autochampion.com
-=====================================`;
-        }
-
-        function createDTRCatalogue() {
-            return `DTR PRODUCT CATALOGUE
-========================
-
-Auto Champion - Premium Car Care Products
-Contact: +92 300 1234567 | Email: info@autochampion.com
-
-DTR CLEANING PRODUCTS
-=====================
-
-1. DTR Brake Cleaner
-   Price: Rs. 550
-   Description: Professional brake system cleaner
-   Features: Brake System Safe, Fast Drying, Removes Grease
-
-2. DTR Carburetor Cleaner
-   Price: Rs. 350
-   Description: Carburetor cleaning solution
-   Features: Carburetor Specific, Removes Deposits, Fast Acting
-
-3. DTR Engine Cleaner
-   Price: Rs. 425
-   Description: Engine degreasing and cleaning
-   Features: Engine Safe Formula, Heavy-duty Degreasing, Professional Results
-
-=====================================
-For bulk orders and wholesale pricing, please contact us.
-Visit our website: www.autochampion.com
-=====================================`;
-        }
-
-        function createMicrofiberCatalogue() {
-            return `MICROFIBER PRODUCT CATALOGUE
-====================================
-
-Auto Champion - Premium Car Care Products
-Contact: +92 300 1234567 | Email: info@autochampion.com
-
-MICROFIBER PRODUCTS
-===================
-
-1. Microfiber Towel Large
-   Price: Rs. 600
-   Description: Premium microfiber towel
-   Features: Premium Quality, Ultra-soft Material, Streak-free Cleaning
-
-2. Microfiber Cloth Large
-   Price: Rs. 400
-   Description: Professional microfiber cloth
-   Features: Professional Grade, Lint-free Cleaning, High Absorbency
-
-3. Microfiber Towel Pack of 2
-   Price: Rs. 1050
-   Description: Value pack microfiber towels
-   Features: Value Pack, Two Premium Towels, Cost Effective
-
-4. Microfiber Towel Pack of 4
-   Price: Rs. 1350
-   Description: Bulk pack microfiber towels
-   Features: Bulk Pack, Four Premium Towels, Best Value
-
-=====================================
-For bulk orders and wholesale pricing, please contact us.
-Visit our website: www.autochampion.com
-=====================================`;
-        }
-
-        function createCompleteCatalogue() {
-            return `COMPLETE PRODUCT CATALOGUE
-================================
-
-Auto Champion - Premium Car Care Products
-Contact: +92 300 1234567 | Email: info@autochampion.com
-
-ALL BRANDS AND PRODUCTS
-=======================
-
-This catalogue contains all products from:
-- Formula 1 Car Care Products
-- AIM Cleaning Products  
-- Areon Air Fresheners
-- WD-40 Products
-- DTR Cleaning Products
-- Microfiber Products
-
-For complete product listings with images and detailed specifications,
-please contact us directly or visit our website.
-
-=====================================
-For bulk orders and wholesale pricing, please contact us.
-Visit our website: www.autochampion.com
-=====================================`;
-        }
-        
-        // Notification function
-        function showNotification(message) {
-            // Remove existing notification
-            const existingNotification = document.querySelector('.notification');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-            
-            // Create new notification
-            const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.innerHTML = `
-                <div class="flex items-center">
-                    <i class="fas fa-download mr-2"></i>
-                    <span>${message}</span>
-                </div>
-            `;
-            
-            document.body.appendChild(notification);
-            
-            // Show notification
-            setTimeout(() => {
-                notification.classList.add('show');
-            }, 100);
-            
-            // Hide notification after 3 seconds
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => {
-                    notification.remove();
-                }, 300);
-            }, 3000);
-        }
-    </script>
+         <script>
+         // Initialize cart count
+         document.addEventListener('DOMContentLoaded', function() {
+             const cart = JSON.parse(localStorage.getItem('cart')) || [];
+             const cartCount = document.getElementById('cartCount');
+             const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+             cartCount.textContent = totalItems;
+         });
+
+         // Download feature function
+         function downloadFeature(feature) {
+             const messages = {
+                 'overview': 'Complete Overview: Our comprehensive product catalog includes all brands and categories with detailed specifications.',
+                 'pdf': 'PDF Format: High-quality PDF format ensures perfect printing and easy sharing across all devices.',
+                 'quality': 'Premium Quality: Professional-grade products with guaranteed quality and performance.'
+             };
+             
+             alert(messages[feature] || 'Feature information will be displayed here.');
+         }
+
+         // Brand filtering function
+         function filterBrand(brand) {
+             const productItems = document.querySelectorAll('.product-item');
+             const filterButtons = document.querySelectorAll('.brand-filter-btn');
+             
+             // Update active button
+             filterButtons.forEach(btn => {
+                 btn.classList.remove('active', 'bg-primary-600', 'text-white');
+                 btn.classList.add('bg-gray-100', 'text-gray-700');
+             });
+             
+             const activeButton = document.querySelector(`[data-brand="${brand}"]`);
+             if (activeButton) {
+                 activeButton.classList.remove('bg-gray-100', 'text-gray-700');
+                 activeButton.classList.add('active', 'bg-primary-600', 'text-white');
+             }
+             
+             // Filter products
+             productItems.forEach(item => {
+                 if (brand === 'all' || item.getAttribute('data-brand') === brand) {
+                     item.style.display = 'block';
+                     item.style.animation = 'fadeIn 0.5s ease-in-out';
+                 } else {
+                     item.style.display = 'none';
+                 }
+             });
+         }
+
+         // Add to cart function
+         function addToCart(productName, price) {
+             const cart = JSON.parse(localStorage.getItem('cart')) || [];
+             const existingItem = cart.find(item => item.name === productName);
+             
+             if (existingItem) {
+                 existingItem.quantity += 1;
+             } else {
+                 cart.push({
+                     name: productName,
+                     price: price,
+                     quantity: 1
+                 });
+             }
+             
+             localStorage.setItem('cart', JSON.stringify(cart));
+             
+             // Update cart count
+             const cartCount = document.getElementById('cartCount');
+             const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+             cartCount.textContent = totalItems;
+             
+             // Show success message
+             showNotification(`${productName} added to cart!`, 'success');
+         }
+
+         // Show notification function
+         function showNotification(message, type = 'success') {
+             // Remove existing notification
+             const existingNotification = document.querySelector('.notification');
+             if (existingNotification) {
+                 existingNotification.remove();
+             }
+             
+             // Create notification element
+             const notification = document.createElement('div');
+             notification.className = `fixed top-20 right-4 z-50 p-4 rounded-xl shadow-lg transform translate-x-full transition-transform duration-300 ${
+                 type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+             }`;
+             
+             notification.innerHTML = `
+                 <div class="flex items-center gap-3">
+                     <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                     <span class="font-semibold">${message}</span>
+                 </div>
+             `;
+             
+             document.body.appendChild(notification);
+             
+             // Show notification
+             setTimeout(() => {
+                 notification.style.transform = 'translateX(0)';
+             }, 100);
+             
+             // Hide notification after 3 seconds
+             setTimeout(() => {
+                 notification.style.transform = 'translateX(full)';
+                 setTimeout(() => {
+                     notification.remove();
+                 }, 300);
+             }, 3000);
+         }
+     </script>
+
+     <style>
+         @keyframes fadeIn {
+             from { opacity: 0; transform: translateY(20px); }
+             to { opacity: 1; transform: translateY(0); }
+         }
+         
+         .brand-filter-btn {
+             transition: all 0.3s ease;
+             border-radius: 0.75rem;
+             padding: 0.75rem 1.5rem;
+             font-weight: 600;
+             font-size: 0.875rem;
+         }
+         
+         .brand-filter-btn:hover {
+             transform: translateY(-2px);
+             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+         }
+         
+         .brand-filter-btn.active {
+             transform: translateY(-2px);
+             box-shadow: 0 4px 12px rgba(10, 65, 116, 0.3);
+         }
+     </style>
 </body>
 </html>

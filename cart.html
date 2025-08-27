@@ -81,7 +81,7 @@
                     <h1 class="text-3xl lg:text-4xl font-black text-white uppercase tracking-wider">
                         Auto Champion
                     </h1>
-                </div>
+            </div>
                 
                 <!-- Navigation -->
                 <nav class="flex flex-wrap gap-2 lg:gap-4">
@@ -100,14 +100,14 @@
                     <a href="contact.html" class="px-4 py-2 bg-primary-700 text-white rounded-full text-sm font-semibold hover:bg-secondary-600 transition-colors">
                         Contact
                     </a>
-                </nav>
+            </nav>
                 
                 <!-- Cart Icon -->
                 <div class="relative">
                     <a href="cart.html" class="text-white text-2xl hover:text-secondary-400 transition-colors">
-                        <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-shopping-cart"></i>
                         <span class="absolute -top-2 -right-2 bg-secondary-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold" id="cartCount">0</span>
-                    </a>
+                </a>
                 </div>
             </div>
         </div>
@@ -133,9 +133,9 @@
                     <div class="bg-white rounded-2xl shadow-lg p-8">
                         <h2 class="text-2xl font-bold text-primary-900 mb-6">Cart Items</h2>
                         <div id="cartItems" class="space-y-4">
-                            <!-- Cart items will be loaded here -->
-                        </div>
-                        
+                    <!-- Cart items will be loaded here -->
+                    </div>
+                    
                         <!-- Empty Cart Message -->
                         <div id="emptyCart" class="text-center py-12 hidden">
                             <i class="fas fa-shopping-cart text-6xl text-gray-300 mb-4"></i>
@@ -145,9 +145,9 @@
                                 Continue Shopping
                             </a>
                         </div>
-                    </div>
-                </div>
-
+                        </div>
+                        </div>
+                        
                 <!-- Order Summary -->
                 <div class="lg:col-span-1">
                     <div class="bg-white rounded-2xl shadow-lg p-8 sticky top-24">
@@ -157,13 +157,13 @@
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Total Items:</span>
                                 <span id="totalItems" class="font-semibold">0</span>
-                            </div>
+                                </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Total Amount:</span>
                                 <span id="totalAmount" class="font-bold text-primary-900">Rs. 0</span>
+                                </div>
                             </div>
-                        </div>
-
+                            
                         <button id="checkoutBtn" class="w-full bg-primary-600 text-white py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors mb-4">
                             Proceed to Checkout
                         </button>
@@ -172,9 +172,9 @@
                             Continue Shopping
                         </a>
                     </div>
-                </div>
-            </div>
-
+                                </div>
+                            </div>
+                            
             <!-- Customer Information Form -->
             <div id="customerForm" class="mt-8 bg-white rounded-2xl shadow-lg p-8 hidden">
                 <h2 class="text-2xl font-bold text-primary-900 mb-6">Customer Information</h2>
@@ -183,23 +183,23 @@
                     <div>
                         <label for="customerName" class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
                         <input type="text" id="customerName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
+                                    </div>
                     <div>
                         <label for="customerPhone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
                         <input type="tel" id="customerPhone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-                </div>
+                                        </div>
+                                    </div>
                 
                 <div class="mb-6">
                     <label for="customerAddress" class="block text-sm font-semibold text-gray-700 mb-2">Delivery Address *</label>
                     <textarea id="customerAddress" rows="3" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"></textarea>
-                </div>
+                                </div>
                 
                 <div class="mb-6">
                     <label for="customerEmail" class="block text-sm font-semibold text-gray-700 mb-2">Email (Optional)</label>
                     <input type="email" id="customerEmail" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                </div>
-
+                            </div>
+                            
                 <!-- Payment Method Section -->
                 <div class="mb-6">
                     <h3 class="text-lg font-semibold text-primary-900 mb-4">Payment Method</h3>
@@ -210,23 +210,23 @@
                                 <i class="fas fa-money-bill-wave text-green-600 mr-3"></i>
                                 <span>Cash on Delivery (COD)</span>
                             </label>
-                        </div>
+                                    </div>
                         <div class="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
                             <input type="radio" id="jazzCash" name="paymentMethod" value="jazzCash" class="mr-3">
                             <label for="jazzCash" class="flex items-center cursor-pointer">
                                 <i class="fas fa-mobile-alt text-blue-600 mr-3"></i>
                                 <span>JazzCash</span>
                             </label>
-                        </div>
+                                        </div>
                         <div class="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
                             <input type="radio" id="bankTransfer" name="paymentMethod" value="bankTransfer" class="mr-3">
                             <label for="bankTransfer" class="flex items-center cursor-pointer">
                                 <i class="fas fa-university text-purple-600 mr-3"></i>
                                 <span>Bank Transfer</span>
                             </label>
-                        </div>
-                    </div>
-                </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                 <!-- COD Information -->
                 <div id="codInfo" class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
@@ -235,15 +235,15 @@
                         <div>
                             <p class="text-blue-800 font-semibold mb-1">Cash on Delivery:</p>
                             <p class="text-blue-700">Pay when you receive your order. No advance payment required.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                    
                 <button id="placeOrderBtn" class="w-full bg-secondary-600 text-white py-3 rounded-full font-semibold hover:bg-secondary-700 transition-colors">
                     Place Order
                 </button>
+                </div>
             </div>
-        </div>
     </main>
 
     <!-- Footer -->
@@ -255,7 +255,7 @@
                     <p class="text-gray-300">
                         Your trusted partner for premium automotive care products.
                     </p>
-                </div>
+                    </div>
                 <div>
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
