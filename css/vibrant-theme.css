@@ -248,24 +248,12 @@ body::before {
     padding: 80px 20px;
     text-align: center;
     position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #FFFFFF;
-    pointer-events: none;
-    z-index: 1;
+    border: none;
+    box-shadow: none;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
 }
 
 .hero h1 {
@@ -846,6 +834,9 @@ body::before {
     
     .hero {
         padding: 100px 40px;
+        background: #FFFFFF;
+        border: none;
+        box-shadow: none;
     }
     
     .cta-button {
@@ -1511,6 +1502,9 @@ body::before {
     
     .hero {
         padding: 60px 15px;
+        background: #FFFFFF;
+        border: none;
+        box-shadow: none;
     }
     
     .contact-section {
@@ -1727,6 +1721,9 @@ body::before {
 @media (max-width: 768px) and (orientation: landscape) {
     .hero {
         padding: 40px 20px;
+        background: #FFFFFF;
+        border: none;
+        box-shadow: none;
     }
     
     .hero h1 {
