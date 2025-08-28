@@ -246,29 +246,57 @@
         
         .download-section {
             text-align: center;
-            margin: 40px 0;
-            padding: 30px;
+            margin: 20px 0;
+            padding: 20px;
             background: linear-gradient(135deg, #f8fafc, #e2e8f0);
             border-radius: 15px;
+        }
+        
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
         }
         
         .download-btn {
             background: linear-gradient(135deg, #0A4174, #1a5a8f);
             color: white;
-            padding: 15px 30px;
+            padding: 12px 20px;
             border: none;
             border-radius: 10px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
+            width: 100%;
+            max-width: 300px;
         }
         
         .download-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(10, 65, 116, 0.3);
+        }
+        
+        @media (min-width: 768px) {
+            .download-section {
+                margin: 40px 0;
+                padding: 30px;
+            }
+            
+            .download-buttons {
+                flex-direction: row;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .download-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+                width: auto;
+            }
         }
         
         .footer {
@@ -774,14 +802,16 @@
     <div class="download-section">
         <h2>Download Complete Website PDF</h2>
         <p>Get the full Auto Champion website overview in PDF format</p>
-        <button class="download-btn" onclick="generateSitePDF()">
-            <i class="fas fa-download"></i>
-            Download Website PDF
-        </button>
-        <button class="download-btn fallback" onclick="generateSimplePDF()" style="margin-left: 10px; background: #6b7280;">
-            <i class="fas fa-file-alt"></i>
-            Download Simple PDF
-        </button>
+        <div class="download-buttons">
+            <button class="download-btn" onclick="generateSitePDF()">
+                <i class="fas fa-download"></i>
+                Download Website PDF
+            </button>
+            <button class="download-btn fallback" onclick="generateSimplePDF()" style="background: #6b7280;">
+                <i class="fas fa-file-alt"></i>
+                Download Simple PDF
+            </button>
+        </div>
     </div>
 
     <script>
