@@ -95,7 +95,7 @@
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-900 to-primary-800 shadow-xl">
         <div class="container mx-auto px-3 sm:px-4 py-2 sm:py-4">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4">
+            <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center gap-2 sm:gap-4">
                     <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="h-12 sm:h-16 w-auto rounded-lg border-2 border-white shadow-lg">
@@ -104,8 +104,8 @@
                     </h1>
                 </div>
                 
-                <!-- Navigation -->
-                <nav class="flex flex-wrap gap-1 sm:gap-2 lg:gap-4 justify-center">
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex flex-wrap gap-1 sm:gap-2 lg:gap-4 justify-center">
                     <a href="index.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
                         Home
                     </a>
@@ -134,6 +134,36 @@
                         <span class="absolute -top-2 -right-2 bg-secondary-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold" id="cartCount">0</span>
                     </a>
                 </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white text-2xl hover:text-secondary-400 transition-colors focus:outline-none">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4 border-t border-primary-700">
+                <nav class="flex flex-col gap-2 pt-4">
+                    <a href="index.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+                        Home
+                    </a>
+                    <a href="shop.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+                        Shop
+                    </a>
+                    <a href="special-bundles.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+                        Special Bundles
+                    </a>
+                    <a href="catalogue.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+                        Catalogue
+                    </a>
+                    <a href="contact.html" class="px-4 py-3 bg-white text-primary-900 rounded-lg text-sm font-semibold hover:bg-secondary-600 hover:text-white transition-colors text-center">
+                        Contact
+                    </a>
+                    <a href="https://wa.me/923001234567" target="_blank" class="px-4 py-3 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors text-center flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </nav>
             </div>
         </div>
     </header>
@@ -571,6 +601,82 @@
                 }, 300);
             }, 5000);
         }
+
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+
+            if (mobileMenuBtn && mobileMenu && menuIcon) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const isOpen = mobileMenu.classList.contains('hidden');
+                    
+                    if (isOpen) {
+                        // Open menu
+                        mobileMenu.classList.remove('hidden');
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-times');
+                        mobileMenu.style.animation = 'slideDown 0.3s ease-out';
+                    } else {
+                        // Close menu
+                        mobileMenu.style.animation = 'slideUp 0.3s ease-out';
+                        setTimeout(() => {
+                            mobileMenu.classList.add('hidden');
+                            menuIcon.classList.remove('fa-times');
+                            menuIcon.classList.add('fa-bars');
+                        }, 300);
+                    }
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.style.animation = 'slideUp 0.3s ease-out';
+                            setTimeout(() => {
+                                mobileMenu.classList.add('hidden');
+                                menuIcon.classList.remove('fa-times');
+                                menuIcon.classList.add('fa-bars');
+                            }, 300);
+                        }
+                    }
+                });
+
+                // Close menu when window is resized to desktop
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 768) {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                });
+            }
+        });
     </script>
+
+    <style>
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+    </style>
 </body>
 </html> 
