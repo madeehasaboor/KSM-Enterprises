@@ -17,7 +17,7 @@
                         'inter': ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        primary: {
+                        navy: {
                             50: '#f0f4f8',
                             100: '#d9e2ec',
                             200: '#bcccdc',
@@ -26,20 +26,20 @@
                             500: '#627d98',
                             600: '#486581',
                             700: '#334e68',
-                            800: '#1a5a8f',
-                            900: '#0A4174',
+                            800: '#1e3a5f',
+                            900: '#0f2d4a',
                         },
-                        secondary: {
-                            50: '#fef2f2',
-                            100: '#fee2e2',
-                            200: '#fecaca',
-                            300: '#fca5a5',
-                            400: '#f87171',
-                            500: '#ef4444',
-                            600: '#dc2626',
-                            700: '#b91c1c',
-                            800: '#991b1b',
-                            900: '#7f1d1d',
+                        accent: {
+                            50: '#fef7ee',
+                            100: '#fdedd4',
+                            200: '#fbd7a8',
+                            300: '#f8bb71',
+                            400: '#f59538',
+                            500: '#f3771a',
+                            600: '#e45a0f',
+                            700: '#bd4210',
+                            800: '#963514',
+                            900: '#792e14',
                         }
                     }
                 }
@@ -66,7 +66,7 @@
         }
         
         .add-to-cart-btn {
-            background: linear-gradient(135deg, #0A4174, #1a5a8f);
+            background: linear-gradient(135deg, #1e3a5f, #334e68);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
@@ -78,7 +78,7 @@
         }
         
         .add-to-cart-btn:hover {
-            background: linear-gradient(135deg, #1a5a8f, #334e68);
+            background: linear-gradient(135deg, #334e68, #486581);
             transform: scale(1.05);
         }
         
@@ -123,32 +123,32 @@
 </head>
 <body class="bg-gray-50">
         <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-900 to-primary-800 shadow-xl">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-xl border-b-2 border-navy-200">
         <div class="container mx-auto px-3 sm:px-4 py-2 sm:py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center gap-2 sm:gap-4">
-                    <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="h-12 sm:h-16 w-auto rounded-lg border-2 border-white shadow-lg">
-                    <h1 class="text-xl sm:text-3xl lg:text-4xl font-black text-yellow-400 uppercase tracking-wider drop-shadow-[0_0_2px_rgba(0,0,0,1)] drop-shadow-[0_0_4px_rgba(0,0,0,1)] drop-shadow-[0_0_6px_rgba(0,0,0,1)] drop-shadow-[0_0_8px_rgba(0,0,0,1)]">
+                    <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="h-12 sm:h-16 w-auto rounded-lg border-2 border-navy-200 shadow-lg">
+                    <h1 class="text-xl sm:text-3xl lg:text-4xl font-black text-navy-800 uppercase tracking-wider">
                         Auto Champion
                     </h1>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex flex-wrap gap-1 sm:gap-2 lg:gap-4 justify-center">
-                    <a href="index.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
+                    <a href="index.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-navy-800 rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors">
                         Home
                     </a>
-                    <a href="shop.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-primary-900 rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 hover:text-white transition-colors">
+                    <a href="shop.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-navy-600 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-700 transition-colors">
                         Shop
                     </a>
-                    <a href="special-bundles.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
+                    <a href="special-bundles.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-navy-800 rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors">
                         Special Bundles
                     </a>
-                    <a href="catalogue.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
+                    <a href="catalogue.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-navy-800 rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors">
                         Catalogue
                     </a>
-                    <a href="contact.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
+                    <a href="contact.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-navy-800 rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors">
                         Contact
                     </a>
                     <a href="https://wa.me/923001234567" target="_blank" class="px-2 sm:px-4 py-1 sm:py-2 bg-green-600 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-green-700 transition-colors flex items-center gap-1 sm:gap-2">
@@ -159,34 +159,34 @@
                 
                 <!-- Cart Icon -->
                 <div class="relative">
-                    <a href="cart.html" class="text-white text-2xl hover:text-secondary-400 transition-colors">
+                    <a href="cart.html" class="text-navy-800 text-2xl hover:text-navy-600 transition-colors">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="absolute -top-2 -right-2 bg-secondary-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold" id="cartCount">0</span>
+                        <span class="absolute -top-2 -right-2 bg-accent-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold" id="cartCount">0</span>
                     </a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden text-white text-2xl hover:text-secondary-400 transition-colors focus:outline-none">
+                <button id="mobileMenuBtn" class="md:hidden text-navy-800 text-2xl hover:text-navy-600 transition-colors focus:outline-none">
                     <i class="fas fa-bars" id="menuIcon"></i>
                 </button>
             </div>
             
             <!-- Mobile Navigation Menu -->
-            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4 border-t border-primary-700">
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4 border-t border-navy-200">
                 <nav class="flex flex-col gap-2 pt-4">
-                    <a href="index.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+                    <a href="index.html" class="px-4 py-3 bg-white text-navy-800 rounded-lg text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors text-center">
                         Home
                     </a>
-                    <a href="shop.html" class="px-4 py-3 bg-white text-primary-900 rounded-lg text-sm font-semibold hover:bg-secondary-600 hover:text-white transition-colors text-center">
+                    <a href="shop.html" class="px-4 py-3 bg-navy-600 text-white rounded-lg text-sm font-semibold hover:bg-navy-700 transition-colors text-center">
                         Shop
                     </a>
-                    <a href="special-bundles.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+                    <a href="special-bundles.html" class="px-4 py-3 bg-white text-navy-800 rounded-lg text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors text-center">
                         Special Bundles
                     </a>
-                    <a href="catalogue.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+                    <a href="catalogue.html" class="px-4 py-3 bg-white text-navy-800 rounded-lg text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors text-center">
                         Catalogue
                     </a>
-                    <a href="contact.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+                    <a href="contact.html" class="px-4 py-3 bg-white text-navy-800 rounded-lg text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors text-center">
                         Contact
                     </a>
                     <a href="https://wa.me/923001234567" target="_blank" class="px-4 py-3 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors text-center flex items-center justify-center gap-2">
@@ -203,7 +203,7 @@
         <div class="container mx-auto px-4">
     <!-- Hero Section -->
             <section class="text-center py-8 sm:py-16">
-                <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-primary-900 mb-4 sm:mb-6">
+                <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-navy-800 mb-4 sm:mb-6">
                     Our Products
                 </h1>
                 <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
@@ -215,7 +215,7 @@
             <section class="py-6 sm:py-8">
                 <!-- Brand Navigation -->
                 <div class="mb-6 sm:mb-8">
-                    <h2 class="text-xl sm:text-2xl font-bold text-primary-900 mb-4 sm:mb-6 text-center">Shop by Brand</h2>
+                    <h2 class="text-xl sm:text-2xl font-bold text-navy-800 mb-4 sm:mb-6 text-center">Shop by Brand</h2>
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4">
                         <button class="brand-btn active bg-gradient-to-r from-red-500 to-red-600 text-white p-2 sm:p-4 rounded-lg sm:rounded-xl text-center hover:scale-105 transition-transform" data-brand="formula1">
                             <i class="fas fa-car text-lg sm:text-2xl mb-1 sm:mb-2"></i>
@@ -1057,49 +1057,129 @@
                     
                 <!-- DTR Products -->
                 <div id="dtr" class="brand-section hidden">
-                    <h3 class="text-2xl font-bold text-green-600 mb-6 text-center">DTR Cleaning Products</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/WD-40/DTR Brake Cleaner.jpg" alt="DTR Product" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">DTR Brake Cleaner</h4>
-                                <p class="text-gray-600 text-sm mb-3">Professional brake system cleaner</p>
+                    <h3 class="text-2xl font-bold text-green-600 mb-6 text-center">DTR Professional Products</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                        <!-- DTR Kitchen Cleaner 1 -->
+                        <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (1).jpeg" alt="DTR Kitchen Cleaner" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <div class="p-3 sm:p-4">
+                                <h4 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">DTR Kitchen Cleaner</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Breaks down tough grease - Aerosol spray</p>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 550</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('DTR Brake Cleaner', 550, 'BRANDWISE PRODUCTS/WD-40/DTR Brake Cleaner.jpg')">
+                                    <span class="text-navy-600 font-bold text-sm sm:text-base">Rs. 750</span>
+                                    <button class="add-to-cart-btn text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2" onclick="addToCart('DTR Kitchen Cleaner', 750, 'BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (1).jpeg')">
                                         Add to Cart
                                     </button>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/WD-40/DTR Carburetor Cleaner.jpg" alt="DTR Product" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">DTR Carburetor Cleaner</h4>
-                                <p class="text-gray-600 text-sm mb-3">Carburetor cleaning solution</p>
+
+                        <!-- DTR Kitchen Cleaner 2 -->
+                        <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (2).jpeg" alt="DTR Kitchen Cleaner" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <div class="p-3 sm:p-4">
+                                <h4 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">DTR Kitchen Cleaner</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Professional kitchen cleaning solution</p>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 350</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('DTR Carburetor Cleaner', 350, 'BRANDWISE PRODUCTS/WD-40/DTR Carburetor Cleaner.jpg')">
+                                    <span class="text-navy-600 font-bold text-sm sm:text-base">Rs. 750</span>
+                                    <button class="add-to-cart-btn text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2" onclick="addToCart('DTR Kitchen Cleaner', 750, 'BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (2).jpeg')">
                                         Add to Cart
                                     </button>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                            <img src="BRANDWISE PRODUCTS/WD-40/DTR Engine Cleaner.jpg" alt="DTR Product" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg mb-2">DTR Engine Cleaner</h4>
-                                <p class="text-gray-600 text-sm mb-3">Engine degreasing and cleaning</p>
+
+                        <!-- DTR Kitchen Cleaner 3 -->
+                        <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (3).jpeg" alt="DTR Kitchen Cleaner" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <div class="p-3 sm:p-4">
+                                <h4 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">DTR Kitchen Cleaner</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Heavy-duty grease removal</p>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-primary-600 font-bold">Rs. 425</span>
-                                    <button class="add-to-cart-btn" onclick="addToCart('DTR Engine Cleaner', 425, 'BRANDWISE PRODUCTS/WD-40/DTR Engine Cleaner.jpg')">
+                                    <span class="text-navy-600 font-bold text-sm sm:text-base">Rs. 750</span>
+                                    <button class="add-to-cart-btn text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2" onclick="addToCart('DTR Kitchen Cleaner', 750, 'BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (3).jpeg')">
                                         Add to Cart
                                     </button>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- DTR Kitchen Cleaner 4 -->
+                        <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (4).jpeg" alt="DTR Kitchen Cleaner" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <div class="p-3 sm:p-4">
+                                <h4 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">DTR Kitchen Cleaner</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Multi-surface kitchen cleaner</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-navy-600 font-bold text-sm sm:text-base">Rs. 750</span>
+                                    <button class="add-to-cart-btn text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2" onclick="addToCart('DTR Kitchen Cleaner', 750, 'BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (4).jpeg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DTR Kitchen Cleaner 5 -->
+                        <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (5).jpeg" alt="DTR Kitchen Cleaner" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <div class="p-3 sm:p-4">
+                                <h4 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">DTR Kitchen Cleaner</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Professional grade kitchen cleaner</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-navy-600 font-bold text-sm sm:text-base">Rs. 750</span>
+                                    <button class="add-to-cart-btn text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2" onclick="addToCart('DTR Kitchen Cleaner', 750, 'BRANDWISE PRODUCTS/DTR/dtr kitchen cleaner750rps (5).jpeg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DTR Brake Cleaner -->
+                        <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/WD-40/DTR Brake Cleaner.jpg" alt="DTR Brake Cleaner" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <div class="p-3 sm:p-4">
+                                <h4 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">DTR Brake Cleaner</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Professional brake system cleaner</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-navy-600 font-bold text-sm sm:text-base">Rs. 550</span>
+                                    <button class="add-to-cart-btn text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2" onclick="addToCart('DTR Brake Cleaner', 550, 'BRANDWISE PRODUCTS/WD-40/DTR Brake Cleaner.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DTR Carburetor Cleaner -->
+                        <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/WD-40/DTR Carburetor Cleaner.jpg" alt="DTR Carburetor Cleaner" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <div class="p-3 sm:p-4">
+                                <h4 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">DTR Carburetor Cleaner</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Carburetor cleaning solution</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-navy-600 font-bold text-sm sm:text-base">Rs. 350</span>
+                                    <button class="add-to-cart-btn text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2" onclick="addToCart('DTR Carburetor Cleaner', 350, 'BRANDWISE PRODUCTS/WD-40/DTR Carburetor Cleaner.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DTR Engine Cleaner -->
+                        <div class="product-card">
+                            <img src="BRANDWISE PRODUCTS/WD-40/DTR Engine Cleaner.jpg" alt="DTR Engine Cleaner" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <div class="p-3 sm:p-4">
+                                <h4 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">DTR Engine Cleaner</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Engine degreasing and cleaning</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-navy-600 font-bold text-sm sm:text-base">Rs. 425</span>
+                                    <button class="add-to-cart-btn text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2" onclick="addToCart('DTR Engine Cleaner', 425, 'BRANDWISE PRODUCTS/WD-40/DTR Engine Cleaner.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                        </div>
-                    </div>
+                </div>
                     
                 <!-- Microfiber Products -->
                 <div id="microfiber" class="brand-section hidden">
@@ -1164,7 +1244,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-r from-primary-900 to-primary-800 text-white py-12">
+    <footer class="bg-navy-900 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>

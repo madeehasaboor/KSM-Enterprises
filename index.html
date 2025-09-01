@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <title>Auto Champion - Premium Car Care</title>
   <link rel="icon" type="image/x-icon" href="auto-champion-logo.jpg.jfif">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
             'inter': ['Inter', 'sans-serif'],
           },
           colors: {
-            primary: {
+            navy: {
               50: '#f0f4f8',
               100: '#d9e2ec',
               200: '#bcccdc',
@@ -26,20 +26,20 @@
               500: '#627d98',
               600: '#486581',
               700: '#334e68',
-              800: '#1a5a8f',
-              900: '#0A4174',
+              800: '#1e3a5f',
+              900: '#0f2d4a',
             },
-            secondary: {
-              50: '#fef2f2',
-              100: '#fee2e2',
-              200: '#fecaca',
-              300: '#fca5a5',
-              400: '#f87171',
-              500: '#ef4444',
-              600: '#dc2626',
-              700: '#b91c1c',
-              800: '#991b1b',
-              900: '#7f1d1d',
+            accent: {
+              50: '#fef7ee',
+              100: '#fdedd4',
+              200: '#fbd7a8',
+              300: '#f8bb71',
+              400: '#f59538',
+              500: '#f3771a',
+              600: '#e45a0f',
+              700: '#bd4210',
+              800: '#963514',
+              900: '#792e14',
             }
           }
         }
@@ -53,27 +53,25 @@
       overflow-x: hidden;
     }
     
+    .brand-modal {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
 
-    
-        .brand-modal {
-          opacity: 0;
-          visibility: hidden;
-          transition: all 0.3s ease;
-        }
+    .brand-modal.modal-show {
+      opacity: 1;
+      visibility: visible;
+    }
 
-        .brand-modal.modal-show {
-          opacity: 1;
-          visibility: visible;
-        }
+    .modal-content {
+      transform: scale(0.7);
+      transition: transform 0.3s ease;
+    }
 
-        .modal-content {
-          transform: scale(0.7);
-          transition: transform 0.3s ease;
-        }
-
-        .brand-modal.modal-show .modal-content {
-          transform: scale(1);
-        }
+    .brand-modal.modal-show .modal-content {
+      transform: scale(1);
+    }
 
     @keyframes scroll-left {
       0% { transform: translateX(100%); }
@@ -82,37 +80,37 @@
     
     .scrolling-text {
       animation: scroll-left 20s linear infinite;
-      }
+    }
   </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-900 to-primary-800 shadow-xl">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-xl border-b-2 border-navy-200">
     <div class="container mx-auto px-3 sm:px-4 py-2 sm:py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center gap-2 sm:gap-4">
-          <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="h-12 sm:h-16 w-auto rounded-lg border-2 border-white shadow-lg">
-          <h1 class="text-xl sm:text-3xl lg:text-4xl font-black text-yellow-400 uppercase tracking-wider drop-shadow-[0_0_2px_rgba(0,0,0,1)] drop-shadow-[0_0_4px_rgba(0,0,0,1)] drop-shadow-[0_0_6px_rgba(0,0,0,1)] drop-shadow-[0_0_8px_rgba(0,0,0,1)]">
+          <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="h-12 sm:h-16 w-auto rounded-lg border-2 border-navy-200 shadow-lg">
+          <h1 class="text-xl sm:text-3xl lg:text-4xl font-black text-navy-800 uppercase tracking-wider">
             Auto Champion
           </h1>
         </div>
         
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex flex-wrap gap-1 sm:gap-2 lg:gap-4 justify-center">
-          <a href="index.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-primary-900 rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 hover:text-white transition-colors">
+          <a href="index.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-navy-600 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-700 transition-colors">
             Home
           </a>
-          <a href="shop.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
+          <a href="shop.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-navy-800 rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors">
             Shop
           </a>
-          <a href="special-bundles.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
+          <a href="special-bundles.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-navy-800 rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors">
             Special Bundles
           </a>
-          <a href="catalogue.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
+          <a href="catalogue.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-navy-800 rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors">
             Catalogue
           </a>
-          <a href="contact.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-primary-700 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-secondary-600 transition-colors">
+          <a href="contact.html" class="px-2 sm:px-4 py-1 sm:py-2 bg-white text-navy-800 rounded-full text-xs sm:text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors">
             Contact
           </a>
           <a href="https://wa.me/923001234567" target="_blank" class="px-2 sm:px-4 py-1 sm:py-2 bg-green-600 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-green-700 transition-colors flex items-center gap-1 sm:gap-2">
@@ -123,34 +121,34 @@
         
         <!-- Cart Icon -->
         <div class="relative">
-          <a href="cart.html" class="text-white text-2xl hover:text-secondary-400 transition-colors">
+          <a href="cart.html" class="text-navy-800 text-2xl hover:text-navy-600 transition-colors">
             <i class="fas fa-shopping-cart"></i>
-            <span class="absolute -top-2 -right-2 bg-secondary-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold" id="cartCount">0</span>
+            <span class="absolute -top-2 -right-2 bg-accent-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold" id="cartCount">0</span>
           </a>
         </div>
         
         <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="md:hidden text-white text-2xl hover:text-secondary-400 transition-colors focus:outline-none">
+        <button id="mobileMenuBtn" class="md:hidden text-navy-800 text-2xl hover:text-navy-600 transition-colors focus:outline-none">
           <i class="fas fa-bars" id="menuIcon"></i>
         </button>
       </div>
       
       <!-- Mobile Navigation Menu -->
-      <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4 border-t border-primary-700">
+      <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4 border-t border-navy-200">
         <nav class="flex flex-col gap-2 pt-4">
-          <a href="index.html" class="px-4 py-3 bg-white text-primary-900 rounded-lg text-sm font-semibold hover:bg-secondary-600 hover:text-white transition-colors text-center">
+          <a href="index.html" class="px-4 py-3 bg-navy-600 text-white rounded-lg text-sm font-semibold hover:bg-navy-700 transition-colors text-center">
             Home
           </a>
-          <a href="shop.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+          <a href="shop.html" class="px-4 py-3 bg-white text-navy-800 rounded-lg text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors text-center">
             Shop
           </a>
-          <a href="special-bundles.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+          <a href="special-bundles.html" class="px-4 py-3 bg-white text-navy-800 rounded-lg text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors text-center">
             Special Bundles
           </a>
-          <a href="catalogue.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+          <a href="catalogue.html" class="px-4 py-3 bg-white text-navy-800 rounded-lg text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors text-center">
             Catalogue
           </a>
-          <a href="contact.html" class="px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-semibold hover:bg-secondary-600 transition-colors text-center">
+          <a href="contact.html" class="px-4 py-3 bg-white text-navy-800 rounded-lg text-sm font-semibold hover:bg-navy-50 border border-navy-200 transition-colors text-center">
             Contact
           </a>
           <a href="https://wa.me/923001234567" target="_blank" class="px-4 py-3 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors text-center flex items-center justify-center gap-2">
@@ -162,150 +160,140 @@
     </div>
    </header>
 
-
-
-  <!-- Welcome Banner -->
-  <section class="py-16 sm:py-24 lg:py-32 bg-white relative overflow-hidden min-h-screen flex items-center">
+  <!-- Hero Section -->
+  <section class="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden min-h-screen flex items-center">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <!-- Floating Orbs -->
+      <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute top-3/4 right-1/4 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+      <div class="absolute bottom-1/4 left-1/3 w-64 h-64 bg-cyan-500/25 rounded-full blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
+      
+      <!-- Grid Pattern Overlay -->
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+      
+      <!-- Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20"></div>
+    </div>
     
     <div class="container mx-auto px-4 relative z-10">
-      <div class="text-center text-gray-800 max-w-7xl mx-auto">
-        <!-- Premium Brand Badge -->
+      <div class="text-center text-white max-w-7xl mx-auto">
+        <!-- Auto Champion Logo -->
         <div class="mb-6 sm:mb-8">
-          <div class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 via-red-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold text-sm sm:text-base uppercase tracking-wider shadow-2xl border-2 border-white/20">
-            <span class="text-lg">🏁</span>
-            <span>Formula 1 • WD-40 • AIM • DTR</span>
-            <span class="text-lg">🏆</span>
+          <div class="flex justify-center">
+            <img src="auto-champion-logo.jpg.jfif" alt="Auto Champion Logo" class="h-20 sm:h-24 lg:h-32 xl:h-40 w-auto drop-shadow-2xl hover:scale-105 transition-all duration-300 filter brightness-110 contrast-110">
           </div>
         </div>
         
-        <!-- Main Title with Brand Styling -->
-        <div class="mb-8 sm:mb-10 lg:mb-12">
-          <h1 class="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-black uppercase tracking-wider text-yellow-400 drop-shadow-[0_0_2px_rgba(0,0,0,1)] drop-shadow-[0_0_4px_rgba(0,0,0,1)] drop-shadow-[0_0_6px_rgba(0,0,0,1)] drop-shadow-[0_0_8px_rgba(0,0,0,1)] drop-shadow-[0_0_10px_rgba(0,0,0,1)] drop-shadow-[0_0_12px_rgba(0,0,0,1)] drop-shadow-[0_0_14px_rgba(0,0,0,1)] drop-shadow-[0_0_16px_rgba(0,0,0,1)] drop-shadow-[0_0_18px_rgba(0,0,0,1)] drop-shadow-[0_0_20px_rgba(0,0,0,1)]">
-            Auto Champion
-          </h1>
-          <div class="w-40 h-1 bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 mx-auto mt-4 rounded-full shadow-lg"></div>
+        <!-- Premium Brand Badge -->
+        <div class="mb-6 sm:mb-8">
+          <div class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600/90 via-indigo-600/90 to-purple-600/90 backdrop-blur-sm text-white px-8 py-4 rounded-full font-bold text-sm sm:text-base uppercase tracking-wider shadow-2xl border border-white/20 hover:scale-105 transition-all duration-300">
+            <span class="text-xl animate-bounce">🏁</span>
+            <span class="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">Formula 1 • WD-40 • AIM • DTR</span>
+            <span class="text-xl animate-bounce" style="animation-delay: 0.5s;">🏆</span>
+          </div>
         </div>
         
-        <!-- Enhanced Subtitle with Brand Mentions -->
+        <!-- Main Title -->
+        <div class="mb-8 sm:mb-10 lg:mb-12">
+          <h1 class="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-black uppercase tracking-wider bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent drop-shadow-[0_0_4px_rgba(59,130,246,0.8)] drop-shadow-[0_0_8px_rgba(59,130,246,0.6)] drop-shadow-[0_0_12px_rgba(59,130,246,0.4)] drop-shadow-[0_0_16px_rgba(59,130,246,0.2)] animate-pulse">
+            Auto Champion
+          </h1>
+          <div class="w-48 h-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 mx-auto mt-6 rounded-full shadow-2xl animate-pulse"></div>
+          <div class="w-32 h-1 bg-gradient-to-r from-blue-300 to-cyan-400 mx-auto mt-2 rounded-full shadow-lg"></div>
+        </div>
+        
+        <!-- Subtitle -->
         <div class="mb-10 sm:mb-14 lg:mb-16">
-          <p class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium leading-relaxed max-w-6xl mx-auto px-4 mb-4">
+          <p class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium leading-relaxed max-w-6xl mx-auto px-4 mb-4 bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
             Your trusted partner for 
-            <span class="text-primary-600 font-bold">premium automotive care</span> products
+            <span class="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent font-bold">premium automotive care</span> products
           </p>
-          <p class="text-lg sm:text-xl lg:text-2xl text-gray-600 font-semibold max-w-5xl mx-auto px-4 mb-6">
+          <p class="text-lg sm:text-xl lg:text-2xl text-blue-100 font-semibold max-w-5xl mx-auto px-4 mb-6 drop-shadow-lg">
             Professional-grade solutions for the ultimate finish
           </p>
-          <p class="text-base sm:text-lg lg:text-xl text-gray-500 max-w-4xl mx-auto px-4">
-            Featuring <span class="text-red-600 font-semibold">Formula 1</span>, <span class="text-blue-600 font-semibold">WD-40</span>, <span class="text-green-600 font-semibold">AIM</span>, and <span class="text-orange-600 font-semibold">DTR</span> premium products
+          <p class="text-base sm:text-lg lg:text-xl text-blue-200 max-w-4xl mx-auto px-4">
+            Featuring <span class="text-red-400 font-semibold drop-shadow-md">Formula 1</span>, <span class="text-blue-300 font-semibold drop-shadow-md">WD-40</span>, <span class="text-green-400 font-semibold drop-shadow-md">AIM</span>, and <span class="text-orange-400 font-semibold drop-shadow-md">DTR</span> premium products
           </p>
         </div>
         
         <!-- Brand Feature Highlights -->
         <div class="mb-10 sm:mb-12 lg:mb-14">
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 max-w-4xl mx-auto">
-            <div class="flex flex-col items-center gap-2 bg-gray-50 px-4 py-3 rounded-xl border border-gray-200">
-              <span class="text-red-600 text-2xl">🏁</span>
+            <div class="flex flex-col items-center gap-2 bg-gradient-to-br from-white/95 to-blue-50/95 backdrop-blur-md px-4 py-3 rounded-xl border border-blue-200/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <span class="text-red-600 text-2xl animate-bounce">🏁</span>
               <span class="text-xs sm:text-sm font-bold text-red-600">Formula 1</span>
-              <span class="text-xs text-gray-600">Car Care</span>
+              <span class="text-xs text-gray-700">Car Care</span>
             </div>
-            <div class="flex flex-col items-center gap-2 bg-gray-50 px-4 py-3 rounded-xl border border-gray-200">
-              <span class="text-blue-600 text-2xl">🛢️</span>
+            <div class="flex flex-col items-center gap-2 bg-gradient-to-br from-white/95 to-blue-50/95 backdrop-blur-md px-4 py-3 rounded-xl border border-blue-200/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <span class="text-blue-600 text-2xl animate-bounce" style="animation-delay: 0.2s;">🛢️</span>
               <span class="text-xs sm:text-sm font-bold text-blue-600">WD-40</span>
-              <span class="text-xs text-gray-600">Multi-Purpose</span>
+              <span class="text-xs text-gray-700">Multi-Purpose</span>
             </div>
-            <div class="flex flex-col items-center gap-2 bg-gray-50 px-4 py-3 rounded-xl border border-gray-200">
-              <span class="text-green-600 text-2xl">🧽</span>
+            <div class="flex flex-col items-center gap-2 bg-gradient-to-br from-white/95 to-blue-50/95 backdrop-blur-md px-4 py-3 rounded-xl border border-blue-200/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <span class="text-green-600 text-2xl animate-bounce" style="animation-delay: 0.4s;">🧽</span>
               <span class="text-xs sm:text-sm font-bold text-green-600">AIM</span>
-              <span class="text-xs text-gray-600">Cleaning</span>
+              <span class="text-xs text-gray-700">Cleaning</span>
             </div>
-            <div class="flex flex-col items-center gap-2 bg-gray-50 px-4 py-3 rounded-xl border border-gray-200">
-              <span class="text-orange-600 text-2xl">🔧</span>
+            <div class="flex flex-col items-center gap-2 bg-gradient-to-br from-white/95 to-blue-50/95 backdrop-blur-md px-4 py-3 rounded-xl border border-blue-200/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <span class="text-orange-600 text-2xl animate-bounce" style="animation-delay: 0.6s;">🔧</span>
               <span class="text-xs sm:text-sm font-bold text-orange-600">DTR</span>
-              <span class="text-xs text-gray-600">Maintenance</span>
+              <span class="text-xs text-gray-700">Maintenance</span>
             </div>
           </div>
         </div>
         
-        <!-- Enhanced Call to Action Buttons -->
+        <!-- Call to Action Buttons -->
         <div class="flex flex-row flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-5">
-          <a href="#brands" class="group bg-gradient-to-r from-red-500 to-red-600 text-white px-5 sm:px-6 lg:px-7 py-3 sm:py-3 lg:py-4 rounded-full font-bold text-sm sm:text-sm lg:text-base uppercase tracking-wider hover:from-red-400 hover:to-red-500 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-red-500/30 flex items-center justify-center border-2 border-red-400/50">
-            <span class="mr-2 text-base">🏁</span>
+          <a href="#brands" class="group bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 sm:px-8 lg:px-10 py-4 sm:py-4 lg:py-5 rounded-full font-bold text-sm sm:text-sm lg:text-base uppercase tracking-wider hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-cyan-500/40 flex items-center justify-center border border-white/20 backdrop-blur-sm">
+            <span class="mr-2 text-lg animate-pulse">🏁</span>
             <span class="hidden sm:inline">Explore</span> Brands
-            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+            <span class="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
           </a>
-          <a href="#products" class="group bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 sm:px-6 lg:px-7 py-3 sm:py-3 lg:py-4 rounded-full font-bold text-sm sm:text-sm lg:text-base uppercase tracking-wider hover:from-blue-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-500/30 flex items-center justify-center border-2 border-blue-400/50">
-            <span class="mr-2 text-base">🛢️</span>
+          <a href="#products" class="group bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 sm:px-8 lg:px-10 py-4 sm:py-4 lg:py-5 rounded-full font-bold text-sm sm:text-sm lg:text-base uppercase tracking-wider hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-blue-500/40 flex items-center justify-center border border-white/20 backdrop-blur-sm">
+            <span class="mr-2 text-lg animate-pulse" style="animation-delay: 0.2s;">🛢️</span>
             <span class="hidden sm:inline">View</span> Products
-            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+            <span class="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
           </a>
-          <a href="generate-site-pdf.html" target="_blank" class="group bg-gradient-to-r from-green-500 to-green-600 text-white px-5 sm:px-6 lg:px-7 py-3 sm:py-3 lg:py-4 rounded-full font-bold text-sm sm:text-sm lg:text-base uppercase tracking-wider hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-green-500/30 flex items-center justify-center border-2 border-green-400/50">
-            <span class="mr-2 text-base">📄</span>
+          <a href="generate-site-pdf.html" target="_blank" class="group bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 sm:px-8 lg:px-10 py-4 sm:py-4 lg:py-5 rounded-full font-bold text-sm sm:text-sm lg:text-base uppercase tracking-wider hover:from-indigo-400 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-indigo-500/40 flex items-center justify-center border border-white/20 backdrop-blur-sm">
+            <span class="mr-2 text-lg animate-pulse" style="animation-delay: 0.4s;">📄</span>
             <span class="hidden sm:inline">Download</span> PDF
-            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+            <span class="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
           </a>
         </div>
       </div>
     </div>
-    
-    <!-- Brand-Specific Floating Elements -->
-    <div class="absolute top-20 left-20 w-16 h-16 bg-red-500/40 rounded-full animate-bounce shadow-lg"></div>
-    <div class="absolute top-32 right-32 w-12 h-12 bg-blue-500/40 rounded-full animate-pulse shadow-lg" style="animation-delay: 1s;"></div>
-    <div class="absolute bottom-32 left-1/3 w-14 h-14 bg-green-500/50 rounded-full animate-bounce shadow-lg" style="animation-delay: 2s;"></div>
-    <div class="absolute bottom-24 right-1/4 w-10 h-10 bg-orange-500/60 rounded-full animate-pulse shadow-lg" style="animation-delay: 0.5s;"></div>
-    
-    <!-- Brand Icons -->
-    <div class="absolute top-1/4 left-10 text-red-400/40 text-4xl animate-pulse">🏁</div>
-    <div class="absolute top-1/3 right-16 text-blue-400/40 text-3xl animate-bounce" style="animation-delay: 1s;">🛢️</div>
-    <div class="absolute bottom-1/4 left-20 text-green-400/40 text-3xl animate-pulse" style="animation-delay: 2s;">🧽</div>
-    <div class="absolute bottom-1/3 right-10 text-orange-400/40 text-3xl animate-bounce" style="animation-delay: 0.8s;">🔧</div>
-    
-    <!-- Product Category Icons -->
-    <div class="absolute top-1/2 left-5 text-yellow-400/30 text-2xl animate-pulse" style="animation-delay: 1.2s;">✨</div>
-    <div class="absolute top-2/3 right-5 text-white/30 text-2xl animate-bounce" style="animation-delay: 1.8s;">🛡️</div>
   </section>
 
   <!-- Brands Section -->
-  <section id="brands" class="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
-    <!-- Enhanced Background Pattern -->
-    <div class="absolute inset-0 opacity-8">
-      <div class="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-red-400 to-red-600 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-green-400 to-green-600 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-    </div>
-    
-    <!-- Brand Logo Grid Pattern -->
-    <div class="absolute inset-0 opacity-3">
-      <div class="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-blue-500/20 rounded-full"></div>
-      <div class="absolute top-3/4 right-1/4 w-24 h-24 border-2 border-red-500/20 rounded-full"></div>
-      <div class="absolute bottom-1/4 left-3/4 w-28 h-28 border-2 border-green-500/20 rounded-full"></div>
-    </div>
+  <section id="brands" class="py-16 sm:py-24 lg:py-32 bg-navy-50 relative overflow-hidden">
     
     <div class="container mx-auto px-4 relative z-10">
       <!-- Enhanced Header -->
       <div class="text-center mb-16 sm:mb-20 lg:mb-24">
         <div class="inline-block mb-6">
-          <span class="bg-gradient-to-r from-primary-600 via-red-500 to-blue-600 text-transparent bg-clip-text text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-wider">
+          <span class="bg-gradient-to-r from-navy-600 to-navy-800 text-transparent bg-clip-text text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-wider">
             Our Premium Brands
           </span>
         </div>
         <p class="text-lg sm:text-xl lg:text-2xl text-gray-600 font-medium max-w-3xl mx-auto px-4 mb-6">
           Discover the world's leading automotive care brands trusted by professionals worldwide
         </p>
-        <div class="w-32 h-1 bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 mx-auto rounded-full shadow-lg"></div>
+        <div class="w-32 h-1 bg-gradient-to-r from-navy-600 to-accent-500 mx-auto rounded-full shadow-lg"></div>
         
         <!-- Brand Stats -->
         <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-12 mt-8 sm:mt-12">
-          <div class="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+          <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg border border-navy-200">
             <span class="text-2xl">🏁</span>
-            <span class="text-sm sm:text-base font-bold text-gray-700">5 Premium Brands</span>
+            <span class="text-sm sm:text-base font-bold text-navy-800">5 Premium Brands</span>
           </div>
-          <div class="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+          <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg border border-navy-200">
             <span class="text-2xl">✨</span>
-            <span class="text-sm sm:text-base font-bold text-gray-700">Professional Grade</span>
+            <span class="text-sm sm:text-base font-bold text-navy-800">Professional Grade</span>
           </div>
-          <div class="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+          <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg border border-navy-200">
             <span class="text-2xl">🛡️</span>
-            <span class="text-sm sm:text-base font-bold text-gray-700">Quality Guaranteed</span>
+            <span class="text-sm sm:text-base font-bold text-navy-800">Quality Guaranteed</span>
           </div>
         </div>
       </div>
@@ -313,22 +301,14 @@
       <!-- Enhanced Brand Cards Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto">
         <!-- WD-40 Brand Card -->
-        <div class="brand-card group bg-gradient-to-br from-white to-blue-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-blue-200 shadow-xl hover:border-blue-400 relative overflow-hidden" data-brand="wd40">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <!-- Brand Badge -->
-          <div class="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
-            Multi-Purpose
-          </div>
-          
+        <div class="brand-card group bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-navy-200 shadow-xl hover:border-navy-400 relative overflow-hidden" data-brand="wd40">
           <div class="relative z-10">
             <div class="h-20 sm:h-24 lg:h-28 mb-6 flex items-center justify-center">
               <img src="brand logos/frontendwd40-logo.jpg.jpg" alt="WD-40 Logo" class="max-w-full max-h-full object-contain rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'">
             </div>
-            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-gray-800 uppercase tracking-wider mb-4 group-hover:text-blue-600 transition-colors duration-300">WD-40</h3>
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-navy-800 uppercase tracking-wider mb-4 group-hover:text-navy-600 transition-colors duration-300">WD-40</h3>
             <p class="text-sm sm:text-base text-gray-600 mb-6 font-medium">Multi-function products and lubricants</p>
-            <button class="brand-btn w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 border-2 border-blue-400/50">
+            <button class="brand-btn w-full bg-navy-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-navy-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-navy-500/25">
               <span class="mr-2">🛢️</span>
               Explore Products
               <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -337,22 +317,14 @@
         </div>
         
         <!-- Formula 1 Brand Card -->
-        <div class="brand-card group bg-gradient-to-br from-white to-red-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-red-200 shadow-xl hover:border-red-400 relative overflow-hidden" data-brand="formula1">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <!-- Brand Badge -->
-          <div class="absolute top-4 right-4 bg-gradient-to-r from-red-500 to-red-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
-            Car Care
-          </div>
-          
+        <div class="brand-card group bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-navy-200 shadow-xl hover:border-navy-400 relative overflow-hidden" data-brand="formula1">
           <div class="relative z-10">
             <div class="h-20 sm:h-24 lg:h-28 mb-6 flex items-center justify-center">
               <img src="brand logos/frontendformula1-logo.jpg.jpg" alt="Formula 1 Logo" class="max-w-full max-h-full object-contain rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'">
             </div>
-            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-gray-800 uppercase tracking-wider mb-4 group-hover:text-red-600 transition-colors duration-300">Formula 1</h3>
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-navy-800 uppercase tracking-wider mb-4 group-hover:text-navy-600 transition-colors duration-300">Formula 1</h3>
             <p class="text-sm sm:text-base text-gray-600 mb-6 font-medium">Professional car care products</p>
-            <button class="brand-btn w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:from-red-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-500/25 border-2 border-red-400/50">
+            <button class="brand-btn w-full bg-navy-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-navy-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-navy-500/25">
               <span class="mr-2">🏁</span>
               Explore Products
               <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -361,22 +333,14 @@
         </div>
         
         <!-- AIM Brand Card -->
-        <div class="brand-card group bg-gradient-to-br from-white to-green-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-green-200 shadow-xl hover:border-green-400 relative overflow-hidden" data-brand="aim">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <!-- Brand Badge -->
-          <div class="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
-            Cleaning
-          </div>
-          
+        <div class="brand-card group bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-navy-200 shadow-xl hover:border-navy-400 relative overflow-hidden" data-brand="aim">
           <div class="relative z-10">
             <div class="h-20 sm:h-24 lg:h-28 mb-6 flex items-center justify-center">
               <img src="brand logos/frontendaim-logo.jpg.jpg" alt="AIM Logo" class="max-w-full max-h-full object-contain rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'">
             </div>
-            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-gray-800 uppercase tracking-wider mb-4 group-hover:text-green-600 transition-colors duration-300">AIM</h3>
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-navy-800 uppercase tracking-wider mb-4 group-hover:text-navy-600 transition-colors duration-300">AIM</h3>
             <p class="text-sm sm:text-base text-gray-600 mb-6 font-medium">Professional cleaning solutions</p>
-            <button class="brand-btn w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25 border-2 border-green-400/50">
+            <button class="brand-btn w-full bg-navy-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-navy-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-navy-500/25">
               <span class="mr-2">🧽</span>
               Explore Products
               <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -385,22 +349,14 @@
         </div>
         
         <!-- DTR Brand Card -->
-        <div class="brand-card group bg-gradient-to-br from-white to-orange-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-orange-200 shadow-xl hover:border-orange-400 relative overflow-hidden" data-brand="dtr">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <!-- Brand Badge -->
-          <div class="absolute top-4 right-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
-            Maintenance
-          </div>
-          
+        <div class="brand-card group bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-navy-200 shadow-xl hover:border-navy-400 relative overflow-hidden" data-brand="dtr">
           <div class="relative z-10">
             <div class="h-20 sm:h-24 lg:h-28 mb-6 flex items-center justify-center">
               <img src="brand logos/frontenddtr-logo.jpg.jpg" alt="DTR Logo" class="max-w-full max-h-full object-contain rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'">
             </div>
-            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-gray-800 uppercase tracking-wider mb-4 group-hover:text-orange-600 transition-colors duration-300">DTR</h3>
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-navy-800 uppercase tracking-wider mb-4 group-hover:text-navy-600 transition-colors duration-300">DTR</h3>
             <p class="text-sm sm:text-base text-gray-600 mb-6 font-medium">Brake and engine cleaners</p>
-            <button class="brand-btn w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25 border-2 border-orange-400/50">
+            <button class="brand-btn w-full bg-navy-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-navy-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-navy-500/25">
               <span class="mr-2">🔧</span>
               Explore Products
               <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -409,22 +365,14 @@
         </div>
         
         <!-- AREON Brand Card -->
-        <div class="brand-card group bg-gradient-to-br from-white to-purple-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-purple-200 shadow-xl hover:border-purple-400 relative overflow-hidden" data-brand="areon">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <!-- Brand Badge -->
-          <div class="absolute top-4 right-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
-            Air Care
-          </div>
-          
+        <div class="brand-card group bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 hover:transform hover:-translate-y-4 hover:shadow-2xl border-2 border-navy-200 shadow-xl hover:border-navy-400 relative overflow-hidden" data-brand="areon">
           <div class="relative z-10">
             <div class="h-20 sm:h-24 lg:h-28 mb-6 flex items-center justify-center">
               <img src="BRANDWISE PRODUCTS/AERON/Areon Air Freshener.jpg" alt="AREON Logo" class="max-w-full max-h-full object-contain rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'">
             </div>
-            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-gray-800 uppercase tracking-wider mb-4 group-hover:text-purple-600 transition-colors duration-300">AREON</h3>
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-navy-800 uppercase tracking-wider mb-4 group-hover:text-navy-600 transition-colors duration-300">AREON</h3>
             <p class="text-sm sm:text-base text-gray-600 mb-6 font-medium">Air fresheners and interior care</p>
-            <button class="brand-btn w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25 border-2 border-purple-400/50">
+            <button class="brand-btn w-full bg-navy-600 text-white py-3 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-navy-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-navy-500/25">
               <span class="mr-2">🌸</span>
               Explore Products
               <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -436,146 +384,134 @@
   </section>
 
   <!-- Top Products Section -->
-  <section id="products" class="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute top-1/4 right-0 w-80 h-80 bg-primary-600 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-secondary-400 rounded-full blur-3xl"></div>
-          </div>
-    
+  <section id="products" class="py-20 bg-white relative overflow-hidden">
     <div class="container mx-auto px-4 relative z-10">
       <div class="text-center mb-16">
         <div class="inline-block mb-4">
-          <span class="bg-gradient-to-r from-primary-600 to-secondary-500 text-transparent bg-clip-text text-4xl lg:text-5xl font-black uppercase tracking-wider">
+          <span class="bg-gradient-to-r from-navy-600 to-navy-800 text-transparent bg-clip-text text-4xl lg:text-5xl font-black uppercase tracking-wider">
             Top Products
           </span>
-          </div>
+        </div>
         <p class="text-xl text-gray-600 font-medium max-w-2xl mx-auto mb-6">
           Handpicked premium products for professional results
         </p>
-        <div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-500 mx-auto rounded-full"></div>
-          </div>
+        <div class="w-24 h-1 bg-gradient-to-r from-navy-600 to-accent-500 mx-auto rounded-full"></div>
+      </div>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
         <!-- Product 1 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-gray-200 shadow-lg">
+        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-navy-200 shadow-lg">
           <div class="h-24 sm:h-32 mb-3 sm:mb-4 flex items-center justify-center">
             <img src="JS files/WD-40.jpg" alt="WD-40 Multi-Function Product" class="max-w-full max-h-full object-contain rounded-lg">
           </div>
-          <h4 class="text-base sm:text-lg font-bold text-gray-800 mb-2">WD-40 Multi-Function</h4>
+          <h4 class="text-base sm:text-lg font-bold text-navy-800 mb-2">WD-40 Multi-Function</h4>
           <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Eliminates squeaks, displaces moisture, cleans & protects</p>
-          <p class="text-xl sm:text-2xl font-black text-primary-600 mb-1">₨ 450</p>
+          <p class="text-xl sm:text-2xl font-black text-navy-600 mb-1">₨ 450</p>
           <p class="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide">200ml</p>
-          </div>
+        </div>
          
         <!-- Product 2 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-gray-200 shadow-lg">
+        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-navy-200 shadow-lg">
           <div class="h-24 sm:h-32 mb-3 sm:mb-4 flex items-center justify-center">
             <img src="products/CAR WASH & WAX/F1-113 CERAMIC LIQUID WAX.jpeg" alt="Formula 1 Ceramic Liquid Wax" class="max-w-full max-h-full object-contain rounded-lg">
-         </div>
-          <h4 class="text-base sm:text-lg font-bold text-gray-800 mb-2">Formula 1 Ceramic Liquid Wax</h4>
+          </div>
+          <h4 class="text-base sm:text-lg font-bold text-navy-800 mb-2">Formula 1 Ceramic Liquid Wax</h4>
           <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Advanced ceramic protection for long-lasting shine</p>
-          <p class="text-xl sm:text-2xl font-black text-primary-600 mb-1">₨ 850</p>
+          <p class="text-xl sm:text-2xl font-black text-navy-600 mb-1">₨ 850</p>
           <p class="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide">500ml</p>
-       </div>
+        </div>
         
         <!-- Product 3 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-gray-200 shadow-lg">
+        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-navy-200 shadow-lg">
           <div class="h-24 sm:h-32 mb-3 sm:mb-4 flex items-center justify-center">
             <img src="products/CLEANERS/F1-119 LEATHER CLEANER +CONDITIONER.jpeg" alt="Leather Cleaner & Conditioner" class="max-w-full max-h-full object-contain rounded-lg">
-    </div>
-          <h4 class="text-base sm:text-lg font-bold text-gray-800 mb-2">Leather Cleaner & Conditioner</h4>
+          </div>
+          <h4 class="text-base sm:text-lg font-bold text-navy-800 mb-2">Leather Cleaner & Conditioner</h4>
           <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Professional leather care and protection</p>
-          <p class="text-xl sm:text-2xl font-black text-primary-600 mb-1">₨ 650</p>
+          <p class="text-xl sm:text-2xl font-black text-navy-600 mb-1">₨ 650</p>
           <p class="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide">500ml</p>
-  </div>
+        </div>
 
         <!-- Product 4 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-gray-200 shadow-lg">
+        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-navy-200 shadow-lg">
           <div class="h-24 sm:h-32 mb-3 sm:mb-4 flex items-center justify-center">
             <img src="products/MICRO FIBER CLOTHES/MICROFIBER TOWEL PACK OF 4.jpeg" alt="Microfiber Towel Pack" class="max-w-full max-h-full object-contain rounded-lg">
-                  </div>
-          <h4 class="text-base sm:text-lg font-bold text-gray-800 mb-2">Microfiber Towel Pack</h4>
+          </div>
+          <h4 class="text-base sm:text-lg font-bold text-navy-800 mb-2">Microfiber Towel Pack</h4>
           <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Premium microfiber towels for streak-free cleaning</p>
-          <p class="text-xl sm:text-2xl font-black text-primary-600 mb-1">₨ 350</p>
+          <p class="text-xl sm:text-2xl font-black text-navy-600 mb-1">₨ 350</p>
           <p class="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide">Pack of 4</p>
-                     </div>
+        </div>
                      </div>
                      </div>
   </section>
 
   <!-- Customer Reviews Section -->
-  <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-primary-600 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/3 right-1/4 w-56 h-56 bg-secondary-400 rounded-full blur-3xl"></div>
-       </div>
-      
+  <section class="py-20 bg-navy-50 relative overflow-hidden">
     <div class="container mx-auto px-4 relative z-10">
       <div class="text-center mb-16">
         <div class="inline-block mb-4">
-          <span class="bg-gradient-to-r from-primary-600 to-secondary-500 text-transparent bg-clip-text text-4xl lg:text-5xl font-black uppercase tracking-wider">
+          <span class="bg-gradient-to-r from-navy-600 to-navy-800 text-transparent bg-clip-text text-4xl lg:text-5xl font-black uppercase tracking-wider">
             Customer Reviews
           </span>
-          </div>
+        </div>
         <p class="text-xl text-gray-600 font-medium max-w-2xl mx-auto mb-6">
           What our valued customers say about our products and service
         </p>
-        <div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-500 mx-auto rounded-full"></div>
-             </div>
+        <div class="w-24 h-1 bg-gradient-to-r from-navy-600 to-accent-500 mx-auto rounded-full"></div>
+      </div>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
         <!-- Review 1 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-gray-200 shadow-lg">
+        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-navy-200 shadow-lg">
           <div class="flex items-start justify-between mb-3 sm:mb-4">
             <div class="flex items-center gap-3 sm:gap-4">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-navy-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg">
                 A
-            </div>
+              </div>
               <div>
-                <h4 class="font-bold text-gray-800 text-sm sm:text-base">Ahmed Khan</h4>
-                <div class="text-secondary-400 text-base sm:text-lg">⭐⭐⭐⭐⭐</div>
-          </div>
-        </div>
+                <h4 class="font-bold text-navy-800 text-sm sm:text-base">Ahmed Khan</h4>
+                <div class="text-accent-500 text-base sm:text-lg">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
             <span class="text-xs sm:text-sm text-gray-500">2 days ago</span>
           </div>
           <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
             Excellent quality products! The Formula 1 wax gave my car an amazing shine that lasted for weeks. Highly recommended!
           </p>
-      </div>
+        </div>
       
         <!-- Review 2 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-gray-200 shadow-lg">
+        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-navy-200 shadow-lg">
           <div class="flex items-start justify-between mb-3 sm:mb-4">
             <div class="flex items-center gap-3 sm:gap-4">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-navy-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg">
                 S
-            </div>
+              </div>
               <div>
-                <h4 class="font-bold text-gray-800 text-sm sm:text-base">Sarah Ahmed</h4>
-                <div class="text-secondary-400 text-base sm:text-lg">⭐⭐⭐⭐⭐</div>
-          </div>
-        </div>
+                <h4 class="font-bold text-navy-800 text-sm sm:text-base">Sarah Ahmed</h4>
+                <div class="text-accent-500 text-base sm:text-lg">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
             <span class="text-xs sm:text-sm text-gray-500">1 week ago</span>
           </div>
           <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
             Fast delivery and great customer service. The microfiber towels are perfect for detailing work.
           </p>
-      </div>
+        </div>
       
         <!-- Review 3 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-gray-200 shadow-lg">
+        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl border-2 border-navy-200 shadow-lg">
           <div class="flex items-start justify-between mb-3 sm:mb-4">
             <div class="flex items-center gap-3 sm:gap-4">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-navy-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg">
                 M
-            </div>
+              </div>
               <div>
-                <h4 class="font-bold text-gray-800 text-sm sm:text-base">Muhammad Ali</h4>
-                <div class="text-secondary-400 text-base sm:text-lg">⭐⭐⭐⭐⭐</div>
-          </div>
-        </div>
+                <h4 class="font-bold text-navy-800 text-sm sm:text-base">Muhammad Ali</h4>
+                <div class="text-accent-500 text-base sm:text-lg">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
             <span class="text-xs sm:text-sm text-gray-500">2 weeks ago</span>
           </div>
           <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
@@ -587,13 +523,13 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
+  <footer class="bg-navy-900 text-white py-12">
     <div class="container mx-auto px-4 text-center">
       <p class="text-lg font-medium">
-    &copy; 2025 Auto Champion. All rights reserved.
+        &copy; 2025 Auto Champion. All rights reserved.
       </p>
     </div>
-    </footer>
+  </footer>
 
     <script>
     // Smooth scrolling for anchor links
